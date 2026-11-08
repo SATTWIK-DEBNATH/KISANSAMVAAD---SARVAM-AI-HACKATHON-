@@ -14,7 +14,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(CURRENT_DIR)
 sys.path.insert(0, BACKEND_DIR)
 
-# Import all 10 test suites
+# Import all 14 test suites
 from tests.test_1_sarvam_handling import TestSarvamHandling
 from tests.test_2_speech_workflow import TestSpeechWorkflow
 from tests.test_3_soil_card_validation import TestSoilCardValidation
@@ -25,6 +25,10 @@ from tests.test_7_mandi_freshness import TestMandiFreshness
 from tests.test_8_weather_validation import TestWeatherValidation
 from tests.test_9_api_error_handling import TestAPIErrorHandling
 from tests.test_10_e2e_integration import TestEndToEndIntegration
+from tests.test_11_persistence_layer import TestPersistenceLayer
+from tests.test_12_net_realisation import TestNetRealisationCalculator
+from tests.test_13_crop_diagnostics import TestCropDiagnosticsService
+from tests.test_14_schemes_intelligence import TestSchemeIntelligenceService
 
 def run_suite():
     loader = unittest.TestLoader()
@@ -40,11 +44,15 @@ def run_suite():
         ("7. Mandi Data Freshness & Transparency", TestMandiFreshness),
         ("8. Agricultural Weather & Spray Windows", TestWeatherValidation),
         ("9. API Error Handling & Resilience", TestAPIErrorHandling),
-        ("10. End-to-End Multilingual Pipeline", TestEndToEndIntegration)
+        ("10. End-to-End Multilingual Pipeline", TestEndToEndIntegration),
+        ("11. Relational Persistence & Schema", TestPersistenceLayer),
+        ("12. Net Realisation Economic Engine", TestNetRealisationCalculator),
+        ("13. Multimodal Crop Diagnostics & Safety", TestCropDiagnosticsService),
+        ("14. Government Schemes Intelligence", TestSchemeIntelligenceService)
     ]
 
     print("\n" + "="*70)
-    print("🌾 KISANSAMVAAD MASTER TEST SUITE - 10 CRITICAL SPECIFICATION AREAS")
+    print("🌾 KISANSAMVAAD MASTER TEST SUITE - 14 CRITICAL SPECIFICATION AREAS")
     print("="*70 + "\n")
 
     overall_passed = True

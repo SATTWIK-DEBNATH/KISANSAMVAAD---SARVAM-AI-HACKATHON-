@@ -16,3 +16,7 @@ awesome-claude-skills/
 skills-lock.json
 ~/
 scratch/
+*.db
+*.sqlite
+backend/*.db
+.env

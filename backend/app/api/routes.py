@@ -11,41 +11,16 @@ from ..integrations.weather.connector import WeatherConnector
 from ..services.soil_service import SoilDiagnosticService
 from ..services.telephony_service import TelephonyIVRService
 from ..services.audio_service import AudioService
+from ..services.calculator_service import NetRealisationCalculator
+from ..services.crop_service import CropDiagnosticsService
+from ..services.scheme_service import SchemeIntelligenceService
 from ..safety.agri_guardrails import AgriGuardrailEngine
 from ..ai.rag.knowledge_store import knowledge_store
+from ..db.repository import repository
 from ..core.config import settings
 
-# Government Agricultural Schemes
-GOVERNMENT_SCHEMES = [
-    {
-        "id": "pm_kisan",
-        "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
-        "benefit": "₹6,000 per year in 3 direct bank installments",
-        "eligibility": "All landholding farmer families with cultivable land.",
-        "portal_url": "https://pmkisan.gov.in"
-    },
-    {
-        "id": "pmfby",
-        "name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
-        "benefit": "Comprehensive crop insurance against non-preventable natural risks at minimal premium (1.5% - 2%)",
-        "eligibility": "All farmers growing notified crops in notified areas.",
-        "portal_url": "https://pmfby.gov.in"
-    },
-    {
-        "id": "shc_scheme",
-        "name": "Soil Health Card Scheme",
-        "benefit": "Free physical soil test report assessing 12 parameters every 2 years",
-        "eligibility": "All farmers across India via local KVK or agricultural department.",
-        "portal_url": "https://soilhealth.dac.gov.in"
-    },
-    {
-        "id": "kusum",
-        "name": "PM-KUSUM (Solar Pumps for Agriculture)",
-        "benefit": "Up to 60% subsidy for standalone solar agricultural water pumps",
-        "eligibility": "Individual farmers, groups of farmers, FPOs and panchayats.",
-        "portal_url": "https://pmkusum.mnre.gov.in"
-    }
-]
+# Backward-compatible alias for schemes
+GOVERNMENT_SCHEMES = SchemeIntelligenceService.list_all_schemes()
 
 class APIRouter:
     """Dispatches API requests with error handling."""
@@ -93,7 +68,8 @@ class APIRouter:
             return weather_data, 200
 
         elif path == "/api/schemes":
-            return {"schemes": GOVERNMENT_SCHEMES}, 200
+            schemes = SchemeIntelligenceService.list_all_schemes()
+            return {"schemes": schemes, "count": len(schemes)}, 200
 
         elif path == "/api/provenance":
             packages = knowledge_store.crop_packages
@@ -101,6 +77,21 @@ class APIRouter:
 
         elif path == "/api/audit-log":
             return {"events": AgriGuardrailEngine.get_audit_log()}, 200
+
+        elif path == "/api/farmers":
+            limit = int(query.get("limit", [50])[0])
+            farmers = repository.list_farmers(limit=limit)
+            return {"farmers": farmers, "count": len(farmers)}, 200
+
+        elif path == "/api/conversations":
+            farmer_id = query.get("farmer_id", [None])[0]
+            limit = int(query.get("limit", [20])[0])
+            convs = repository.get_conversation_history(farmer_id=farmer_id, limit=limit)
+            return {"conversations": convs, "count": len(convs)}, 200
+
+        elif path == "/api/expert-cases":
+            cases = repository.list_open_expert_cases()
+            return {"expert_cases": cases, "count": len(cases)}, 200
 
         return {"error": f"Endpoint '{path}' not found"}, 404
 
@@ -128,7 +119,19 @@ class APIRouter:
         elif path == "/api/chat":
             query = body.get("query", "")
             lang = body.get("language", "kn")
+            farmer_id = body.get("farmer_id")
             result = client.chat_advisory(query=query, language=lang)
+            # Persist conversation to database
+            try:
+                repository.save_conversation(
+                    query_text=query,
+                    response_text=result.get("response", ""),
+                    farmer_id=farmer_id,
+                    language=lang,
+                    detected_intent=result.get("detected_intent", "advisory")
+                )
+            except Exception:
+                pass
             return result, 200
 
         elif path == "/api/soil-parse":
@@ -166,6 +169,78 @@ class APIRouter:
                 "recommendations_en": diag["recommendations_en"]
             }, 200
 
+        elif path == "/api/net-realisation":
+            commodity = body.get("commodity", "Tomato")
+            quantity = float(body.get("quantity_quintals", 50.0))
+            local_market = body.get("local_market", {
+                "name": "Kolar APMC",
+                "price": 1850.0,
+                "distance_km": 15.0,
+                "transport_rate_per_km": 22.0,
+                "spoilage_pct": 1.5
+            })
+            terminal_market = body.get("terminal_market", {
+                "name": "Yeshwanthpur APMC (Bengaluru)",
+                "price": 2250.0,
+                "distance_km": 75.0,
+                "transport_rate_per_km": 28.0,
+                "spoilage_pct": 4.0
+            })
+            comparison = NetRealisationCalculator.compare_mandis(
+                commodity=commodity,
+                quantity_quintals=quantity,
+                local_market=local_market,
+                terminal_market=terminal_market
+            )
+            return comparison, 200
+
+        elif path == "/api/crop-diagnostics":
+            crop_name = body.get("crop", "Tomato")
+            symptoms = body.get("symptoms", "")
+            image_b64 = body.get("image_base64")
+            farmer_id = body.get("farmer_id")
+            lang = body.get("language", "kn-IN")
+            diagnostic = CropDiagnosticsService.diagnose(
+                crop_name=crop_name,
+                symptom_description=symptoms,
+                image_base64=image_b64,
+                farmer_id=farmer_id,
+                language=lang
+            )
+            return diagnostic, 200
+
+        elif path == "/api/schemes/evaluate":
+            farmer_name = body.get("farmer_name", "Farmer")
+            land_acres = float(body.get("landholding_acres", 2.0))
+            state = body.get("state", "Karnataka")
+            district = body.get("district", "Kolar")
+            crops = body.get("crops", ["Tomato", "Ragi"])
+            irrigation = body.get("irrigation_source", "Borewell")
+            evaluation = SchemeIntelligenceService.evaluate_eligibility(
+                farmer_name=farmer_name,
+                landholding_acres=land_acres,
+                state=state,
+                district=district,
+                crops=crops,
+                irrigation_source=irrigation
+            )
+            return evaluation, 200
+
+        elif path == "/api/farmers":
+            name = body.get("name", "")
+            if not name:
+                return {"error": "Farmer name is required"}, 400
+            farmer = repository.create_farmer(
+                name=name,
+                phone=body.get("phone"),
+                village=body.get("village"),
+                district=body.get("district", "Kolar"),
+                state=body.get("state", "Karnataka"),
+                preferred_language=body.get("preferred_language", "kn-IN"),
+                landholding_acres=float(body.get("landholding_acres", 1.0))
+            )
+            return {"success": True, "farmer": farmer}, 201
+
         elif path == "/api/telephony":
             digit = body.get("digit", "welcome")
             lang = body.get("language", "kn")
@@ -180,4 +255,3 @@ class APIRouter:
             return result, 200
 
         return {"error": f"Endpoint '{path}' not found"}, 404
-

@@ -1,0 +1,40 @@
+# KisanSamvaad - Multi-Container Production Compose Specification
+version: "3.8"
+
+services:
+  kisansamvaad-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kisansamvaad:latest
+    container_name: kisansamvaad_ai
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - HOST=0.0.0.0
+      - PORT=8000
+      - SARVAM_API_KEY=${SARVAM_API_KEY:-}
+      - STRICT_ICAR_SAFETY=true
+      - DATABASE_PATH=/app/data/kisansamvaad.db
+    volumes:
+      - kisansamvaad_data:/app/data
+    deploy:
+      resources:
+        limits:
+          cpus: "1.00"
+          memory: 256M
+        reservations:
+          cpus: "0.25"
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  kisansamvaad_data:
+    driver: local

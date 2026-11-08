@@ -13,9 +13,9 @@ class TelephonyIVRService:
 
     IVR_PROMPTS = {
         "welcome": {
-            "kn": "ಕಿಸಾನ್ ಸಂವಾದ ಉಚಿತ ಕೃಷಿ ಸಹಾಯವಾಣಿಗೆ ಸ್ವಾಗತ. ಮಣ್ಣು ಪರೀಕ್ಷೆ ಫಲಿತಾಂಶಕ್ಕೆ 1 ಒತ್ತಿರಿ. ಇಂದಿನ ಮಂಡಿ ದರ ತಿಳಿಯಲು 2 ಒತ್ತಿರಿ. ಹವಾಮಾನ ಮತ್ತು ಸಿಂಪಡಣೆ ಮಾಹಿತಿಗೆ 3 ಒತ್ತಿರಿ. ಕೃಷಿ ವೈದ್ಯರೊಂದಿಗೆ ಮಾತನಾಡಲು 4 ಒತ್ತಿರಿ.",
-            "hi": "किसान संवाद टोल-फ्री हेल्पलाइन में आपका स्वागत है। मृदा स्वास्थ्य रिपोर्ट के लिए 1 दबाएं। मंडी भाव के लिए 2 दबाएं। मौसम और छिड़काव सलाह के लिए 3 दबाएं। सीधे कृषि विशेषज्ञ से बात करने के लिए 4 दबाएं।",
-            "en": "Welcome to KisanSamvaad sovereign agricultural helpline. Press 1 for Soil Card analysis. Press 2 for Mandi rates. Press 3 for Weather and spray advisories. Press 4 for voice consultation."
+            "kn": "ಕಿಸಾನ್ ಸಂವಾದ ಉಚಿತ ಕೃಷಿ ಸಹಾಯವಾಣಿಗೆ ಸ್ವಾಗತ. ಮಣ್ಣು ಪರೀಕ್ಷೆ ಫಲಿತಾಂಶಕ್ಕೆ 1 ಒತ್ತಿರಿ. ಇಂದಿನ ಮಂಡಿ ದರ ತಿಳಿಯಲು 2 ಒತ್ತಿರಿ. ಹವಾಮಾನ ಮತ್ತು ಸಿಂಪಡಣೆ ಮಾಹಿತಿಗೆ 3 ಒತ್ತಿರಿ. ಕೃಷಿ ವೈದ್ಯರೊಂದಿಗೆ ಮಾತನಾಡಲು 4 ಒತ್ತಿರಿ. ಸರ್ಕಾರಿ ಯೋಜನೆಗಳಿಗೆ 5 ಒತ್ತಿರಿ.",
+            "hi": "किसान संवाद टोल-फ्री हेल्पलाइन में आपका स्वागत है। मृदा स्वास्थ्य रिपोर्ट के लिए 1 दबाएं। मंडी भाव के लिए 2 दबाएं। मौसम और छिड़काव सलाह के लिए 3 दबाएं। सीधे कृषि विशेषज्ञ से बात करने के लिए 4 दबाएं। सरकारी योजनाओं के लिए 5 दबाएं।",
+            "en": "Welcome to KisanSamvaad sovereign agricultural helpline. Press 1 for Soil Card analysis. Press 2 for Mandi rates. Press 3 for Weather and spray advisories. Press 4 for voice consultation. Press 5 for Government schemes."
         }
     }
 
@@ -91,6 +91,22 @@ class TelephonyIVRService:
                 "menu": "Voice Consultation Recording",
                 "speech_response": speech,
                 "status": "ready_for_audio"
+            }
+
+        elif digit == "5":
+            # Government Schemes Information
+            if lang_key == "kn":
+                speech = "ಪಿಎಂ ಕಿಸಾನ್ ಯೋಜನೆಯಡಿ ವಾರ್ಷಿಕ 6,000 ರೂ ಹಾಗೂ ಕರ್ನಾಟಕ ರೈತ ಸಿರಿ ಯೋಜನೆಯಡಿ ಸಿರಿಧಾನ್ಯ ಬೆಳೆಗಾರರಿಗೆ ಹೆಕ್ಟೇರ್‌ಗೆ 10,000 ರೂ ಪ್ರೋತ್ಸಾಹಧನ ಲಭ್ಯವಿದೆ."
+            elif lang_key == "hi":
+                speech = "पीएम-किसान योजना के अंतर्गत ₹6,000 वार्षिक और कर्नाटक रायता सिरी में मिलेट उत्पादकों को ₹10,000 प्रति हेक्टेयर प्रोत्साहन उपलब्ध है।"
+            else:
+                speech = "PM-KISAN provides ₹6,000 per year and Karnataka Raita Siri provides ₹10,000 per hectare for millet growers."
+
+            return {
+                "digit": digit,
+                "menu": "Government Schemes Information",
+                "speech_response": speech,
+                "status": "completed"
             }
 
         else:
