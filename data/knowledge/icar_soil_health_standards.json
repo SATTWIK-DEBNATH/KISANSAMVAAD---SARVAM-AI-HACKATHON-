@@ -1,0 +1,60 @@
+{
+  "authority": "Department of Agriculture and Farmers Welfare & ICAR",
+  "version": "Soil Health Management Guidelines 2024-2025",
+  "publication_date": "2024-04-01",
+  "source_url": "https://soilhealth.dac.gov.in/guidelines",
+  "parameters": {
+    "nitrogen_kg_ha": {
+      "name": "Available Nitrogen (N)",
+      "unit": "kg/ha",
+      "thresholds": {
+        "low": 280.0,
+        "medium": 560.0
+      },
+      "low_guidance": "Add well-decomposed Farm Yard Manure (FYM) @ 5 t/acre or seed inoculation with Azotobacter / Rhizobium culture.",
+      "high_guidance": "Reduce Urea or synthetic nitrogen application by 25% to prevent vegetative lodging and pest susceptibility."
+    },
+    "phosphorus_kg_ha": {
+      "name": "Available Phosphorus (P2O5)",
+      "unit": "kg/ha",
+      "thresholds": {
+        "low": 10.0,
+        "medium": 25.0
+      },
+      "low_guidance": "Apply Single Super Phosphate (SSP) or rock phosphate blended with compost to improve root development.",
+      "high_guidance": "Reduce DAP application to avoid zinc antagonism."
+    },
+    "potassium_kg_ha": {
+      "name": "Available Potassium (K2O)",
+      "unit": "kg/ha",
+      "thresholds": {
+        "low": 140.0,
+        "medium": 280.0
+      },
+      "low_guidance": "Incorporate Muriate of Potash (MOP) or wood ash in split doses to improve disease resistance and fruit firmness.",
+      "high_guidance": "Withhold supplementary potash sprays."
+    },
+    "ph": {
+      "name": "Soil Reaction (pH)",
+      "unit": "pH units",
+      "thresholds": {
+        "strongly_acidic": 5.5,
+        "acidic": 6.5,
+        "neutral_min": 6.5,
+        "neutral_max": 7.8,
+        "alkaline": 8.5
+      },
+      "acidic_remediation": "Apply agricultural lime (calcium carbonate) or dolomite @ 250 to 500 kg/ha based on buffering capacity.",
+      "alkaline_remediation": "Apply agricultural gypsum (CaSO4.2H2O) @ 500 kg/ha and grow green manure crops like Dhaincha (Sesbania)."
+    },
+    "organic_carbon_pct": {
+      "name": "Organic Carbon (OC)",
+      "unit": "%",
+      "thresholds": {
+        "low": 0.5,
+        "medium": 0.75
+      },
+      "remediation": "Incorporate vermicompost, cover crops, or biochar into the top 15cm soil layer."
+    }
+  }
+}

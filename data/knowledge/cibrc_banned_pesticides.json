@@ -1,0 +1,68 @@
+{
+  "authority": "Central Insecticides Board & Registration Committee (CIBRC), Ministry of Agriculture & Farmers Welfare, Government of India",
+  "document_reference": "List of Pesticides Banned for Manufacture, Import and Use in India",
+  "updated_date": "2024-10-01",
+  "official_source": "http://ppqs.gov.in/divisions/cib-rc/banned-pesticides",
+  "banned_pesticides": [
+    {
+      "name": "Endosulfan",
+      "status": "Strictly Banned Nationwide",
+      "notification": "Supreme Court Order 2011 / Gazette of India",
+      "hazard_reason": "High acute toxicity, endocrine disruption, bioaccumulation, severe teratogenic risks."
+    },
+    {
+      "name": "Monocrotophos",
+      "status": "Banned for Vegetables; Restricted/Phased Out",
+      "notification": "S.O. 2486(E) / CIBRC Directive",
+      "hazard_reason": "Extreme organophosphate neurotoxicity, dangerous to humans, birds, and aquatic life."
+    },
+    {
+      "name": "Paraquat Dichloride",
+      "status": "Severely Restricted / Banned in Multiple States",
+      "notification": "State Agricultural Directives & CIBRC Review",
+      "hazard_reason": "No antidote exists; fatal upon accidental ingestion or dermal absorption."
+    },
+    {
+      "name": "Methyl Parathion",
+      "status": "Strictly Banned",
+      "notification": "Gazette S.O. 569(E)",
+      "hazard_reason": "WHO Class Ia extremely hazardous chemical."
+    },
+    {
+      "name": "DDT",
+      "status": "Banned in Agriculture",
+      "notification": "Stockholm Convention & Insecticides Act 1968",
+      "hazard_reason": "Persistent organic pollutant causing eggshell thinning and bioaccumulation."
+    },
+    {
+      "name": "Phosphamidon",
+      "status": "Strictly Banned",
+      "notification": "S.O. 837(E)",
+      "hazard_reason": "High mammalian toxicity."
+    },
+    {
+      "name": "Aldrin",
+      "status": "Strictly Banned",
+      "notification": "S.O. 682(E)",
+      "hazard_reason": "Persistent toxic organochlorine."
+    },
+    {
+      "name": "Dieldrin",
+      "status": "Strictly Banned",
+      "notification": "S.O. 682(E)",
+      "hazard_reason": "Persistent organic pollutant."
+    },
+    {
+      "name": "Chlordane",
+      "status": "Strictly Banned",
+      "notification": "S.O. 682(E)",
+      "hazard_reason": "High neurotoxicity and environmental persistence."
+    },
+    {
+      "name": "Heptachlor",
+      "status": "Strictly Banned",
+      "notification": "S.O. 682(E)",
+      "hazard_reason": "Cyclodiene insecticide bioaccumulative hazard."
+    }
+  ]
+}

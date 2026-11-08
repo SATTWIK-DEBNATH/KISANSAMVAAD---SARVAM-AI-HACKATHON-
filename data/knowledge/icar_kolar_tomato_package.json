@@ -1,0 +1,85 @@
+[
+  {
+    "document_id": "ICAR-UASB-TOMATO-2025-V2",
+    "title": "Integrated Pest and Nutrient Management for Tomato in Kolar & Chikkaballapur Districts",
+    "institution": "ICAR - National Institute of Agricultural Engineering and Technology & UAS Bangalore",
+    "publication_date": "2025-01-15",
+    "document_version": "v2.4",
+    "source_url": "https://icar.org.in/crop-production/horticulture/tomato-kolar-package",
+    "applicable_regions": ["Kolar", "Chikkaballapur", "Bangalore Rural", "Karnataka"],
+    "crop": "Tomato",
+    "pest_disease_guidance": [
+      {
+        "issue": "Early Blight and Late Blight (Phytophthora / Alternaria)",
+        "symptoms": "Dark brown circular spots on lower leaves with concentric rings, rapid leaf drying",
+        "organic_remedy": "Foliar spray of Trichoderma harzianum @ 5g/L or 5% Neem Seed Kernel Extract (NSKE)",
+        "chemical_remedy": "Mancozeb 75% WP @ 2.0 to 2.5 g/L water or Copper Oxychloride 50% WP @ 2.5 g/L",
+        "safety_notes": "Wait 10 days before harvest after Mancozeb spray. Wear protective mask and gloves. Strictly avoid unapproved or restricted Class I chemicals."
+      },
+      {
+        "issue": "Tomato Leaf Curl Virus (ToLCV) via Whitefly vector",
+        "symptoms": "Upward curling and crinkling of leaves, stunted plant growth, bushy appearance",
+        "organic_remedy": "Yellow sticky traps @ 15 traps/acre. Spray neem oil (1500 ppm) @ 3 ml/L",
+        "chemical_remedy": "Imidacloprid 17.8% SL @ 0.3 to 0.5 ml/L water during early vegetative stage only",
+        "safety_notes": "Strict limit: 0.5 ml/L maximum. Toxic to bees. Do not spray during peak flowering or pollination hours."
+      }
+    ],
+    "soil_nutrition": {
+      "recommended_npk_ratio": "150:100:100 kg/ha",
+      "micronutrients": "Zinc Sulphate @ 10 kg/ha basal, Boron foliar spray @ 1 g/L during flowering"
+    }
+  },
+  {
+    "document_id": "ICAR-CICR-COTTON-2024-V3",
+    "title": "Standard Operating Package for Bt Cotton in North Karnataka & Raichur Black Soils",
+    "institution": "ICAR - Central Institute for Cotton Research & UAS Raichur",
+    "publication_date": "2024-11-20",
+    "document_version": "v3.1",
+    "source_url": "https://cicr.icar.gov.in/cotton-advisories/raichur-package",
+    "applicable_regions": ["Raichur", "Kalaburagi", "Koppal", "Ballari", "Karnataka"],
+    "crop": "Cotton",
+    "pest_disease_guidance": [
+      {
+        "issue": "Pink Bollworm (Pectinophora gossypiella)",
+        "symptoms": "Rosetted flowers, exit holes in green bolls, stained lint",
+        "organic_remedy": "Pheromone traps @ 8 per acre for monitoring. Release Trichogramma parasitoid wasps @ 60000/acre",
+        "chemical_remedy": "Chlorantraniliprole 18.5% SC @ 0.3 ml/L or Emamectin Benzoate 5% SG @ 0.4 g/L",
+        "safety_notes": "Never exceed recommended dilution. Strictly avoid unapproved or restricted chemical formulations."
+      },
+      {
+        "issue": "Leaf Reddening and Magnesium Deficiency in Deep Black Soils",
+        "symptoms": "Interveinal purpling and reddening of mature leaves, shedding of squares",
+        "organic_remedy": "Soil application of FYM (Farm Yard Manure) @ 5 tonnes/ha prior to sowing",
+        "chemical_remedy": "Foliar spray of Magnesium Sulphate (MgSO4) @ 10 g/L (1%) along with 1% 19:19:19 water soluble fertilizer",
+        "safety_notes": "Spray during late evening hours to maximize foliar absorption."
+      }
+    ],
+    "soil_nutrition": {
+      "recommended_npk_ratio": "120:60:60 kg/ha",
+      "micronutrients": "Zinc Sulphate @ 25 kg/ha in zinc deficient black soils"
+    }
+  },
+  {
+    "document_id": "UASB-VC-FARM-SUGARCANE-2024",
+    "title": "Soil Health Management and Nutrient Optimization for Cauvery Basin Sugarcane",
+    "institution": "University of Agricultural Sciences, Bangalore & Zonal Agri Research Station Mandya",
+    "publication_date": "2024-08-10",
+    "document_version": "v1.8",
+    "source_url": "https://uasbangalore.edu.in/mandya-sugarcane-handbook",
+    "applicable_regions": ["Mandya", "Mysuru", "Hassan", "Karnataka"],
+    "crop": "Sugarcane",
+    "pest_disease_guidance": [
+      {
+        "issue": "Early Shoot Borer (Chilo infuscatellus)",
+        "symptoms": "Dead hearts in young shoots that emit foul smell when pulled out",
+        "organic_remedy": "Trash mulching @ 3 tonnes/acre at 3-5 days after planting to conserve moisture and suppress borer",
+        "chemical_remedy": "Chlorpyrifos 20% EC @ 2.0 ml/L directed towards root zone",
+        "safety_notes": "Ensure soil has adequate moisture prior to drenching. Wear gloves and rubber boots."
+      }
+    ],
+    "soil_nutrition": {
+      "recommended_npk_ratio": "250:100:125 kg/ha in 4 split doses",
+      "micronutrients": "Ferrous Sulphate @ 25 kg/ha if interveinal chlorosis appears"
+    }
+  }
+]

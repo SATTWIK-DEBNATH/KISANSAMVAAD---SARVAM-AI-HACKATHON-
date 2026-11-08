@@ -1,0 +1,10 @@
+node_modules/
+Foreman/
+.agent/
+.agents/
+.venv/
+__pycache__/
+*.pyc
+graphify-out/
+.system_generated/
+*.tmp
