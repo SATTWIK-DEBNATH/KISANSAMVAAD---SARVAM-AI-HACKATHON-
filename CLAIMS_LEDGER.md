@@ -32,3 +32,4 @@ In strict adherence to Section 9 of the Master Redesign Brief ("No invented stat
 - **No Zero-Risk Guarantee**: The platform never claims or implies that AI recommendations eliminate agricultural, climatic, or market risk.
 - **Human Expert Escalation**: When diagnostic confidence drops below 80% or rare symptoms are reported, the system explicitly routes farmers to their nearest Krishi Vigyan Kendra (KVK) extension officer.
 - **Data Provenance Labelling**: Every price, forecast, and diagnosis is tagged with `LIVE`, `CACHED`, `DEMO`, or `UNAVAILABLE` so farmers and agronomists can always identify the exact provenance of information.
+

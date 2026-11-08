@@ -116,3 +116,4 @@ UI Representation:
 3. **Deterministic Safety Guardrails**:
    - All LLM queries and soil remediation suggestions are intercepted outside the stochastic loop by `AgriGuardrails` before reaching the farmer.
    - Queries referencing CIBRC banned pesticides (Endosulfan, Paraquat, Monocrotophos) fail closed immediately with an emergency safety advisory.
+

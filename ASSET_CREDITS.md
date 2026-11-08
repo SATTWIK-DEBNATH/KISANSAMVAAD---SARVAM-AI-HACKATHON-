@@ -43,3 +43,4 @@ When physical field photography is added to the platform, photographers and desi
 - **Subject**: Authentic auction yard crates of tomatoes and onions at Kolar APMC trading platform.
 - **Lighting**: Bright early morning market activity.
 - **Composition**: Documentary-style depth of field showing produce crates in foreground with trading boards in background.
+

@@ -111,3 +111,4 @@ Four strict operational states across all market, soil, and voice outputs:
 ### 5. Mobile Application Bottom Navigation (`<nav class="app-bottom-nav">`)
 - Fixed bottom dock with 5 core touch destinations: Home, Voice, Soil, Mandi, Weather.
 - Touch target height: 60px. Labels >= 11px with icons.
+
