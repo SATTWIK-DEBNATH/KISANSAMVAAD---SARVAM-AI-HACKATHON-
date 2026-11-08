@@ -317,3 +317,4 @@ class KisanRepository:
         return [dict(r) for r in cursor.fetchall()]
 
 repository = KisanRepository()
+

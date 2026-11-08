@@ -137,3 +137,4 @@ class NetRealisationCalculator:
             "recommendation_kn": advice_kn,
             "recommendation_hi": advice_hi
         }
+

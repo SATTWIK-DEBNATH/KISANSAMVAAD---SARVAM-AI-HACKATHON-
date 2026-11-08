@@ -14,7 +14,7 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(CURRENT_DIR)
 sys.path.insert(0, BACKEND_DIR)
 
-# Import all 14 test suites
+# Import all 19 test suites
 from tests.test_1_sarvam_handling import TestSarvamHandling
 from tests.test_2_speech_workflow import TestSpeechWorkflow
 from tests.test_3_soil_card_validation import TestSoilCardValidation
@@ -29,6 +29,11 @@ from tests.test_11_persistence_layer import TestPersistenceLayer
 from tests.test_12_net_realisation import TestNetRealisationCalculator
 from tests.test_13_crop_diagnostics import TestCropDiagnosticsService
 from tests.test_14_schemes_intelligence import TestSchemeIntelligenceService
+from tests.test_15_soil_planner_units import TestSoilPlannerUnits
+from tests.test_16_soil_planner_optimizer import TestSoilPlannerOptimizer
+from tests.test_17_soil_planner_golden import TestSoilPlannerGoldenCases
+from tests.test_18_soil_planner_narration import TestSoilPlannerNarration
+from tests.test_19_soil_planner_weather import TestSoilPlannerWeather
 
 def run_suite():
     loader = unittest.TestLoader()
@@ -48,11 +53,16 @@ def run_suite():
         ("11. Relational Persistence & Schema", TestPersistenceLayer),
         ("12. Net Realisation Economic Engine", TestNetRealisationCalculator),
         ("13. Multimodal Crop Diagnostics & Safety", TestCropDiagnosticsService),
-        ("14. Government Schemes Intelligence", TestSchemeIntelligenceService)
+        ("14. Government Schemes Intelligence", TestSchemeIntelligenceService),
+        ("15. Soil Planner Unit Conversions", TestSoilPlannerUnits),
+        ("16. Soil Planner Multi-Nutrient Optimizer", TestSoilPlannerOptimizer),
+        ("17. Soil Planner Golden-File Regression", TestSoilPlannerGoldenCases),
+        ("18. Soil Planner Narration & Grounding", TestSoilPlannerNarration),
+        ("19. Soil Planner Weather Thresholds", TestSoilPlannerWeather)
     ]
 
     print("\n" + "="*70)
-    print("🌾 KISANSAMVAAD MASTER TEST SUITE - 14 CRITICAL SPECIFICATION AREAS")
+    print("🌾 KISANSAMVAAD MASTER TEST SUITE - 19 CRITICAL SPECIFICATION AREAS")
     print("="*70 + "\n")
 
     overall_passed = True

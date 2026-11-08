@@ -440,3 +440,4 @@ Returns past consultation dialogue history with timestamps and detected intents.
 
 #### `GET /api/expert-cases`
 Lists open cases flagged for human-in-the-loop review by KVK extension scientists.
+

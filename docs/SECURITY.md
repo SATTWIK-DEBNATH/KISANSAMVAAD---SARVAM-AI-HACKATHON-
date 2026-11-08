@@ -103,3 +103,4 @@ All safety violations, dosage threshold warnings, and banned substance queries a
 - Event classification (`BANNED_SUBSTANCE_ATTEMPT`, `DOSAGE_OVERFLOW_ATTEMPT`).
 - Query snippet and intercepted substance.
 - Immediate action taken (`BLOCKED`, `SANITIZED`).
+

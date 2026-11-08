@@ -14,6 +14,7 @@ from ..services.audio_service import AudioService
 from ..services.calculator_service import NetRealisationCalculator
 from ..services.crop_service import CropDiagnosticsService
 from ..services.scheme_service import SchemeIntelligenceService
+from ..planner import SoilPlannerService, VoiceSlotExtractor, ValidationError
 from ..safety.agri_guardrails import AgriGuardrailEngine
 from ..ai.rag.knowledge_store import knowledge_store
 from ..db.repository import repository
@@ -246,6 +247,23 @@ class APIRouter:
             lang = body.get("language", "kn")
             result = TelephonyIVRService.process_dtmf_input(digit=digit, language=lang)
             return result, 200
+
+        elif path in ("/api/v1/soil-plan", "/api/soil-plan"):
+            try:
+                plan = SoilPlannerService.generate_plan(body)
+                return plan, 200
+            except ValidationError as ve:
+                return {"error": ve.message, "field": ve.field_name}, 400
+            except ValueError as ve:
+                return {"error": str(ve)}, 400
+            except Exception as e:
+                return {"error": f"Failed to compute soil plan: {str(e)}"}, 500
+
+        elif path in ("/api/v1/voice-slot-extract", "/api/voice-slot-extract"):
+            transcript = body.get("transcript", "")
+            lang = body.get("language", "kn")
+            slots = VoiceSlotExtractor.extract_slots(transcript, language=lang)
+            return slots, 200
 
         elif path == "/api/translate":
             text = body.get("text", "")

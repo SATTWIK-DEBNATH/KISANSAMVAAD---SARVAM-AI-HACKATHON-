@@ -146,3 +146,4 @@ Expected JSON response:
    - KisanSamvaad enables SQLite Write-Ahead Logging (`PRAGMA journal_mode=WAL;`) and busy timeouts (`PRAGMA busy_timeout=5000;`) to prevent concurrency locks across multiple threads.
 3. Audio Playback Muted on Mobile Browsers:
    - Mobile browsers (Safari on iOS, Chrome on Android) require user interaction (a tap on the screen) before playing synthetic audio via the HTML5 Web Audio API. Ensure the farmer presses the microphone or speaker icon before expecting audio output.
+

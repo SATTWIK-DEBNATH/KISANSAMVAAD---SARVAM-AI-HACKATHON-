@@ -112,3 +112,4 @@ CREATE INDEX IF NOT EXISTS idx_farms_farmer_id ON farms(farmer_id);
 CREATE INDEX IF NOT EXISTS idx_crops_farm_id ON crops(farm_id);
 CREATE INDEX IF NOT EXISTS idx_conversations_farmer_id ON conversations(farmer_id);
 CREATE INDEX IF NOT EXISTS idx_market_commodity ON market_observations(commodity, market_name);
+

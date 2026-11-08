@@ -1,0 +1,101 @@
+# KisanSamvaad - Commercial Fertilizer Specification and Price Registry
+# Government of India statutory bag sizes and benchmark retail prices
+# Note: Urea is strictly packaged in 45 kg bags (mandated by GoI since March 2018).
+# Prices are demo subsidized retail defaults, configurable per state/district.
+
+fertilizers:
+  urea:
+    id: "urea"
+    name: "Neem Coated Urea"
+    name_kn: "ಬೇವು ಲೇಪಿತ ಯೂರಿಯಾ"
+    name_hi: "नीम लेपित यूरिया"
+    name_ta: "வேப்பம் பூசப்பட்ட யூரியா"
+    formula: "CO(NH2)2"
+    bag_size_kg: 45.0  # Mandatory 45 kg bag as per Ministry of Chemicals & Fertilizers
+    n_content_pct: 46.0
+    p2o5_content_pct: 0.0
+    k2o_content_pct: 0.0
+    secondary_nutrients: []
+    default_price_inr: 266.50
+    price_updated_at: "2026-11-01"
+    subsidized: true
+    source: "Department of Fertilizers, Ministry of Chemicals & Fertilizers, GoI"
+    verified: false  # TODO(verify): local mandi retail price verification
+
+  dap:
+    id: "dap"
+    name: "Di-Ammonium Phosphate (DAP)"
+    name_kn: "ಡಿಎಪಿ (ಡೈ-ಅಮೋನಿಯಂ ಫಾಸ್ಫೇಟ್)"
+    name_hi: "डीएपी (डाई-अमोनियम फॉस्फेट)"
+    name_ta: "டிஏபி (டை-அம்மோனியம் பாஸ்பேட்)"
+    formula: "(NH4)2HPO4"
+    bag_size_kg: 50.0
+    n_content_pct: 18.0
+    p2o5_content_pct: 46.0
+    k2o_content_pct: 0.0
+    secondary_nutrients: []
+    default_price_inr: 1350.00
+    price_updated_at: "2026-11-01"
+    subsidized: true
+    source: "Nutrient Based Subsidy (NBS) Scheme Benchmark 2026"
+    verified: false  # TODO(verify): local mandi retail price verification
+
+  ssp:
+    id: "ssp"
+    name: "Single Super Phosphate (SSP - Powder/Granular)"
+    name_kn: "ಸಿಂಗಲ್ ಸೂಪರ್ ಫಾಸ್ಫೇಟ್ (ಎಸ್ಎಸ್ಪಿ)"
+    name_hi: "सिंगल सुपर फॉस्फेट (एसएसपी)"
+    name_ta: "சிங்கிள் சூப்பர் பாஸ்பேட் (எஸ்எஸ்பி)"
+    formula: "Ca(H2PO4)2 + CaSO4"
+    bag_size_kg: 50.0
+    n_content_pct: 0.0
+    p2o5_content_pct: 16.0
+    k2o_content_pct: 0.0
+    secondary_nutrients:
+      - name: "Sulfur (S)"
+        pct: 11.0
+      - name: "Calcium (Ca)"
+        pct: 19.0
+    default_price_inr: 550.00
+    price_updated_at: "2026-11-01"
+    subsidized: true
+    source: "NBS Price Schedule 2026"
+    verified: false  # TODO(verify): local mandi retail price verification
+
+  mop:
+    id: "mop"
+    name: "Muriate of Potash (MOP - Potassium Chloride)"
+    name_kn: "ಮ್ಯೂರಿಯೇಟ್ ಆಫ್ ಪೊಟ್ಯಾಷ್ (ಎಂಒಪಿ)"
+    name_hi: "म्यूरिएट ऑफ पोटाश (एमओपी)"
+    name_ta: "மியூரியேட் ஆஃப் பொட்டாஷ் (எம்ஓபி)"
+    formula: "KCl"
+    bag_size_kg: 50.0
+    n_content_pct: 0.0
+    p2o5_content_pct: 0.0
+    k2o_content_pct: 60.0
+    secondary_nutrients:
+      - name: "Chlorine (Cl)"
+        pct: 47.0
+    default_price_inr: 1700.00
+    price_updated_at: "2026-11-01"
+    subsidized: true
+    source: "NBS Potash Retail Rate 2026"
+    verified: false  # TODO(verify): local mandi retail price verification
+
+  npk_10_26_26:
+    id: "npk_10_26_26"
+    name: "NPK Complex (10:26:26)"
+    name_kn: "ಎನ್‌ಪಿಕೆ ಕಾಂಪ್ಲೆಕ್ಸ್ (10:26:26)"
+    name_hi: "एनपीके कॉम्प्लेक्स (10:26:26)"
+    name_ta: "என்பிகே காம்ப்ளக்ஸ் (10:26:26)"
+    formula: "NPK 10-26-26"
+    bag_size_kg: 50.0
+    n_content_pct: 10.0
+    p2o5_content_pct: 26.0
+    k2o_content_pct: 26.0
+    secondary_nutrients: []
+    default_price_inr: 1470.00
+    price_updated_at: "2026-11-01"
+    subsidized: true
+    source: "IFFCO / KRIBHCO Retail Schedule 2026"
+    verified: false  # TODO(verify): local mandi retail price verification

@@ -166,3 +166,4 @@ flowchart LR
 - Acceptance Criteria:
   - All 14 suites pass cleanly in under 1 second total execution time.
   - No memory leaks or unclosed file descriptors.
+

@@ -1,0 +1,180 @@
+# KisanSamvaad - Crop Nutrient Dose Reference Table
+# Doses in kg/ha of elemental Nitrogen (N), Phosphorus pentoxide (P2O5), Potassium oxide (K2O)
+# Grounded in ICAR and State Agricultural Universities (SAU) Packages of Practices
+# Note: Every entry carries verified: false until confirmed by a certified field agronomist.
+
+crops:
+  tomato:
+    crop_name: "Tomato"
+    scientific_name: "Solanum lycopersicum"
+    recommended_dose_kg_ha:
+      nitrogen: 150.0
+      phosphorus_p2o5: 100.0
+      potassium_k2o: 100.0
+    organic_dose:
+      fym_tonnes_ha: 25.0
+      vermicompost_tonnes_ha: 5.0
+      fym_n_credit_kg: 30.0
+      fym_p2o5_credit_kg: 15.0
+      fym_k2o_credit_kg: 30.0
+    timing_schedule:
+      basal:
+        n_pct: 33.33
+        p2o5_pct: 100.0
+        k2o_pct: 100.0
+        description_en: "Apply all Phosphorus, all Potassium, and 1/3 Nitrogen at transplanting/sowing"
+        description_kn: "ಬಿತ್ತನೆ ಸಮಯದಲ್ಲಿ ಎಲ್ಲಾ ರಂಜಕ, ಪೊಟ್ಯಾಷ್ ಮತ್ತು 1/3 ಭಾಗ ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "बुवाई के समय पूरा फास्फोरस, पोटाश और 1/3 नाइट्रोजन डालें"
+        description_ta: "விதைக்கும் போது முழு பாஸ்பரஸ், பொட்டாஷ் மற்றும் 1/3 நைட்ரஜன் இடவும்"
+      top_dress_1:
+        days_after_sowing: 30
+        n_pct: 33.33
+        p2o5_pct: 0.0
+        k2o_pct: 0.0
+        description_en: "Apply 1/3 Nitrogen 30 days after transplanting (vegetative stage)"
+        description_kn: "ನಾಟಿ ಮಾಡಿದ 30 ದಿನಗಳ ನಂತರ 1/3 ಭಾಗ ಸಾರಜನಕವನ್ನು ಮೇಲುಗೊಬ್ಬರವಾಗಿ ನೀಡಿ"
+        description_hi: "रोपाई के 30 दिन बाद 1/3 नाइट्रोजन की पहली टॉप-ड्रेसिंग करें"
+        description_ta: "நடவு செய்த 30 நாட்களுக்குப் பிறகு 1/3 நைட்ரஜன் இடவும்"
+      top_dress_2:
+        days_after_sowing: 45
+        n_pct: 33.34
+        p2o5_pct: 0.0
+        k2o_pct: 0.0
+        description_en: "Apply remaining 1/3 Nitrogen 45 days after transplanting (flowering/fruit set)"
+        description_kn: "ನಾಟಿ ಮಾಡಿದ 45 ದಿನಗಳ ನಂತರ ಉಳಿದ 1/3 ಭಾಗ ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "रोपाई के 45 दिन बाद बची हुई 1/3 नाइट्रोजन डालें"
+        description_ta: "நடவு செய்த 45 நாட்களுக்குப் பிறகு மீதமுள்ள 1/3 நைட்ரஜன் இடவும்"
+    citation:
+      institution: "ICAR - University of Agricultural Sciences, Bangalore (UASB)"
+      publication: "Package of Practices for Horticultural Crops 2024-2025"
+      source_url: "https://uasbangalore.edu.in"
+      verified: false  # TODO(verify): agronomic field validation required
+
+  maize:
+    crop_name: "Maize"
+    scientific_name: "Zea mays"
+    recommended_dose_kg_ha:
+      nitrogen: 150.0
+      phosphorus_p2o5: 75.0
+      potassium_k2o: 40.0
+    organic_dose:
+      fym_tonnes_ha: 10.0
+      vermicompost_tonnes_ha: 2.5
+      fym_n_credit_kg: 15.0
+      fym_p2o5_credit_kg: 7.5
+      fym_k2o_credit_kg: 15.0
+    timing_schedule:
+      basal:
+        n_pct: 33.33
+        p2o5_pct: 100.0
+        k2o_pct: 100.0
+        description_en: "Apply all P, all K, and 1/3 N at sowing"
+        description_kn: "ಬಿತ್ತನೆ ಸಮಯದಲ್ಲಿ ಎಲ್ಲಾ ರಂಜಕ, ಪೊಟ್ಯಾಷ್ ಮತ್ತು 1/3 ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "बुवाई के समय पूरा फास्फोरस, पोटाश और 1/3 नाइट्रोजन डालें"
+        description_ta: "விதைக்கும் போது முழு P, K மற்றும் 1/3 N இடவும்"
+      top_dress_1:
+        days_after_sowing: 30
+        n_pct: 33.33
+        p2o5_pct: 0.0
+        k2o_pct: 0.0
+        description_en: "Apply 1/3 N at knee-high stage (30 DAS)"
+        description_kn: "ಮಂಡಿ ಎತ್ತರದ ಹಂತದಲ್ಲಿ (30 ದಿನ) 1/3 ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "घुटने तक की ऊंचाई की अवस्था (30 दिन) पर 1/3 नाइट्रोजन डालें"
+        description_ta: "30 ஆம் நாளில் 1/3 N இடவும்"
+      top_dress_2:
+        days_after_sowing: 50
+        n_pct: 33.34
+        p2o5_pct: 0.0
+        k2o_pct: 0.0
+        description_en: "Apply 1/3 N at tasseling stage (50 DAS)"
+        description_kn: "ತೆನೆ ಬರುವ ಹಂತದಲ್ಲಿ (50 ದಿನ) ಉಳಿದ 1/3 ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "नर मंजरी अवस्था (50 दिन) पर 1/3 नाइट्रोजन डालें"
+        description_ta: "50 ஆம் நாளில் மீதமுள்ள 1/3 N இடவும்"
+    citation:
+      institution: "ICAR - Indian Institute of Maize Research (IIMR) & UAS Dharwad"
+      publication: "Maize Production Technology Guide 2024"
+      source_url: "https://iimr.icar.gov.in"
+      verified: false  # TODO(verify): agronomic field validation required
+
+  ragi:
+    crop_name: "Ragi (Finger Millet)"
+    scientific_name: "Eleusine coracana"
+    recommended_dose_kg_ha:
+      nitrogen: 60.0
+      phosphorus_p2o5: 30.0
+      potassium_k2o: 30.0
+    organic_dose:
+      fym_tonnes_ha: 7.5
+      vermicompost_tonnes_ha: 2.0
+      fym_n_credit_kg: 10.0
+      fym_p2o5_credit_kg: 5.0
+      fym_k2o_credit_kg: 10.0
+    timing_schedule:
+      basal:
+        n_pct: 50.0
+        p2o5_pct: 100.0
+        k2o_pct: 100.0
+        description_en: "Apply all P, all K, and 50% N at sowing/transplanting"
+        description_kn: "ಬಿತ್ತನೆ ಸಮಯದಲ್ಲಿ ಎಲ್ಲಾ ರಂಜಕ, ಪೊಟ್ಯಾಷ್ ಮತ್ತು 50% ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "बुवाई के समय पूरा फास्फोरस, पोटाश और आधा नाइट्रोजन डालें"
+        description_ta: "விதைக்கும் போது முழு P, K மற்றும் 50% N இடவும்"
+      top_dress_1:
+        days_after_sowing: 25
+        n_pct: 50.0
+        p2o5_pct: 0.0
+        k2o_pct: 0.0
+        description_en: "Apply remaining 50% N 25-30 days after transplanting (tillering stage)"
+        description_kn: "ನಾಟಿ ಮಾಡಿದ 25-30 ದಿನಗಳ ನಂತರ ಉಳಿದ 50% ಸಾರಜನಕ ಮೇಲುಗೊಬ್ಬರವಾಗಿ ಹಾಕಿ"
+        description_hi: "रोपाई के 25-30 दिन बाद शेष 50% नाइट्रोजन डालें"
+        description_ta: "25-30 நாட்களில் மீதமுள்ள 50% N இடவும்"
+    citation:
+      institution: "ICAR - All India Coordinated Research Project on Small Millets & UAS Bangalore"
+      publication: "Millets Production Guide for Southern Dry Zone 2024"
+      source_url: "https://millets.icar.gov.in"
+      verified: false  # TODO(verify): agronomic field validation required
+
+  paddy:
+    crop_name: "Paddy (Rice)"
+    scientific_name: "Oryza sativa"
+    recommended_dose_kg_ha:
+      nitrogen: 100.0
+      phosphorus_p2o5: 50.0
+      potassium_k2o: 50.0
+    organic_dose:
+      fym_tonnes_ha: 10.0
+      vermicompost_tonnes_ha: 2.5
+      fym_n_credit_kg: 15.0
+      fym_p2o5_credit_kg: 7.5
+      fym_k2o_credit_kg: 15.0
+    timing_schedule:
+      basal:
+        n_pct: 50.0
+        p2o5_pct: 100.0
+        k2o_pct: 50.0
+        description_en: "Apply all P, 50% K, and 50% N at transplanting"
+        description_kn: "ನಾಟಿ ಸಮಯದಲ್ಲಿ ಎಲ್ಲಾ ರಂಜಕ, ಅರ್ಧ ಪೊಟ್ಯಾಷ್ ಮತ್ತು ಅರ್ಧ ಸಾರಜನಕ ಹಾಕಿ"
+        description_hi: "रोपाई के समय पूरा फास्फोरस, आधा पोटाश और आधा नाइट्रोजन डालें"
+        description_ta: "நடவு செய்யும் போது முழு P, 50% K, 50% N இடவும்"
+      top_dress_1:
+        days_after_sowing: 25
+        n_pct: 25.0
+        p2o5_pct: 0.0
+        k2o_pct: 25.0
+        description_en: "Apply 25% N and 25% K at active tillering (25-30 DAT)"
+        description_kn: "ಕವಲೊಡೆಯುವ ಹಂತದಲ್ಲಿ (25-30 ದಿನ) 25% ಸಾರಜನಕ ಮತ್ತು 25% ಪೊಟ್ಯಾಷ್ ಹಾಕಿ"
+        description_hi: "कल्ले फूटने के समय 25% नाइट्रोजन और 25% पोटाश डालें"
+        description_ta: "25 ஆம் நாளில் 25% N மற்றும் 25% K இடவும்"
+      top_dress_2:
+        days_after_sowing: 45
+        n_pct: 25.0
+        p2o5_pct: 0.0
+        k2o_pct: 25.0
+        description_en: "Apply 25% N and 25% K at panicle initiation (45 DAT)"
+        description_kn: "ತೆನೆ ಮೂಡುವ ಹಂತದಲ್ಲಿ (45 ದಿನ) ಉಳಿದ 25% ಸಾರಜನಕ ಮತ್ತು 25% ಪೊಟ್ಯಾಷ್ ಹಾಕಿ"
+        description_hi: "बाली बनने की अवस्था पर शेष 25% नाइट्रोजन और 25% पोटाश डालें"
+        description_ta: "45 ஆம் நாளில் மீதமுள்ள 25% N மற்றும் 25% K இடவும்"
+    citation:
+      institution: "ICAR - National Rice Research Institute (NRRI)"
+      publication: "Standard Nutrient Guidelines for Irrigated Rice 2024"
+      source_url: "https://icar-nrri.gov.in"
+      verified: false  # TODO(verify): agronomic field validation required

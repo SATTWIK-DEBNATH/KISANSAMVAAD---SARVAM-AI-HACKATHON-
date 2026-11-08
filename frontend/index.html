@@ -1269,25 +1269,65 @@ Access: 100% Offline 2G</pre>
             </div>
           </div>
 
-          <!-- Bag Prescription -->
-          <div style="background:var(--cyan-dark); color:#fff; border-left:4px solid var(--yellow); padding:1.5rem;">
-            <span class="font-mono" style="font-size:0.75rem; color:var(--yellow); font-weight:700;">ICAR UAS-B DOSAGE FOR 1 ACRE TOMATO</span>
-            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem;">
+          <!-- Bag Prescription & Soil-to-Rupee Planner -->
+          <div style="background:var(--sheet-2); border:1px solid var(--hair); padding:1.5rem; margin-bottom:1.5rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
               <div>
-                <div class="font-mono" style="font-size:0.75rem; color:var(--cyan-muted);">UREA (46% N)</div>
-                <h3 style="color:#fff; margin:0.2rem 0;">45 kg</h3>
-                <p class="small" style="color:var(--line-w); margin:0;">Apply in 2 splits</p>
+                <span class="tag green">SOIL-TO-RUPEE DETERMINISTIC OPTIMIZER</span>
+                <h3 style="margin:0.3rem 0 0 0;">Convert Soil Card to Fertilizer Bags & Rupees</h3>
+                <p class="small" style="margin:0.2rem 0 0 0; color:var(--ink-muted);">Calculates exact whole bags, costs, basal/top-dress timing, and rain delays.</p>
+              </div>
+              <span class="tag warn" style="font-size:0.65rem;">DEMO / UNVERIFIED DATA (PENDING KVK VALIDATION)</span>
+            </div>
+
+            <!-- Interactive Planner Form -->
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0.75rem; margin-bottom:1rem; background:var(--sheet); padding:1rem; border:1px solid var(--rule);">
+              <div>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">CROP / ಬೆಳೆ</label>
+                <select id="planCrop" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; background:#fff;">
+                  <option value="tomato" selected>Tomato (ಟೊಮೇಟೊ)</option>
+                  <option value="maize">Maize (ಮೆಕ್ಕೆಜೋಳ)</option>
+                  <option value="ragi">Ragi (ರಾಗಿ / ಸಿರಿಧಾನ್ಯ)</option>
+                  <option value="paddy">Paddy (ಭತ್ತ / ಅಕ್ಕಿ)</option>
+                </select>
               </div>
               <div>
-                <div class="font-mono" style="font-size:0.75rem; color:var(--cyan-muted);">SSP (16% P)</div>
-                <h3 style="color:#fff; margin:0.2rem 0;">75 kg</h3>
-                <p class="small" style="color:var(--line-w); margin:0;">Full basal dose</p>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">LAND AREA / ವಿಸ್ತೀರ್ಣ</label>
+                <input id="planArea" type="number" step="0.5" min="0.1" value="2.0" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; box-sizing:border-box;">
               </div>
               <div>
-                <div class="font-mono" style="font-size:0.75rem; color:var(--cyan-muted);">MOP (60% K)</div>
-                <h3 style="color:#fff; margin:0.2rem 0;">30 kg</h3>
-                <p class="small" style="color:var(--line-w); margin:0;">Basal + 30 days</p>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">UNIT / ಪ್ರಮಾಣ</label>
+                <select id="planUnit" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; background:#fff;">
+                  <option value="acre" selected>Acre (ಎಕರೆ)</option>
+                  <option value="gunta">Gunta (ಗುಂಟೆ - 40/ac)</option>
+                  <option value="hectare">Hectare (ಹೆಕ್ಟೇರ್)</option>
+                </select>
               </div>
+              <div>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">SOIL N (kg/ha)</label>
+                <input id="planSoilN" type="number" value="198.5" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; box-sizing:border-box;">
+              </div>
+              <div>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">SOIL P (kg/ha)</label>
+                <input id="planSoilP" type="number" value="9.2" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; box-sizing:border-box;">
+              </div>
+              <div>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">SOIL K (kg/ha)</label>
+                <input id="planSoilK" type="number" value="152.0" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; box-sizing:border-box;">
+              </div>
+              <div>
+                <label style="font-size:0.7rem; font-weight:700; display:block; margin-bottom:0.25rem;">SOIL pH</label>
+                <input id="planSoilPH" type="number" step="0.1" value="5.8" style="width:100%; padding:0.45rem; border:1px solid var(--rule); font-family:inherit; font-size:0.85rem; box-sizing:border-box;">
+              </div>
+            </div>
+
+            <button class="btn go" style="width:100%; padding:0.75rem; font-size:0.95rem; font-weight:700; cursor:pointer;" onclick="calculateSoilPlan()">
+              Compute Soil-to-Rupee Plan (ಗೊಬ್ಬರದ ಚೀಲಗಳು & ವೆಚ್ಚ)
+            </button>
+
+            <!-- Dynamic Result Area -->
+            <div id="soilPlanResult" style="margin-top:1.5rem; display:none;">
+              <!-- Populated by calculateSoilPlan() -->
             </div>
           </div>
         </div>
@@ -1504,10 +1544,180 @@ Access: 100% Offline 2G</pre>
         if (p) p.style.display = 'none';
         switchAppScreen('soil-report');
         showToast("Extracted NPK values successfully!");
+        if (document.getElementById('planSoilN')) document.getElementById('planSoilN').value = "198.5";
+        if (document.getElementById('planSoilP')) document.getElementById('planSoilP').value = "9.2";
+        if (document.getElementById('planSoilK')) document.getElementById('planSoilK').value = "152.0";
+        if (document.getElementById('planSoilPH')) document.getElementById('planSoilPH').value = "5.8";
+        if (document.getElementById('planCrop')) document.getElementById('planCrop').value = "tomato";
+        if (document.getElementById('planArea')) document.getElementById('planArea').value = "2.0";
+        if (document.getElementById('planUnit')) document.getElementById('planUnit').value = "acre";
+        calculateSoilPlan();
       }, 1500);
     }
 
+    let lastSoilPlanAudio = null;
+    let lastSoilPlanNarration = "";
+
+    async function calculateSoilPlan() {
+      const crop = document.getElementById('planCrop').value;
+      const area = parseFloat(document.getElementById('planArea').value) || 2.0;
+      const unit = document.getElementById('planUnit').value;
+      const n = parseFloat(document.getElementById('planSoilN').value) || 198.5;
+      const p = parseFloat(document.getElementById('planSoilP').value) || 9.2;
+      const k = parseFloat(document.getElementById('planSoilK').value) || 152.0;
+      const ph = parseFloat(document.getElementById('planSoilPH').value) || 5.8;
+
+      showToast("Computing optimal fertilizer plan...");
+      const resultBox = document.getElementById('soilPlanResult');
+      resultBox.style.display = 'block';
+      resultBox.innerHTML = '<div style="padding:1rem; text-align:center; color:var(--ink-muted); font-size:0.85rem;">Running integer optimization & weather check...</div>';
+
+      try {
+        const resp = await fetch('/api/v1/soil-plan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            crop: crop,
+            area: area,
+            unit: unit,
+            state: 'Karnataka',
+            soil_values: {
+              nitrogen_kg_ha: n,
+              phosphorus_kg_ha: p,
+              potassium_kg_ha: k,
+              ph: ph
+            },
+            language: currentLang || 'kn'
+          })
+        });
+
+        const data = await resp.json();
+        if (!resp.ok) {
+          resultBox.innerHTML = `<div style="background:var(--sheet); border:1px solid var(--coral); color:var(--coral-ink); padding:1rem; font-size:0.85rem;">Error: ${data.error || 'Failed to compute plan'}</div>`;
+          return;
+        }
+
+        const plan = data.fertilizer_plan;
+        const weather = data.weather_warning;
+        const org = data.organic_alternative;
+        const narration = data.spoken_narration;
+        lastSoilPlanAudio = narration && narration.audio_base64 ? narration.audio_base64 : null;
+        lastSoilPlanNarration = narration && narration.text ? narration.text : "";
+
+        let bagsHtml = '';
+        if (plan.bags && plan.bags.length > 0) {
+          bagsHtml = plan.bags.map(b => `
+            <div style="background:#fff; border:1px solid var(--hair); padding:0.75rem; text-align:center;">
+              <div style="font-size:0.7rem; color:var(--ink-muted); font-weight:700;">${b.name}</div>
+              <div style="font-size:1.4rem; font-weight:800; color:var(--green-ink); margin:0.2rem 0;">${b.bags_count} <span style="font-size:0.85rem; font-weight:500;">Bags (${b.bag_size_kg}kg)</span></div>
+              <div style="font-size:0.75rem; color:var(--ink);">₹${b.total_cost_inr.toLocaleString()}</div>
+            </div>
+          `).join('');
+        } else {
+          bagsHtml = '<div style="grid-column:1/-1; background:#fff; padding:1rem; text-align:center; color:var(--green-ink); font-weight:600;">Zero chemical fertilizer needed (Soil reserves are high)</div>';
+        }
+
+        let scheduleHtml = '';
+        if (data.timing_schedule) {
+          scheduleHtml = data.timing_schedule.map(s => `
+            <div style="margin-bottom:0.6rem; padding-bottom:0.6rem; border-bottom:1px dashed var(--rule);">
+              <div style="font-size:0.75rem; font-weight:700; color:var(--ink);">${s.stage}</div>
+              <div style="font-size:0.8rem; color:var(--green-ink); margin:0.15rem 0;">${s.action}</div>
+              <div style="font-size:0.7rem; color:var(--ink-muted);">${s.weather_advisory}</div>
+            </div>
+          `).join('');
+        }
+
+        let weatherBanner = '';
+        if (weather.delay_recommended) {
+          weatherBanner = `
+            <div style="background:#fff4e5; border-left:4px solid var(--yellow); padding:0.75rem 1rem; margin-bottom:1rem; font-size:0.8rem; color:#663c00;">
+              <strong>⚠️ RAIN DELAY ADVISORY:</strong> ${weather.reason || 'Heavy rain expected over next 72 hours. Postpone application.'}
+            </div>
+          `;
+        } else {
+          weatherBanner = `
+            <div style="background:#edf7ed; border-left:4px solid var(--green); padding:0.6rem 1rem; margin-bottom:1rem; font-size:0.8rem; color:#1e4620;">
+              <strong>✅ WEATHER SAFE:</strong> 72h rainfall is below threshold (${weather.precipitation_next_72h_mm || 0}mm). Safe for soil application.
+            </div>
+          `;
+        }
+
+        let organicHtml = '';
+        if (org) {
+          organicHtml = `
+            <div style="background:#f9f8f4; border:1px solid var(--rule); padding:0.75rem; margin-top:1rem; font-size:0.75rem;">
+              <strong>🌱 ORGANIC SOIL CONDITIONER ALTERNATIVE:</strong>
+              Apply approx <strong>${org.recommended_tonnes} tonnes</strong> of ${org.material}. ${org.note}
+            </div>
+          `;
+        }
+
+        resultBox.innerHTML = `
+          ${weatherBanner}
+
+          <div style="display:flex; justify-content:space-between; align-items:center; background:var(--green); color:#fff; padding:1rem; margin-bottom:1rem; flex-wrap:wrap; gap:0.5rem;">
+            <div>
+              <div style="font-size:0.75rem; text-transform:uppercase; opacity:0.9;">Total Estimated Fertilizer Investment</div>
+              <div style="font-size:1.8rem; font-weight:800; letter-spacing:-0.02em;">₹${plan.total_cost_inr.toLocaleString()}</div>
+            </div>
+            <button class="btn" style="background:#fff; color:var(--green); font-weight:700; font-size:0.85rem; padding:0.6rem 1rem; border:none; cursor:pointer;" onclick="playSoilPlanAudio()">
+              🔊 Listen in Regional Speech
+            </button>
+          </div>
+
+          <div style="font-size:0.75rem; font-weight:700; color:var(--ink-muted); margin-bottom:0.5rem; text-transform:uppercase;">Fertilizer Whole-Bag Prescription (₹ Subsidized MRP)</div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:0.75rem; margin-bottom:1rem;">
+            ${bagsHtml}
+          </div>
+
+          <div style="background:#fff; border:1px solid var(--hair); padding:1rem; margin-bottom:1rem;">
+            <div style="font-size:0.75rem; font-weight:700; color:var(--ink-muted); margin-bottom:0.5rem; text-transform:uppercase;">Application Timing & Split Schedule</div>
+            ${scheduleHtml}
+          </div>
+
+          <div id="soilPlanTranscript" style="background:var(--sheet); border:1px solid var(--rule); padding:0.75rem; font-size:0.85rem; line-height:1.5; color:var(--ink);">
+            <strong>Spoken Farmer Narration:</strong><br>${lastSoilPlanNarration}
+          </div>
+
+          ${organicHtml}
+
+          <div style="margin-top:1rem; font-size:0.65rem; color:var(--ink-muted); line-height:1.4;">
+            <strong>Citation:</strong> ${data.citations && data.citations[0] ? data.citations[0].institution + ' (' + data.citations[0].publication + ')' : 'ICAR UAS-Bangalore'} | 
+            <span style="color:var(--coral-ink); font-weight:700;">DISCLAIMER:</span> Confirm with your local KVK or agricultural officer before applying chemical fertilizers.
+          </div>
+        `;
+        showToast("Plan calculated: ₹" + plan.total_cost_inr.toLocaleString());
+      } catch (err) {
+        resultBox.innerHTML = `<div style="background:var(--sheet); border:1px solid var(--coral); color:var(--coral-ink); padding:1rem; font-size:0.85rem;">Network Error: ${err.message}</div>`;
+      }
+    }
+
+    function playSoilPlanAudio() {
+      if (lastSoilPlanAudio) {
+        try {
+          const snd = new Audio("data:audio/wav;base64," + lastSoilPlanAudio);
+          snd.play();
+          showToast("Playing synthesized Bulbul audio...");
+          return;
+        } catch (e) {
+          console.log("Audio play error:", e);
+        }
+      }
+      if (lastSoilPlanNarration && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(lastSoilPlanNarration);
+        u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+        showToast("Playing voice narration...");
+      }
+    }
+
     function playAudioResponse() {
+      if (lastSoilPlanNarration || lastSoilPlanAudio) {
+        playSoilPlanAudio();
+        return;
+      }
       try {
         if ('speechSynthesis' in window) {
           window.speechSynthesis.cancel();
