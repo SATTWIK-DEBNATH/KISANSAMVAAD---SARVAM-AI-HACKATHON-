@@ -191,3 +191,4 @@ class VoiceSlotExtractor:
                 return "What is your land area (e.g. 2 acres or 30 guntas)?"
 
         return "Could you please clarify your crop and land area?"
+

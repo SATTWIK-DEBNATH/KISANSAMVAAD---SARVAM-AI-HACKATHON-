@@ -151,3 +151,4 @@ class RequirementsCalculator:
             "organic_alternative": organic_info,
             "citation": crop_spec.get("citation", {})
         }
+

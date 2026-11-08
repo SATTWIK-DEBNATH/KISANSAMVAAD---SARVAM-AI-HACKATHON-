@@ -99,3 +99,4 @@ fertilizers:
     subsidized: true
     source: "IFFCO / KRIBHCO Retail Schedule 2026"
     verified: false  # TODO(verify): local mandi retail price verification
+

@@ -154,3 +154,4 @@ class PlannerDataLoader:
     def clear_cache(cls):
         cls._dose_cache = None
         cls._fert_cache = None
+
