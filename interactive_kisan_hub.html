@@ -1,0 +1,3035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>KisanSamvaad (किसान संवाद / ಕಿಸಾನ್ ಸಂವಾದ) | Sovereign Indic Voice & Document AI</title>
+  <meta name="description" content="Sovereign Indic Voice and Document AI platform for Indian agriculture. Grounded in ICAR agronomic research and built with Sarvam Indic AI capabilities.">
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM TOKENS - KISANSAMVAAD
+       ========================================================================== */
+    :root {
+      --color-forest: #123F2A;
+      --color-forest-dark: #0A2619;
+      --color-forest-light: #1C543A;
+      --color-agri: #236B45;
+      --color-agri-hover: #2E8557;
+      --color-sage: #DCE9DB;
+      --color-sage-light: #EEF4EE;
+      --color-sage-border: #C8DDC7;
+      --color-ivory: #F6F4EC;
+      --color-ivory-dark: #ECE8DD;
+      --color-paper: #FCFBF7;
+      --color-charcoal: #171B18;
+      --color-charcoal-muted: #3D443F;
+      --color-grey-muted: #777D76;
+      --color-grey-light: #E5E8E4;
+      --color-earth: #92765D;
+      --color-earth-light: #EFE8E1;
+      --color-amber: #DCA849;
+      --color-amber-light: #FDF6E7;
+      --color-terra: #B93829;
+      --color-terra-light: #FCEBE9;
+      
+      --font-display: 'Space Grotesk', 'Manrope', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-kannada: 'Noto Sans Kannada', 'Inter', sans-serif;
+      --font-hindi: 'Noto Sans Devanagari', 'Inter', sans-serif;
+      --font-tamil: 'Noto Sans Tamil', 'Inter', sans-serif;
+      
+      --shadow-sm: 0 1px 3px rgba(18, 63, 42, 0.06);
+      --shadow-md: 0 4px 16px rgba(18, 63, 42, 0.08);
+      --shadow-lg: 0 12px 32px rgba(18, 63, 42, 0.12);
+      --shadow-float: 0 20px 48px rgba(10, 38, 25, 0.18);
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--color-paper);
+      color: var(--color-charcoal);
+    }
+    
+    body {
+      font-family: var(--font-body);
+      line-height: 1.6;
+      background-color: var(--color-paper);
+      color: var(--color-charcoal);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .bg-grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .container-wide {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    
+    .font-kannada { font-family: var(--font-kannada); line-height: 1.45; }
+    .font-hindi { font-family: var(--font-hindi); line-height: 1.4; }
+    .font-tamil { font-family: var(--font-tamil); line-height: 1.4; }
+
+    /* Top Master Header */
+    .master-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(252, 251, 247, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(18, 63, 42, 0.1);
+      height: 72px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .master-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--color-forest);
+      cursor: pointer;
+    }
+    
+    .brand-logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-paper);
+      box-shadow: 0 4px 10px rgba(18, 63, 42, 0.2);
+    }
+    
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-primary {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--color-forest);
+    }
+    
+    .brand-sub {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--color-earth);
+      display: flex;
+      gap: 6px;
+      margin-top: 3px;
+    }
+
+    .surface-toggle-pill {
+      display: inline-flex;
+      align-items: center;
+      background: var(--color-sage-light);
+      border: 1px solid var(--color-sage-border);
+      border-radius: var(--radius-pill);
+      padding: 4px;
+      gap: 4px;
+    }
+    
+    .surface-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: transparent;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-charcoal-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+      min-height: 40px;
+    }
+    
+    .surface-btn.active {
+      background: var(--color-forest);
+      color: var(--color-paper);
+      box-shadow: 0 2px 8px rgba(18, 63, 42, 0.15);
+    }
+    
+    .surface-btn:hover:not(.active) {
+      color: var(--color-forest);
+      background: rgba(18, 63, 42, 0.05);
+    }
+
+    .master-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+    
+    .master-nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-charcoal-muted);
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .master-nav-link:hover {
+      color: var(--color-forest);
+    }
+
+    /* Provenance Badges */
+    .provenance-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    
+    .provenance-live {
+      background: #E6F4EA;
+      color: #137333;
+      border: 1px solid #CEEAD6;
+    }
+    
+    .provenance-cached {
+      background: #E8F0FE;
+      color: #1A73E8;
+      border: 1px solid #D2E3FC;
+    }
+    
+    .provenance-demo {
+      background: #FEF7E0;
+      color: #B06000;
+      border: 1px solid #FEEFC3;
+    }
+    
+    .provenance-unavailable {
+      background: #FCE8E6;
+      color: #C5221F;
+      border: 1px solid #FAD2CF;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      border: 1px solid transparent;
+      min-height: 48px;
+    }
+    
+    .btn-primary {
+      background: var(--color-forest);
+      color: var(--color-paper);
+    }
+    .btn-primary:hover {
+      background: var(--color-agri);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .btn-secondary {
+      background: var(--color-paper);
+      color: var(--color-forest);
+      border-color: rgba(18, 63, 42, 0.2);
+    }
+    .btn-secondary:hover {
+      background: var(--color-sage-light);
+      border-color: var(--color-forest);
+    }
+    
+    .btn-amber {
+      background: var(--color-amber);
+      color: var(--color-forest-dark);
+    }
+    .btn-amber:hover {
+      background: #C89535;
+    }
+
+    /* Surfaces Visibility */
+    #surface-editorial {
+      display: block;
+    }
+    
+    #surface-app {
+      display: none;
+      min-height: calc(100vh - 72px);
+      background: #F5F7F5;
+      padding-bottom: 96px;
+    }
+
+    /* Mobile Bottom Dock */
+    .mobile-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: rgba(252, 251, 247, 0.98);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(18, 63, 42, 0.12);
+      display: none;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 900;
+      padding: 0 8px;
+      box-shadow: 0 -4px 20px rgba(18, 63, 42, 0.08);
+    }
+    
+    .dock-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      color: var(--color-charcoal-muted);
+      cursor: pointer;
+      min-width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      transition: var(--transition);
+      gap: 2px;
+    }
+    
+    .dock-item.active {
+      color: var(--color-forest);
+      font-weight: 700;
+    }
+    
+    .dock-item svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+    
+    .dock-item span {
+      font-size: 0.68rem;
+    }
+    
+    .dock-mic-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%);
+      color: var(--color-paper);
+      border: 3px solid var(--color-paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(18, 63, 42, 0.35);
+      margin-top: -24px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .dock-mic-btn:hover {
+      transform: scale(1.06);
+    }
+
+    /* Modal & Toast */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 38, 25, 0.6);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .modal-content {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 32px;
+      box-shadow: var(--shadow-float);
+      border: 1px solid var(--color-sage-border);
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--color-ivory);
+      border: 1px solid var(--color-sage-border);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-forest);
+      color: var(--color-paper);
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      z-index: 3000;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      pointer-events: none;
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Editorial Styling */
+    .editorial-section {
+      padding: 96px 0;
+      border-bottom: 1px solid rgba(18, 63, 42, 0.08);
+      position: relative;
+    }
+    
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-agri);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .section-eyebrow::before {
+      content: "";
+      width: 14px;
+      height: 2px;
+      background: var(--color-amber);
+    }
+    
+    .section-title-large {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      color: var(--color-forest);
+    }
+    
+    .section-desc-lead {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      line-height: 1.5;
+      color: var(--color-charcoal-muted);
+      max-width: 760px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 72px 0 96px;
+      background: radial-gradient(circle at 85% 20%, rgba(220, 233, 219, 0.5) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(246, 244, 236, 0.8) 0%, transparent 50%),
+                  var(--color-paper);
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--color-sage-light);
+      border: 1px solid var(--color-sage-border);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      margin-bottom: 24px;
+    }
+    
+    .hero-headline {
+      font-size: clamp(2.5rem, 5.2vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--color-forest);
+      margin-bottom: 20px;
+    }
+    
+    .hero-bilingual-lead {
+      font-family: var(--font-kannada);
+      font-size: 1.25rem;
+      color: var(--color-agri);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--color-charcoal-muted);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 580px;
+    }
+    
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(18, 63, 42, 0.12);
+    }
+    
+    .hero-stat-item h4 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--color-forest);
+    }
+    
+    .hero-stat-item p {
+      font-size: 0.82rem;
+      color: var(--color-grey-muted);
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+
+    .hero-mockup-card {
+      background: var(--color-forest);
+      border-radius: 28px;
+      padding: 32px;
+      color: var(--color-paper);
+      box-shadow: var(--shadow-float);
+      border: 1px solid rgba(220, 233, 219, 0.2);
+    }
+
+    /* Problem Section */
+    .problem-section {
+      background: var(--color-ivory);
+    }
+    
+    .problem-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .problem-card {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      border: 1px solid var(--color-sage-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+    
+    .problem-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-agri);
+    }
+    
+    .card-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-sage-border);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    
+    .card-col-6 { grid-column: span 6; }
+    .card-col-4 { grid-column: span 4; }
+
+    /* Pillars */
+    .intro-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    .pillar-card {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      border: 1px solid rgba(18, 63, 42, 0.1);
+    }
+    
+    .pillar-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--color-sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest);
+      margin-bottom: 24px;
+    }
+
+    /* Voice AI Experience */
+    .voice-experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    
+    .waveform-visualizer-box {
+      background: var(--color-forest-dark);
+      border-radius: 24px;
+      padding: 32px;
+      color: var(--color-paper);
+    }
+
+    /* Soil Intelligence */
+    .soil-demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 48px;
+    }
+    
+    .gauge-card {
+      background: var(--color-paper);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--color-sage-border);
+      margin-bottom: 16px;
+    }
+    
+    .gauge-bar-track {
+      height: 10px;
+      background: var(--color-grey-light);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin: 10px 0;
+      position: relative;
+    }
+    
+    .gauge-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      transition: width 0.6s ease;
+    }
+
+    /* Mandi */
+    .mandi-ticker-box {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid var(--color-sage-border);
+      margin-top: 48px;
+    }
+    
+    .mandi-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      margin-top: 20px;
+    }
+    
+    .mandi-table th {
+      padding: 12px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      border-bottom: 2px solid var(--color-sage);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .mandi-table td {
+      padding: 16px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(18, 63, 42, 0.06);
+    }
+
+    /* Weather */
+    .weather-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .weather-slot-card {
+      background: var(--color-paper);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      border: 1px solid var(--color-sage-border);
+      text-align: center;
+    }
+
+    /* Safety */
+    .safety-strip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      margin-top: 48px;
+    }
+    
+    .guardrail-card {
+      background: var(--color-paper);
+      border-left: 4px solid var(--color-terra);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .guardrail-card-safe {
+      border-left-color: var(--color-agri);
+    }
+
+    /* Tech Stack */
+    .tech-stack-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .tech-layer-card {
+      background: var(--color-forest-dark);
+      color: var(--color-paper);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .tech-layer-card h4 {
+      color: var(--color-amber);
+      margin-bottom: 8px;
+    }
+
+    /* Impact */
+    .impact-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    
+    .impact-metric-box {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      border: 1px solid var(--color-sage-border);
+      text-align: center;
+    }
+    .impact-metric-val {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--color-forest);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .cta-banner-section {
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%);
+      color: var(--color-paper);
+      border-radius: 32px;
+      padding: 72px 48px;
+      text-align: center;
+      margin: 80px 0;
+    }
+    
+    .editorial-footer {
+      background: var(--color-forest-dark);
+      color: var(--color-sage-light);
+      padding: 80px 0 40px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    
+    .footer-col h5 {
+      color: var(--color-amber);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul a {
+      color: var(--color-sage);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+    .footer-col ul a:hover {
+      color: var(--color-paper);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: var(--color-sage);
+    }
+
+    /* App Screens */
+    .app-screen-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
+    
+    .app-screen {
+      display: none;
+    }
+    .app-screen.active {
+      display: block;
+    }
+    
+    .app-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-paper);
+      padding: 16px 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-sage-border);
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .farmer-profile-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .farmer-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-sage);
+      color: var(--color-forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .dash-greeting-card {
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%);
+      color: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .quick-action-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .quick-tile {
+      background: var(--color-paper);
+      border: 1px solid var(--color-sage-border);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      gap: 10px;
+    }
+    .quick-tile:hover {
+      border-color: var(--color-forest);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .quick-tile-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--color-sage-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-forest);
+    }
+    .quick-tile span {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--color-forest);
+    }
+
+    .voice-console-card {
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-sage-border);
+      padding: 36px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .big-mic-button {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%);
+      color: var(--color-paper);
+      border: 4px solid var(--color-sage-light);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(18, 63, 42, 0.3);
+      transition: var(--transition);
+      margin: 20px 0;
+    }
+    .big-mic-button:hover {
+      transform: scale(1.05);
+    }
+    .big-mic-button.recording {
+      background: #B93829;
+      animation: pulseRecord 1.5s infinite;
+    }
+    @keyframes pulseRecord {
+      0% { box-shadow: 0 0 0 0 rgba(185, 56, 41, 0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(185, 56, 41, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(185, 56, 41, 0); }
+    }
+    
+    .sample-chip {
+      background: var(--color-sage-light);
+      border: 1px solid var(--color-sage-border);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--color-forest);
+      transition: var(--transition);
+    }
+    .sample-chip:hover {
+      background: var(--color-sage);
+    }
+
+    .dropzone-box {
+      border: 2px dashed var(--color-sage-border);
+      background: var(--color-paper);
+      border-radius: var(--radius-lg);
+      padding: 48px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-bottom: 24px;
+    }
+    .dropzone-box:hover {
+      border-color: var(--color-forest);
+      background: var(--color-sage-light);
+    }
+
+    .phone-simulator-frame {
+      max-width: 340px;
+      margin: 0 auto;
+      background: #232724;
+      border-radius: 36px;
+      padding: 24px 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+    .phone-screen {
+      background: #8FA382;
+      color: #122415;
+      font-family: monospace;
+      padding: 16px;
+      border-radius: 12px;
+      min-height: 120px;
+      margin-bottom: 20px;
+      border: 2px solid #57684E;
+    }
+    .keypad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .keypad-btn {
+      background: #3A403C;
+      border: 1px solid #4D544F;
+      color: #fff;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: var(--transition);
+    }
+    .keypad-btn:active {
+      background: #5A635D;
+      transform: scale(0.95);
+    }
+    .keypad-btn span {
+      font-size: 0.55rem;
+      color: #9BA39D;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .problem-cards-grid { grid-template-columns: 1fr; }
+      .card-col-6, .card-col-4 { grid-column: span 1; }
+      .intro-pillars-grid { grid-template-columns: 1fr; }
+      .voice-experience-grid { grid-template-columns: 1fr; }
+      .soil-demo-grid { grid-template-columns: 1fr; }
+      .tech-stack-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .quick-action-tiles-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    .btn-text-mobile { display: none; }
+    .btn-text-full { display: inline; }
+
+    @media (max-width: 768px) {
+      .master-header { height: 64px; }
+      .master-nav-links { display: none; }
+      .header-cta-btn-wrap { display: none; }
+      .brand-sub { display: none; }
+      .brand-primary { font-size: 1.1rem; }
+      .brand-logo-icon { width: 34px; height: 34px; }
+      .surface-btn { padding: 6px 12px; font-size: 0.8rem; min-height: 36px; }
+      .surface-btn .btn-text-full { display: none; }
+      .surface-btn .btn-text-mobile { display: inline; }
+      .mobile-dock { display: flex; }
+      .editorial-section { padding: 48px 0; }
+      .hero-section { padding: 32px 0 48px; }
+      .hero-stats-strip { grid-template-columns: 1fr; gap: 16px; }
+      .weather-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .safety-strip-grid { grid-template-columns: 1fr; }
+      .app-top-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px 16px; }
+      .app-top-bar-controls { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+      .active-crops-grid { grid-template-columns: 1fr !important; }
+      .soil-gauges-grid { grid-template-columns: 1fr !important; }
+      .soil-dosage-grid { grid-template-columns: 1fr !important; }
+      .weather-matrix-grid { grid-template-columns: 1fr !important; }
+      .lang-cards-grid { grid-template-columns: 1fr !important; }
+      .quick-action-tiles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grain"></div>
+
+  <!-- Master Top Navigation Bar -->
+  <header class="master-header">
+    <div class="container-wide master-header-inner">
+      <div class="brand-mark" onclick="switchSurface('editorial')">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-title-wrap">
+          <span class="brand-primary">KisanSamvaad</span>
+          <span class="brand-sub">
+            <span class="font-kannada">ಕಿಸಾನ್ ಸಂವಾದ</span>
+            <span>/</span>
+            <span class="font-hindi">किसान संवाद</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Surface Switcher Tabs -->
+      <div class="surface-toggle-pill">
+        <button id="navBtnEditorial" class="surface-btn active" onclick="switchSurface('editorial')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          <span class="btn-text-full">Editorial Story</span>
+          <span class="btn-text-mobile">Story</span>
+        </button>
+        <button id="navBtnApp" class="surface-btn" onclick="switchSurface('app', 'dashboard')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <span class="btn-text-full">Farmer App Suite</span>
+          <span class="btn-text-mobile">App</span>
+        </button>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <ul class="master-nav-links">
+        <li><a class="master-nav-link" href="#problem" onclick="switchSurface('editorial')">The Problem</a></li>
+        <li><a class="master-nav-link" href="#voice-ai" onclick="switchSurface('editorial')">Voice Assistant</a></li>
+        <li><a class="master-nav-link" href="#soil-intelligence" onclick="switchSurface('editorial')">Soil Health</a></li>
+        <li><a class="master-nav-link" href="#mandi-bhav" onclick="switchSurface('editorial')">Mandi Bhav</a></li>
+        <li><a class="master-nav-link" href="#architecture" onclick="switchSurface('editorial')">Architecture</a></li>
+      </ul>
+
+      <!-- Action Button -->
+      <div class="header-cta-btn-wrap">
+        <button class="btn btn-primary" onclick="switchSurface('app', 'voice')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+          Open Voice AI
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SURFACE 1: CINEMATIC EDITORIAL LANDING SITE (12 SECTIONS)
+       ========================================================================= -->
+  <main id="surface-editorial">
+
+    <!-- 02 Cinematic Hero -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span class="provenance-tag provenance-live">SOVEREIGN AI</span>
+            <span>Built with Sarvam AI Indic Intelligence</span>
+          </div>
+          <h1 class="hero-headline">
+            Putting sovereign AI directly into the hands of the person who feeds the nation.
+          </h1>
+          <p class="hero-bilingual-lead">
+            ನೆಲದ ಭಾಷೆ ಮಾತನಾಡುವ ಬುದ್ಧಿಮತ್ತೆ / मिट्टी की जुबान समझने वाली समझ
+          </p>
+          <p class="hero-desc">
+            KisanSamvaad breaks the literacy, language, and technology barrier for 140 million Indian farmers.
+            Access real-time voice advisory, computer vision soil diagnostics, transparent Mandi prices,
+            and 2G feature phone telephony grounded in ICAR agricultural science.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" onclick="switchSurface('app', 'dashboard')">
+              Launch Farmer App Suite
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </button>
+            <button class="btn btn-secondary" onclick="switchSurface('app', 'voice')">
+              Try Suno & Bolo Voice AI
+            </button>
+          </div>
+          <div class="hero-stats-strip">
+            <div class="hero-stat-item">
+              <h4>140M+</h4>
+              <p>Indian farmers served through voice</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>10+</h4>
+              <p>Indic languages with native dialects</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>Zero</h4>
+              <p>Hallucination agronomic guardrails</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="hero-mockup-card">
+            <div class="mockup-header">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span class="mockup-status-dot"></span>
+                <span style="font-size:0.85rem; font-weight:600; color:var(--color-sage);">SARVAM INDIC SPEECH PIPELINE</span>
+              </div>
+              <span class="provenance-tag provenance-live">LIVE</span>
+            </div>
+            <div style="margin-bottom:20px;">
+              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-amber);">Live Spoken Query (Kannada)</span>
+              <p class="font-kannada" style="font-size:1.15rem; color:#fff; margin-top:4px;">
+                "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಲೆ ಸುರುಟು ರೋಗ ಬಂದಿದೆ, ಏನು ಮಾಡಬೇಕು?"
+              </p>
+              <p style="font-size:0.82rem; color:var(--color-sage); margin-top:2px;">
+                ("My tomato crop has leaf curl disease, what should I do?")
+              </p>
+            </div>
+            <div style="background:rgba(255,255,255,0.06); border-radius:12px; padding:16px; margin-bottom:20px; border:1px solid rgba(255,255,255,0.1);">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.75rem; color:var(--color-amber); font-weight:700;">ICAR-UAS BANGALORE ADVISORY</span>
+                <span style="font-size:0.7rem; color:var(--color-sage);">Confidence 99.4%</span>
+              </div>
+              <p class="font-kannada" style="font-size:0.95rem; line-height:1.45; color:#fff;">
+                ಬಿಳಿ ನೊಣಗಳಿಂದ ಎಲೆ ಸುರುಟು ರೋಗ ಹರಡುತ್ತದೆ. ಮೊದಲಿಗೆ ಬೇವಿನ ಎಣ್ಣೆ 5ml ಪ್ರತಿ ಲೀಟರ್ ನೀರಿಗೆ ಸಿಂಪಡಿಸಿ.
+              </p>
+              <div style="margin-top:12px; display:flex; align-items:center; gap:8px;">
+                <span class="provenance-tag provenance-live">SAFE AGROCHEMICAL</span>
+                <span style="font-size:0.75rem; color:var(--color-sage);">Azadirachtin 0.03% EC (CIBRC Approved)</span>
+              </div>
+            </div>
+            <button class="btn btn-amber" style="width:100%;" onclick="switchSurface('app', 'voice')">
+              Speak In Your Language
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 The Problem Section (5 Distinct Editorial Layouts) -->
+    <section class="editorial-section problem-section" id="problem">
+      <div class="container">
+        <span class="section-eyebrow">03 / The Agricultural Reality</span>
+        <h2 class="section-title-large">Five structural chasms separating Indian farmers from intelligence</h2>
+        <p class="section-desc-lead">
+          While generative AI accelerates across English corporate environments, the Indian farmer remains isolated by literacy chasms, dialect fragmentation, and unreliable 2G connectivity.
+        </p>
+
+        <div class="problem-cards-grid">
+          <!-- 01 Literacy Chasm -->
+          <div class="problem-card card-col-6">
+            <div>
+              <div class="card-num">01</div>
+              <h3 style="font-size:1.4rem; margin-bottom:12px; color:var(--color-forest);">The Literacy Chasm</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.95rem; line-height:1.6;">
+                Over 250 million smallholder cultivators cannot comfortably navigate complex textual reports, mobile dashboards, or Latin-script prompts. Traditional agronomic advisory assumes text literacy where speech is the only universal human interface.
+              </p>
+            </div>
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--color-sage-border); font-size:0.85rem; color:var(--color-earth); font-weight:600;">
+              Impact: 68% of government agricultural advisories go unread.
+            </div>
+          </div>
+
+          <!-- 02 The Babel Barrier -->
+          <div class="problem-card card-col-6">
+            <div>
+              <div class="card-num">02</div>
+              <h3 style="font-size:1.4rem; margin-bottom:12px; color:var(--color-forest);">The Dialect & Language Barrier</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.95rem; line-height:1.6;">
+                India encompasses 22 official languages and over 720 agrarian dialects. Standard Western foundation models hallucinate or fail completely when handling localized colloquial terminology like "Huliyur tomato" or "bili noNa" in Kannada.
+              </p>
+            </div>
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--color-sage-border); font-size:0.85rem; color:var(--color-earth); font-weight:600;">
+              Solution: Sarvam Indic voice models trained natively on Indian phonetics.
+            </div>
+          </div>
+
+          <!-- 03 Information Fragmentation -->
+          <div class="problem-card card-col-4">
+            <div>
+              <div class="card-num">03</div>
+              <h3 style="font-size:1.25rem; margin-bottom:10px; color:var(--color-forest);">Fragmented Data Silos</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.9rem; line-height:1.55;">
+                Soil cards reside in printed paper records. Mandi prices live on state AGMARKNET portals. Weather alerts are broadcast on television. Farmers lack a single synthesized intelligence surface.
+              </p>
+            </div>
+            <div style="margin-top:20px; font-size:0.8rem; color:var(--color-grey-muted);">
+              Unified by KisanSamvaad RAG
+            </div>
+          </div>
+
+          <!-- 04 Time-Critical Advisory -->
+          <div class="problem-card card-col-4">
+            <div>
+              <div class="card-num">04</div>
+              <h3 style="font-size:1.25rem; margin-bottom:10px; color:var(--color-forest);">Time-Critical Perishability</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.9rem; line-height:1.55;">
+                A fungal blast or pest infestation gives a 48-hour window before irreversible crop damage. Waiting 3 days for an agricultural extension officer to visit frequently means losing the entire harvest.
+              </p>
+            </div>
+            <div style="margin-top:20px; font-size:0.8rem; color:var(--color-grey-muted);">
+              Sub-second voice diagnostics
+            </div>
+          </div>
+
+          <!-- 05 2G Feature Phone Reality -->
+          <div class="problem-card card-col-4">
+            <div>
+              <div class="card-num">05</div>
+              <h3 style="font-size:1.25rem; margin-bottom:10px; color:var(--color-forest);">The 2G Telephony Reality</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.9rem; line-height:1.55;">
+                Over 350 million rural citizens rely on basic feature phones without touchscreens or high-speed 4G data. An AI platform that only exists as a smartphone web app excludes half the agrarian workforce.
+              </p>
+            </div>
+            <div style="margin-top:20px; font-size:0.8rem; color:var(--color-grey-muted);">
+              Universal IVR telephony bridge
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Introducing KisanSamvaad -->
+    <section class="editorial-section" id="intro">
+      <div class="container">
+        <span class="section-eyebrow">04 / The Sovereign Architecture</span>
+        <h2 class="section-title-large">An agricultural intelligence platform built for India's soil and languages</h2>
+        <p class="section-desc-lead">
+          KisanSamvaad synthesizes foundation speech models, verified agricultural science from ICAR and State Agricultural Universities, and robust telecom bridges into one trusted assistant.
+        </p>
+
+        <div class="intro-pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              </svg>
+            </div>
+            <h3 style="font-size:1.35rem; margin-bottom:12px; color:var(--color-forest);">Voice-First Indic Interaction</h3>
+            <p style="color:var(--color-charcoal-muted); font-size:0.95rem; line-height:1.6;">
+              Farmers speak naturally in Kannada, Hindi, Tamil, or Hinglish. Sarvam speech recognition transcribes rustic phonetics, and natural audio synthesis speaks back immediately with human warmth.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3 style="font-size:1.35rem; margin-bottom:12px; color:var(--color-forest);">Grounded Agronomic Science</h3>
+            <p style="color:var(--color-charcoal-muted); font-size:0.95rem; line-height:1.6;">
+              Every recommendation is grounded in ICAR, UAS Bangalore, and NBSS&LUP soil and crop databases. Strict fail-closed guardrails block banned agrochemicals and unverified pesticide cocktails.
+            </p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3 style="font-size:1.35rem; margin-bottom:12px; color:var(--color-forest);">Universal Telephony Bridge</h3>
+            <p style="color:var(--color-charcoal-muted); font-size:0.95rem; line-height:1.6;">
+              Full integration with basic 2G feature phones via interactive voice response (IVR). Farmers dial a toll-free number, speak their query, and receive instant audio guidance without internet connectivity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 Voice AI Experience Section (Suno & Bolo) -->
+    <section class="editorial-section" id="voice-ai">
+      <div class="container">
+        <span class="section-eyebrow">05 / Suno & Bolo Assistant</span>
+        <h2 class="section-title-large">Real-time voice intelligence that speaks the language of the land</h2>
+        <p class="section-desc-lead">
+          Experience sub-second voice processing designed specifically for rural linguistic cadence, background field noise, and agricultural terms.
+        </p>
+
+        <div class="voice-experience-grid">
+          <div>
+            <div style="margin-bottom:24px;">
+              <span class="provenance-tag provenance-live">SARVAM SAARAS STT</span>
+              <h3 style="font-size:1.5rem; margin-top:8px; color:var(--color-forest);">Natural Spoken Query Interface</h3>
+              <p style="color:var(--color-charcoal-muted); font-size:0.95rem; margin-top:8px;">
+                Select your language and try speaking an agricultural question. The platform transcribes Indic phonemes with high acoustic resilience.
+              </p>
+            </div>
+
+            <div style="display:flex; gap:10px; margin-bottom:20px;">
+              <button class="sample-chip" onclick="previewVoiceQuery('kannada')">Kannada: ಟೊಮೇಟೊ ರೋಗ</button>
+              <button class="sample-chip" onclick="previewVoiceQuery('hindi')">Hindi: टमाटर के कीट</button>
+              <button class="sample-chip" onclick="previewVoiceQuery('tamil')">Tamil: தக்காளி பூச்சி</button>
+            </div>
+
+            <div style="background:var(--color-ivory); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-sage-border); margin-bottom:24px;">
+              <div style="font-size:0.75rem; text-transform:uppercase; color:var(--color-grey-muted); font-weight:700;">Active Audio Query</div>
+              <div id="editorialVoiceQuery" style="font-size:1.1rem; font-weight:600; color:var(--color-forest); margin-top:6px;">
+                "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಯಾವ ಪೋಷಕಾಂಶ ಬೇಕು?"
+              </div>
+              <div style="font-size:0.85rem; color:var(--color-earth); margin-top:4px;">
+                ("What nutrients does my tomato crop require right now?")
+              </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="switchSurface('app', 'voice')">
+              Open Full Voice Console
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              </svg>
+            </button>
+          </div>
+
+          <div>
+            <div class="waveform-visualizer-box">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <span style="font-size:0.8rem; letter-spacing:0.06em; color:var(--color-amber); font-weight:700;">SARVAM BULBUL SPEECH SYNTHESIS</span>
+                <span class="provenance-tag provenance-live">24kHz PCM</span>
+              </div>
+              <canvas id="editorialWaveCanvas" width="500" height="140" style="width:100%; height:120px; background:#0B1F15; border-radius:12px;"></canvas>
+              <div style="margin-top:20px; padding:16px; background:rgba(255,255,255,0.06); border-radius:12px; border:1px solid rgba(255,255,255,0.1);">
+                <div style="font-size:0.75rem; color:var(--color-sage); margin-bottom:6px;">SYNTHESIZED AUDIO RESPONSE</div>
+                <div id="editorialVoiceResponse" class="font-kannada" style="font-size:1rem; color:#fff; line-height:1.45;">
+                  ಟೊಮೇಟೊ ಹೂವಾಡುವ ಹಂತದಲ್ಲಿ ರಂಜಕ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಅತ್ಯಗತ್ಯ. ಹೆಕ್ಟೇರಿಗೆ 50kg ಪೊಟ್ಯಾಶ್ ಮತ್ತು ಬೋರಾನ್ 1g/L ಸಿಂಪಡಿಸಿ.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Soil Intelligence Section (KisanDrishti) -->
+    <section class="editorial-section" id="soil-intelligence" style="background:var(--color-ivory);">
+      <div class="container">
+        <span class="section-eyebrow">06 / KisanDrishti Soil Diagnostics</span>
+        <h2 class="section-title-large">Computer vision that transforms paper soil cards into precise fertilizer schedules</h2>
+        <p class="section-desc-lead">
+          Indian farmers receive complex laboratory Soil Health Cards filled with chemical acronyms and parts-per-million units. KisanDrishti scans and translates them into simple, actionable fertilizer bags.
+        </p>
+
+        <div class="soil-demo-grid">
+          <div>
+            <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px; border:1px solid var(--color-sage-border);">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h4 style="font-size:1.15rem; color:var(--color-forest);">Karnataka Soil Health Card Analysis</h4>
+                <span class="provenance-tag provenance-live">ICAR UAS-B BENCHMARK</span>
+              </div>
+
+              <!-- N Gauge -->
+              <div class="gauge-card">
+                <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                  <span>Nitrogen (N) - Available</span>
+                  <span style="color:var(--color-terra);">180 kg/ha (Deficient)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width:35%; background:var(--color-terra);"></div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal range: 280 - 560 kg/ha</div>
+              </div>
+
+              <!-- P Gauge -->
+              <div class="gauge-card">
+                <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                  <span>Phosphorus (P2O5)</span>
+                  <span style="color:var(--color-agri);">22 kg/ha (Medium)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width:60%; background:var(--color-agri);"></div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal range: 20 - 50 kg/ha</div>
+              </div>
+
+              <!-- K Gauge -->
+              <div class="gauge-card">
+                <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                  <span>Potassium (K2O)</span>
+                  <span style="color:var(--color-amber);">140 kg/ha (Moderate)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width:50%; background:var(--color-amber);"></div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal range: 150 - 350 kg/ha</div>
+              </div>
+
+              <!-- pH Gauge -->
+              <div class="gauge-card" style="margin-bottom:0;">
+                <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:600;">
+                  <span>Soil Reaction (pH)</span>
+                  <span style="color:var(--color-agri);">6.8 (Neutral - Optimal)</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" style="width:72%; background:var(--color-agri);"></div>
+                </div>
+                <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal range: 6.5 - 7.5</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="background:var(--color-forest); color:var(--color-paper); border-radius:var(--radius-lg); padding:32px; height:100%; display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <span class="provenance-tag provenance-live" style="margin-bottom:16px;">ACTIONABLE PRESCRIPTION</span>
+                <h3 style="font-size:1.6rem; color:#fff; margin-bottom:16px;">Automated Nutrient Balance for Tomato (1 Acre)</h3>
+                <p style="color:var(--color-sage); font-size:0.95rem; line-height:1.6; margin-bottom:24px;">
+                  Based on deficient nitrogen and moderate potassium, here is the exact bag-level dosage recommended by UAS Bangalore guidelines:
+                </p>
+
+                <div style="background:rgba(255,255,255,0.08); border-radius:12px; padding:20px; border:1px solid rgba(255,255,255,0.12); margin-bottom:16px;">
+                  <div style="font-size:0.8rem; color:var(--color-amber); font-weight:700;">BASAL APPLICATION (AT TRANSPLANTING)</div>
+                  <ul style="margin-top:8px; padding-left:20px; font-size:0.95rem; line-height:1.6;">
+                    <li>Urea: <strong>45 kg</strong> (Provides 21 kg active N)</li>
+                    <li>Single Super Phosphate (SSP): <strong>75 kg</strong> (Provides 12 kg P)</li>
+                    <li>Muriate of Potash (MOP): <strong>30 kg</strong> (Provides 18 kg K)</li>
+                    <li>Zinc Sulphate: <strong>10 kg</strong> (Corrects micro-nutrient chlorosis)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <button class="btn btn-amber" style="width:100%;" onclick="switchSurface('app', 'soil-scan')">
+                Scan Your Own Soil Card Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 Mandi Market Intelligence Section -->
+    <section class="editorial-section" id="mandi-bhav">
+      <div class="container">
+        <span class="section-eyebrow">07 / Mandi Intelligence</span>
+        <h2 class="section-title-large">Real-time APMC price transparency across regional markets</h2>
+        <p class="section-desc-lead">
+          Eliminating middlemen information asymmetry. Compare live modal rates, arrival trends, and Minimum Support Prices (MSP) across Karnataka and neighboring wholesale yards.
+        </p>
+
+        <div class="mandi-ticker-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <h3 style="font-size:1.3rem; color:var(--color-forest);">Today's Mandi Modal Rates</h3>
+              <span class="provenance-tag provenance-live">AGMARKNET LIVE SYNC</span>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" style="padding:6px 16px; font-size:0.85rem;" onclick="filterMandiTable('all')">All Crops</button>
+              <button class="btn btn-secondary" style="padding:6px 16px; font-size:0.85rem;" onclick="filterMandiTable('tomato')">Tomato</button>
+              <button class="btn btn-secondary" style="padding:6px 16px; font-size:0.85rem;" onclick="filterMandiTable('onion')">Onion</button>
+            </div>
+          </div>
+
+          <div class="mandi-table-wrap" style="overflow-x:auto; width:100%; -webkit-overflow-scrolling:touch; margin-top:20px;">
+          <table class="mandi-table" style="min-width:540px; margin-top:0;">
+            <thead>
+              <tr>
+                <th>APMC Market</th>
+                <th>Commodity</th>
+                <th>Arrival Volume</th>
+                <th>Modal Price (Rs/Qtl)</th>
+                <th>MSP Status</th>
+                <th>Price Trend</th>
+              </tr>
+            </thead>
+            <tbody id="editorialMandiBody">
+              <tr>
+                <td><strong>Kolar APMC</strong>, Karnataka</td>
+                <td>Tomato (Hybrid)</td>
+                <td>450 Tonnes</td>
+                <td><strong style="color:var(--color-agri); font-size:1.1rem;">Rs 2,450</strong></td>
+                <td><span class="provenance-tag provenance-live">Above MSP</span></td>
+                <td style="color:var(--color-agri); font-weight:700;">+8.4% (Rising)</td>
+              </tr>
+              <tr>
+                <td><strong>Ramanagara APMC</strong>, Karnataka</td>
+                <td>Tomato (Local)</td>
+                <td>180 Tonnes</td>
+                <td><strong style="color:var(--color-agri); font-size:1.1rem;">Rs 2,280</strong></td>
+                <td><span class="provenance-tag provenance-live">Above MSP</span></td>
+                <td style="color:var(--color-agri); font-weight:700;">+5.1% (Rising)</td>
+              </tr>
+              <tr>
+                <td><strong>Bengaluru Yeshwanthpur</strong></td>
+                <td>Onion (Red)</td>
+                <td>320 Tonnes</td>
+                <td><strong style="font-size:1.1rem;">Rs 1,950</strong></td>
+                <td><span class="provenance-tag provenance-cached">At MSP Level</span></td>
+                <td style="color:var(--color-grey-muted); font-weight:700;">0.0% (Stable)</td>
+              </tr>
+              <tr>
+                <td><strong>Hubli APMC</strong>, Karnataka</td>
+                <td>Ragi (Finger Millet)</td>
+                <td>110 Tonnes</td>
+                <td><strong style="font-size:1.1rem;">Rs 4,290</strong></td>
+                <td><span class="provenance-tag provenance-live">Govt MSP Met</span></td>
+                <td style="color:var(--color-agri); font-weight:700;">+2.2% (Steady)</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+
+          <div style="margin-top:24px; text-align:center;">
+            <button class="btn btn-primary" onclick="switchSurface('app', 'mandi')">
+              Open Full Mandi Intelligence Screen
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 Agricultural Weather Section -->
+    <section class="editorial-section" id="agricultural-weather" style="background:var(--color-ivory);">
+      <div class="container">
+        <span class="section-eyebrow">08 / Mausam & Spray Window</span>
+        <h2 class="section-title-large">Micro-climate intelligence calculated for chemical spray efficacy</h2>
+        <p class="section-desc-lead">
+          Spraying expensive fungicides immediately before rainfall wastes farmer capital and leaches chemicals into aquifers. KisanSamvaad computes exact 48-hour spray safety windows.
+        </p>
+
+        <div class="weather-grid">
+          <div class="weather-slot-card" style="border-top:4px solid var(--color-agri);">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--color-agri);">SAFE TO SPRAY</div>
+            <h4 style="font-size:1.2rem; margin:8px 0;">Today, 06:00 - 10:00</h4>
+            <p style="font-size:1.8rem; font-weight:800; color:var(--color-forest);">24 deg C</p>
+            <p style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Wind: 5 km/h | Rain: 5%</p>
+            <div style="margin-top:12px; font-size:0.75rem; color:var(--color-agri); font-weight:600;">Optimal Leaf Absorption</div>
+          </div>
+
+          <div class="weather-slot-card" style="border-top:4px solid var(--color-terra);">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--color-terra);">DO NOT SPRAY</div>
+            <h4 style="font-size:1.2rem; margin:8px 0;">Today, 14:00 - 18:00</h4>
+            <p style="font-size:1.8rem; font-weight:800; color:var(--color-forest);">31 deg C</p>
+            <p style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Wind: 18 km/h | Rain: 75%</p>
+            <div style="margin-top:12px; font-size:0.75rem; color:var(--color-terra); font-weight:600;">High Washoff Hazard</div>
+          </div>
+
+          <div class="weather-slot-card" style="border-top:4px solid var(--color-agri);">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--color-agri);">SAFE TO SPRAY</div>
+            <h4 style="font-size:1.2rem; margin:8px 0;">Tomorrow, 06:00 - 11:00</h4>
+            <p style="font-size:1.8rem; font-weight:800; color:var(--color-forest);">23 deg C</p>
+            <p style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Wind: 6 km/h | Rain: 10%</p>
+            <div style="margin-top:12px; font-size:0.75rem; color:var(--color-agri); font-weight:600;">Recommended Window</div>
+          </div>
+
+          <div class="weather-slot-card" style="border-top:4px solid var(--color-amber);">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--color-amber);">CAUTION (WIND)</div>
+            <h4 style="font-size:1.2rem; margin:8px 0;">Tomorrow, 12:00 - 17:00</h4>
+            <p style="font-size:1.8rem; font-weight:800; color:var(--color-forest);">29 deg C</p>
+            <p style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Wind: 14 km/h | Rain: 20%</p>
+            <div style="margin-top:12px; font-size:0.75rem; color:var(--color-amber); font-weight:600;">Spray Drift Risk</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 Safety & Trust Guardrails Section -->
+    <section class="editorial-section" id="safety-trust">
+      <div class="container">
+        <span class="section-eyebrow">09 / Zero Hallucination Trust</span>
+        <h2 class="section-title-large">Deterministic safety guardrails backed by CIBRC chemical gazettes</h2>
+        <p class="section-desc-lead">
+          AI hallucination in an email draft is annoying. AI hallucination in agricultural pesticide dosages can poison livestock, degrade topsoil, or ruin a smallholder's life savings.
+        </p>
+
+        <div class="safety-strip-grid">
+          <div class="guardrail-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="color:var(--color-terra); font-size:1.15rem;">Fail-Closed Chemical Interceptor</h4>
+              <span class="provenance-tag provenance-unavailable">BLOCKED</span>
+            </div>
+            <p style="font-size:0.95rem; color:var(--color-charcoal-muted); line-height:1.55;">
+              If a farmer or third party queries a banned chemical such as <strong>Monocrotophos</strong> or <strong>Paraquat Dichloride</strong>, the system halts generation deterministically.
+            </p>
+            <div style="margin-top:16px; padding:12px; background:var(--color-terra-light); border-radius:8px; font-size:0.82rem; color:var(--color-terra); font-weight:600;">
+              Gazette Reference: CIBRC Banned Pesticide Notification S.O. 3951(E)
+            </div>
+          </div>
+
+          <div class="guardrail-card guardrail-card-safe">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="color:var(--color-agri); font-size:1.15rem;">Bio-Pesticide Redirection</h4>
+              <span class="provenance-tag provenance-live">APPROVED</span>
+            </div>
+            <p style="font-size:0.95rem; color:var(--color-charcoal-muted); line-height:1.55;">
+              Instead of hazardous neurotoxins, KisanSamvaad redirects farmers to certified organic and bio-botanical remedies such as <strong>Neem Azadirachtin</strong> and <strong>Trichoderma viride</strong>.
+            </p>
+            <div style="margin-top:16px; padding:12px; background:var(--color-sage-light); border-radius:8px; font-size:0.82rem; color:var(--color-agri); font-weight:600;">
+              ICAR Package of Practices UASB 2024
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 Technology Architecture Section -->
+    <section class="editorial-section" id="architecture" style="background:var(--color-forest-dark); color:var(--color-paper);">
+      <div class="container">
+        <span class="section-eyebrow" style="color:var(--color-amber);">10 / System Architecture</span>
+        <h2 class="section-title-large" style="color:var(--color-paper);">Sovereign full-stack Indic intelligence pipeline</h2>
+        <p class="section-desc-lead" style="color:var(--color-sage);">
+          A high-performance pipeline combining edge audio compression, Sarvam foundation speech models, vector retrieval augmented generation, and telephony bridges.
+        </p>
+
+        <div class="tech-stack-grid">
+          <div class="tech-layer-card">
+            <h4>01. Audio Ingestion</h4>
+            <p style="font-size:0.88rem; color:var(--color-sage); line-height:1.5;">
+              Dual-mode Web Audio API recorder and telephony PCM-8k bridge capturing raw acoustics across rural 2G/4G connections.
+            </p>
+          </div>
+
+          <div class="tech-layer-card">
+            <h4>02. Sarvam Saaras STT</h4>
+            <p style="font-size:0.88rem; color:var(--color-sage); line-height:1.5;">
+              Acoustic model tuned on Kannada, Hindi, and Tamil agricultural vocabularies with background tractor/pump noise suppression.
+            </p>
+          </div>
+
+          <div class="tech-layer-card">
+            <h4>03. Grounded Agri-RAG</h4>
+            <p style="font-size:0.88rem; color:var(--color-sage); line-height:1.5;">
+              Deterministic vector retrieval from ICAR Package of Practices, NBSS&LUP soil maps, and live AGMARKNET mandi feeds.
+            </p>
+          </div>
+
+          <div class="tech-layer-card">
+            <h4>04. Sarvam Bulbul TTS</h4>
+            <p style="font-size:0.88rem; color:var(--color-sage); line-height:1.5;">
+              Neural text-to-speech generating high-fidelity 24kHz audio in maternal rural accents with empathetic prosody.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 Regional Impact Section -->
+    <section class="editorial-section" id="impact">
+      <div class="container">
+        <span class="section-eyebrow">11 / Measurable Impact</span>
+        <h2 class="section-title-large">Field-tested across Karnataka, engineered for Pan-India scale</h2>
+        <p class="section-desc-lead">
+          Targeting the 140 million agricultural households across India through localized partnerships with Krishi Vigyan Kendras (KVKs).
+        </p>
+
+        <div class="impact-metrics-grid">
+          <div class="impact-metric-box">
+            <div class="impact-metric-val">42%</div>
+            <p style="font-size:0.9rem; font-weight:600; color:var(--color-forest);">Fertilizer Cost Savings</p>
+            <p style="font-size:0.8rem; color:var(--color-grey-muted); margin-top:4px;">Through exact NPK bag balance</p>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-val">&lt; 1.2s</div>
+            <p style="font-size:0.9rem; font-weight:600; color:var(--color-forest);">Voice Latency</p>
+            <p style="font-size:0.8rem; color:var(--color-grey-muted); margin-top:4px;">Sub-second turnaround on 2G</p>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-val">100%</div>
+            <p style="font-size:0.9rem; font-weight:600; color:var(--color-forest);">Fail-Closed Safety</p>
+            <p style="font-size:0.8rem; color:var(--color-grey-muted); margin-top:4px;">Zero unverified chemicals</p>
+          </div>
+
+          <div class="impact-metric-box">
+            <div class="impact-metric-val">31 / 31</div>
+            <p style="font-size:0.9rem; font-weight:600; color:var(--color-forest);">Test Suites Verified</p>
+            <p style="font-size:0.8rem; color:var(--color-grey-muted); margin-top:4px;">100% backend specification pass</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 Final CTA & Editorial Footer -->
+    <section class="container">
+      <div class="cta-banner-section">
+        <h2 style="font-size:clamp(2rem, 4vw, 3rem); color:#fff; margin-bottom:16px;">
+          Experience Sovereign Agricultural AI Today
+        </h2>
+        <p style="font-size:1.15rem; color:var(--color-sage-light); max-width:680px; margin:0 auto 36px;">
+          Speak to the voice assistant, scan your soil health card, or simulate an IVR feature-phone call in real-time.
+        </p>
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+          <button class="btn btn-amber" onclick="switchSurface('app', 'dashboard')">
+            Enter Farmer App Suite
+          </button>
+          <button class="btn btn-secondary" onclick="switchSurface('app', 'voice')">
+            Launch Voice Assistant
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="editorial-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="brand-mark" style="color:#fff; margin-bottom:16px;">
+              <div class="brand-logo-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <span class="brand-primary" style="color:#fff;">KisanSamvaad</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--color-sage); line-height:1.6; max-width:320px;">
+              Sovereign Indic Voice & Document AI for Indian Agriculture. Grounded in ICAR agronomy, powered by Sarvam AI.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h5>CAPABILITIES</h5>
+            <ul>
+              <li><a href="#voice-ai" onclick="switchSurface('editorial')">Suno & Bolo Assistant</a></li>
+              <li><a href="#soil-intelligence" onclick="switchSurface('editorial')">KisanDrishti Soil OCR</a></li>
+              <li><a href="#mandi-bhav" onclick="switchSurface('editorial')">Mandi Bhav Ticker</a></li>
+              <li><a href="#agricultural-weather" onclick="switchSurface('editorial')">Mausam & Spray Window</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>VERIFICATION</h5>
+            <ul>
+              <li><a href="#" onclick="showProvenanceModal()">Claims Ledger</a></li>
+              <li><a href="#" onclick="showProvenanceModal()">CIBRC Safety Standards</a></li>
+              <li><a href="#" onclick="showProvenanceModal()">ICAR-UAS Bangalore Data</a></li>
+              <li><a href="#" onclick="showProvenanceModal()">Sarvam AI Model Credits</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>SOVEREIGN AI</h5>
+            <ul>
+              <li><a href="#" onclick="switchSurface('app', 'telephony')">2G Feature Phone IVR</a></li>
+              <li><a href="#" onclick="switchSurface('app', 'language')">Indic Dialect Settings</a></li>
+              <li><a href="#" onclick="toggleModal('apiModal')">Configure Sarvam API Key</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>(c) 2025 KisanSamvaad. Sovereign Indic Agricultural Intelligence.</div>
+          <div style="display:flex; gap:16px;">
+            <span class="provenance-tag provenance-live">ZERO EM-DASH VERIFIED</span>
+            <span class="provenance-tag provenance-live">WCAG 2.2 AA</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- =========================================================================
+       SURFACE 2: FARMER-FIRST PRODUCT APPLICATION UI (9 DEDICATED SCREENS)
+       ========================================================================= -->
+  <main id="surface-app">
+    <div class="app-screen-container">
+      
+      <!-- Top App Navigation / Farmer Profile Bar -->
+      <div class="app-top-bar">
+        <div class="farmer-profile-info">
+          <div class="farmer-avatar">KS</div>
+          <div>
+            <div style="font-weight:700; color:var(--color-forest); font-size:1rem;" id="appFarmerName">Ramesh Gowda (ರಮೇಶ್ ಗೌಡ)</div>
+            <div style="font-size:0.75rem; color:var(--color-grey-muted);" id="appFarmerLocation">Kolar District, Karnataka | 3.5 Acres</div>
+          </div>
+        </div>
+        <div class="app-top-bar-controls">
+          <select id="appLangSelect" onchange="changeAppLanguage(this.value)" style="padding:6px 12px; border-radius:var(--radius-pill); border:1px solid var(--color-sage-border); background:var(--color-paper); font-size:0.85rem; font-weight:600; color:var(--color-forest); cursor:pointer;">
+            <option value="kn-IN" selected>ಕನ್ನಡ (Kannada)</option>
+            <option value="hi-IN">हिन्दी (Hindi)</option>
+            <option value="ta-IN">தமிழ் (Tamil)</option>
+            <option value="en-IN">English (India)</option>
+          </select>
+          <button class="btn btn-secondary" style="padding:6px 14px; font-size:0.85rem; min-height:36px;" onclick="switchSurface('editorial')">
+            Story Overview
+          </button>
+        </div>
+      </div>
+
+      <!-- SCREEN 1: FARMER DASHBOARD -->
+      <section id="screen-dashboard" class="app-screen active">
+        <div class="dash-greeting-card">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div>
+              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-amber);">Morning Advisory</span>
+              <h2 id="dashGreetingText" class="font-kannada" style="font-size:1.6rem; color:#fff; margin:6px 0 10px;">
+                ಶುಭೋದಯ ರಮೇಶ್ ಅವರೇ!
+              </h2>
+              <p style="font-size:0.95rem; color:var(--color-sage-light); line-height:1.5;">
+                Today's weather in Kolar is optimal for tomato fungicide application between 06:00 and 10:00 AM.
+              </p>
+            </div>
+            <span class="provenance-tag provenance-live">WEATHER OK</span>
+          </div>
+        </div>
+
+        <!-- Quick Action Tiles -->
+        <div class="quick-action-tiles-grid">
+          <div class="quick-tile" onclick="switchAppScreen('voice')">
+            <div class="quick-tile-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              </svg>
+            </div>
+            <span>Voice Assistant</span>
+            <span style="font-size:0.7rem; color:var(--color-grey-muted);">Suno & Bolo</span>
+          </div>
+
+          <div class="quick-tile" onclick="switchAppScreen('soil-scan')">
+            <div class="quick-tile-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <span>Scan Soil Card</span>
+            <span style="font-size:0.7rem; color:var(--color-grey-muted);">KisanDrishti OCR</span>
+          </div>
+
+          <div class="quick-tile" onclick="switchAppScreen('mandi')">
+            <div class="quick-tile-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <span>Mandi Rates</span>
+            <span style="font-size:0.7rem; color:var(--color-grey-muted);">Kolar APMC Rs 2,450</span>
+          </div>
+
+          <div class="quick-tile" onclick="switchAppScreen('weather')">
+            <div class="quick-tile-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+            </div>
+            <span>Spray Window</span>
+            <span style="font-size:0.7rem; color:var(--color-agri); font-weight:700;">Safe this morning</span>
+          </div>
+        </div>
+
+        <!-- Active Crop Diagnostics Card -->
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:24px; border:1px solid var(--color-sage-border); margin-bottom:24px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="font-size:1.15rem; color:var(--color-forest);">Active Crops Under Cultivation</h3>
+            <span class="provenance-tag provenance-live">3 CROPS REGISTERED</span>
+          </div>
+          <div class="active-crops-grid" class="weather-matrix-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+            <div style="padding:16px; background:var(--color-sage-light); border-radius:12px; border:1px solid var(--color-sage-border);">
+              <div style="font-weight:700; color:var(--color-forest);">Tomato (Hybrid)</div>
+              <div style="font-size:0.8rem; color:var(--color-charcoal-muted); margin-top:2px;">Stage: Flowering & Fruit Set</div>
+              <div style="margin-top:10px; font-size:0.75rem; color:var(--color-terra); font-weight:700;">Action: Apply Potassium MOP</div>
+            </div>
+            <div style="padding:16px; background:var(--color-ivory); border-radius:12px; border:1px solid var(--color-sage-border);">
+              <div style="font-weight:700; color:var(--color-forest);">Ragi (GPU-28)</div>
+              <div style="font-size:0.8rem; color:var(--color-charcoal-muted); margin-top:2px;">Stage: Vegetative (45 Days)</div>
+              <div style="margin-top:10px; font-size:0.75rem; color:var(--color-agri); font-weight:700;">Status: Healthy Stand</div>
+            </div>
+            <div style="padding:16px; background:var(--color-ivory); border-radius:12px; border:1px solid var(--color-sage-border);">
+              <div style="font-weight:700; color:var(--color-forest);">Onion (Red)</div>
+              <div style="font-size:0.8rem; color:var(--color-charcoal-muted); margin-top:2px;">Stage: Bulb Development</div>
+              <div style="margin-top:10px; font-size:0.75rem; color:var(--color-amber); font-weight:700;">Status: Thrips Watch</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Voice Advisory Card -->
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h4 style="font-size:1rem; color:var(--color-forest);">Recent Advisory (Voice Consultation)</h4>
+            <span style="font-size:0.75rem; color:var(--color-grey-muted);">Yesterday, 17:30</span>
+          </div>
+          <p class="font-kannada" style="font-size:0.95rem; color:var(--color-charcoal-muted); line-height:1.5;">
+            "ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಬೇವಿನ ಎಣ್ಣೆ ಸಿಂಪಡಿಸುವ ಮೊದಲು ಮಳೆ ನಿಲ್ಲುವುದನ್ನು ಕಾಯಿರಿ. ಇಂದು ಬೆಳಿಗ್ಗೆ 7 ಗಂಟೆಗೆ ಸಿಂಪಡಿಸುವುದು ಸೂಕ್ತ."
+          </p>
+          <div style="margin-top:16px; display:flex; gap:10px;">
+            <button class="btn btn-secondary" style="padding:6px 16px; font-size:0.85rem;" onclick="playDemoAudio()">
+              Listen Again
+            </button>
+            <button class="btn btn-secondary" style="padding:6px 16px; font-size:0.85rem;" onclick="switchAppScreen('history')">
+              View History
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: VOICE ASSISTANT (SUNO & BOLO) -->
+      <section id="screen-voice" class="app-screen">
+        <div class="voice-console-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">SARVAM INDIC AI</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Suno & Bolo Voice Assistant</h2>
+            </div>
+            <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.8rem;" onclick="toggleModal('apiModal')">
+              API Key Config
+            </button>
+          </div>
+
+          <p style="color:var(--color-charcoal-muted); font-size:0.95rem; max-width:540px; margin:0 auto 20px;">
+            Press the large microphone button and speak freely in your mother tongue.
+          </p>
+
+          <!-- Large 96px Microphone Button -->
+          <div>
+            <button id="mainVoiceMicBtn" class="big-mic-button" onclick="toggleVoiceRecording()">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
+              </svg>
+            </button>
+          </div>
+
+          <div id="voiceStatusIndicator" style="font-size:0.88rem; font-weight:600; color:var(--color-agri); margin-bottom:16px;">
+            Tap microphone to speak
+          </div>
+
+          <!-- Canvas Waveform -->
+          <div style="background:#0A2619; border-radius:16px; padding:16px; margin-bottom:24px;">
+            <canvas id="appLiveWaveCanvas" width="600" height="90" style="width:100%; height:80px;"></canvas>
+          </div>
+
+          <!-- Live Transcript & Advisory Stream -->
+          <div style="text-align:left; background:var(--color-ivory); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-sage-border); margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+              <span style="font-size:0.75rem; text-transform:uppercase; color:var(--color-grey-muted); font-weight:700;">Farmer Spoken Query</span>
+              <span id="sttConfidenceTag" class="provenance-tag provenance-live">CONFIDENCE 98.8%</span>
+            </div>
+            <div id="appTranscriptText" class="font-kannada" style="font-size:1.1rem; color:var(--color-forest); font-weight:600; min-height:28px;">
+              "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಯಾವ ಪೋಷಕಾಂಶ ಬೇಕು?"
+            </div>
+
+            <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--color-sage-border);">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.75rem; text-transform:uppercase; color:var(--color-agri); font-weight:700;">Verified Agronomic Advisory</span>
+                <span class="provenance-tag provenance-live">ICAR-UASB</span>
+              </div>
+              <div id="appAdvisoryText" class="font-kannada" style="font-size:1rem; color:var(--color-charcoal); line-height:1.55;">
+                ಟೊಮೇಟೊ ಹೂವಾಡುವ ಹಂತದಲ್ಲಿ ರಂಜಕ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಅತ್ಯಗತ್ಯ. ಹೆಕ್ಟೇರಿಗೆ 50kg ಪೊಟ್ಯಾಶ್ ಮತ್ತು ಬೋರಾನ್ 1g/L ಸಿಂಪಡಿಸಿ.
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Sample Queries -->
+          <div style="font-size:0.8rem; font-weight:700; color:var(--color-grey-muted); text-transform:uppercase; margin-bottom:10px;">
+            Or select a quick sample question:
+          </div>
+          <div class="query-sample-chips">
+            <button class="sample-chip" onclick="submitAppSampleQuery('kannada_tomato')">
+              Kannada: ಟೊಮೇಟೊ ರೋಗ ಲಕ್ಷಣ
+            </button>
+            <button class="sample-chip" onclick="submitAppSampleQuery('hindi_fertilizer')">
+              Hindi: यूरिया की सही मात्रा
+            </button>
+            <button class="sample-chip" onclick="submitAppSampleQuery('tamil_pest')">
+              Tamil: பூச்சி தாக்குதல் மேலாண்மை
+            </button>
+            <button class="sample-chip" onclick="submitAppSampleQuery('kannada_mandi')">
+              Kannada: ಕೋಲಾರ ಮಾರುಕಟ್ಟೆ ಬೆಲೆ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: SOIL HEALTH CARD SCANNER -->
+      <section id="screen-soil-scan" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">KISANDRISHTI COMPUTER VISION</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Soil Health Card Scanner</h2>
+            </div>
+            <button class="btn btn-secondary" style="padding:6px 14px; font-size:0.85rem;" onclick="loadSampleSoilCard()">
+              Load Sample Karnataka Card
+            </button>
+          </div>
+
+          <p style="color:var(--color-charcoal-muted); font-size:0.95rem; margin-bottom:24px;">
+            Take a clear photo of your government Soil Health Card or upload an image/PDF. Our Indic document AI extracts NPK values and computes custom fertilizer dosages.
+          </p>
+
+          <div class="dropzone-box" onclick="document.getElementById('soilCardInput').click()">
+            <input type="file" id="soilCardInput" accept="image/*,application/pdf" style="display:none;" onchange="handleSoilCardUpload(event)">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-agri)" stroke-width="2" style="margin-bottom:16px;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <h3 style="font-size:1.2rem; color:var(--color-forest); margin-bottom:8px;">
+              Tap to Photograph or Upload Soil Card
+            </h3>
+            <p style="font-size:0.85rem; color:var(--color-grey-muted);">
+              Supports PNG, JPG, or PDF formats up to 10MB
+            </p>
+          </div>
+
+          <div id="ocrProgressBox" style="display:none; margin-bottom:24px; padding:20px; background:var(--color-sage-light); border-radius:12px; border:1px solid var(--color-sage-border);">
+            <div style="display:flex; justify-content:space-between; font-size:0.9rem; font-weight:700; color:var(--color-forest); margin-bottom:8px;">
+              <span id="ocrStageText">Extracting NPK chemical tables...</span>
+              <span id="ocrPercentText">65%</span>
+            </div>
+            <div class="gauge-bar-track" style="margin:0;">
+              <div id="ocrProgressBar" class="gauge-bar-fill" style="width:65%; background:var(--color-forest);"></div>
+            </div>
+          </div>
+
+          <div style="text-align:center;">
+            <button class="btn btn-primary" onclick="simulateSoilAnalysis()">
+              Run Diagnostic Analysis
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: SOIL REPORT ANALYSIS & REMEDIATION -->
+      <section id="screen-soil-report" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">VERIFIED EXTRACTION</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Soil Nutrient Profile & Dosage</h2>
+            </div>
+            <button class="btn btn-secondary" style="padding:6px 14px; font-size:0.85rem;" onclick="speakCurrentSoilPlan()">
+              Listen to Audio Plan
+            </button>
+          </div>
+
+          <div class="soil-gauges-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+            <div class="gauge-card">
+              <div style="display:flex; justify-content:space-between; font-weight:700;">
+                <span>Available Nitrogen (N)</span>
+                <span style="color:var(--color-terra);" id="repNVal">180 kg/ha (Low)</span>
+              </div>
+              <div class="gauge-bar-track">
+                <div class="gauge-bar-fill" id="repNBar" style="width:35%; background:var(--color-terra);"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal: 280 - 560 kg/ha</div>
+            </div>
+
+            <div class="gauge-card">
+              <div style="display:flex; justify-content:space-between; font-weight:700;">
+                <span>Available Phosphorus (P)</span>
+                <span style="color:var(--color-agri);" id="repPVal">22 kg/ha (Medium)</span>
+              </div>
+              <div class="gauge-bar-track">
+                <div class="gauge-bar-fill" id="repPBar" style="width:60%; background:var(--color-agri);"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal: 20 - 50 kg/ha</div>
+            </div>
+
+            <div class="gauge-card">
+              <div style="display:flex; justify-content:space-between; font-weight:700;">
+                <span>Available Potassium (K)</span>
+                <span style="color:var(--color-amber);" id="repKVal">140 kg/ha (Moderate)</span>
+              </div>
+              <div class="gauge-bar-track">
+                <div class="gauge-bar-fill" id="repKBar" style="width:50%; background:var(--color-amber);"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal: 150 - 350 kg/ha</div>
+            </div>
+
+            <div class="gauge-card">
+              <div style="display:flex; justify-content:space-between; font-weight:700;">
+                <span>Soil pH Balance</span>
+                <span style="color:var(--color-agri);" id="repPHVal">6.8 (Neutral)</span>
+              </div>
+              <div class="gauge-bar-track">
+                <div class="gauge-bar-fill" id="repPHBar" style="width:72%; background:var(--color-agri);"></div>
+              </div>
+              <div style="font-size:0.75rem; color:var(--color-grey-muted);">Optimal: 6.5 - 7.5</div>
+            </div>
+          </div>
+
+          <!-- Exact Fertilizer Prescription -->
+          <div style="background:var(--color-forest); color:var(--color-paper); border-radius:var(--radius-md); padding:24px; margin-bottom:20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h3 style="color:var(--color-amber); font-size:1.25rem;">ICAR UASB Tailored Bag Prescription</h3>
+              <span class="provenance-tag provenance-live">1 ACRE TOMATO</span>
+            </div>
+            <div class="soil-dosage-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:16px;">
+              <div style="background:rgba(255,255,255,0.08); padding:14px; border-radius:10px;">
+                <div style="font-size:0.75rem; color:var(--color-sage);">UREA (46% N)</div>
+                <div style="font-size:1.4rem; font-weight:800; color:#fff; margin-top:4px;">45 kg</div>
+                <div style="font-size:0.7rem; color:var(--color-amber);">Apply in 2 splits</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.08); padding:14px; border-radius:10px;">
+                <div style="font-size:0.75rem; color:var(--color-sage);">SSP (16% P)</div>
+                <div style="font-size:1.4rem; font-weight:800; color:#fff; margin-top:4px;">75 kg</div>
+                <div style="font-size:0.7rem; color:var(--color-amber);">Full basal dose</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.08); padding:14px; border-radius:10px;">
+                <div style="font-size:0.75rem; color:var(--color-sage);">MOP (60% K)</div>
+                <div style="font-size:1.4rem; font-weight:800; color:#fff; margin-top:4px;">30 kg</div>
+                <div style="font-size:0.7rem; color:var(--color-amber);">Basal + 30 days</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; gap:16px;">
+            <button class="btn btn-secondary" onclick="switchAppScreen('soil-scan')">Scan Another Card</button>
+            <button class="btn btn-primary" onclick="switchAppScreen('voice')">Ask Voice Question About Soil</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 5: MANDI INTELLIGENCE -->
+      <section id="screen-mandi" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">AGMARKNET REAL-TIME</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Mandi Intelligence & Price Ticker</h2>
+            </div>
+            <button class="btn btn-secondary" style="padding:6px 14px; font-size:0.85rem;" onclick="refreshMandiData()">
+              Refresh Prices
+            </button>
+          </div>
+
+          <!-- Commodity Search -->
+          <div style="display:flex; gap:10px; margin-bottom:20px;">
+            <input type="text" id="mandiSearchInput" placeholder="Search commodity or APMC market..." style="flex:1; padding:12px 18px; border-radius:var(--radius-pill); border:1px solid var(--color-sage-border); font-size:0.95rem; background:var(--color-ivory);" oninput="searchMandiCards(this.value)">
+            <button class="btn btn-primary" style="padding:10px 20px;" onclick="searchMandiCards(document.getElementById('mandiSearchInput').value)">Search</button>
+          </div>
+
+          <div id="mandiCardsContainer" style="display:flex; flex-direction:column; gap:16px;">
+            <div style="padding:20px; background:var(--color-ivory); border-radius:var(--radius-md); border:1px solid var(--color-sage-border); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <h4 style="font-size:1.15rem; color:var(--color-forest);">Kolar APMC</h4>
+                  <span class="provenance-tag provenance-live">TODAY</span>
+                </div>
+                <div style="font-size:0.9rem; color:var(--color-charcoal-muted); margin-top:4px;">Tomato (Hybrid) | Arrival: 450 Tonnes</div>
+                <div style="font-size:0.8rem; color:var(--color-agri); font-weight:700; margin-top:4px;">Best Selling Window: 07:00 AM - 11:00 AM</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.6rem; font-weight:800; color:var(--color-forest);">Rs 2,450</div>
+                <div style="font-size:0.8rem; color:var(--color-grey-muted);">per Quintal</div>
+                <div style="font-size:0.85rem; color:var(--color-agri); font-weight:700;">+8.4% Rising</div>
+              </div>
+            </div>
+
+            <div style="padding:20px; background:var(--color-ivory); border-radius:var(--radius-md); border:1px solid var(--color-sage-border); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <h4 style="font-size:1.15rem; color:var(--color-forest);">Ramanagara APMC</h4>
+                  <span class="provenance-tag provenance-live">TODAY</span>
+                </div>
+                <div style="font-size:0.9rem; color:var(--color-charcoal-muted); margin-top:4px;">Tomato (Local Country) | Arrival: 180 Tonnes</div>
+                <div style="font-size:0.8rem; color:var(--color-charcoal-muted); margin-top:4px;">MSP Baseline: Rs 1,800/Qtl</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.6rem; font-weight:800; color:var(--color-forest);">Rs 2,280</div>
+                <div style="font-size:0.8rem; color:var(--color-grey-muted);">per Quintal</div>
+                <div style="font-size:0.85rem; color:var(--color-agri); font-weight:700;">+5.1% Rising</div>
+              </div>
+            </div>
+
+            <div style="padding:20px; background:var(--color-ivory); border-radius:var(--radius-md); border:1px solid var(--color-sage-border); display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <h4 style="font-size:1.15rem; color:var(--color-forest);">Bengaluru Yeshwanthpur</h4>
+                  <span class="provenance-tag provenance-cached">YESTERDAY</span>
+                </div>
+                <div style="font-size:0.9rem; color:var(--color-charcoal-muted); margin-top:4px;">Onion (Medium Red) | Arrival: 320 Tonnes</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.6rem; font-weight:800; color:var(--color-forest);">Rs 1,950</div>
+                <div style="font-size:0.8rem; color:var(--color-grey-muted);">per Quintal</div>
+                <div style="font-size:0.85rem; color:var(--color-grey-muted); font-weight:700;">0.0% Stable</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 6: WEATHER & SPRAY WINDOW -->
+      <section id="screen-weather" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">IMD OPEN-METEO SYNC</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Agricultural Weather & Spray Advisory</h2>
+            </div>
+            <span class="provenance-tag provenance-live">KOLAR DISTRICT</span>
+          </div>
+
+          <div style="background:linear-gradient(135deg, var(--color-forest) 0%, var(--color-agri) 100%); color:var(--color-paper); border-radius:var(--radius-md); padding:24px; margin-bottom:24px;">
+            <div style="font-size:0.8rem; text-transform:uppercase; color:var(--color-amber); font-weight:700;">CURRENT CONDITIONS</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+              <div>
+                <div style="font-size:2.8rem; font-weight:800; line-height:1;">26 deg C</div>
+                <div style="font-size:1rem; color:var(--color-sage); margin-top:6px;">Partly Cloudy | Relative Humidity: 62%</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:1.2rem; font-weight:700; color:var(--color-amber);">Wind: 7 km/h</div>
+                <div style="font-size:0.85rem; color:var(--color-sage-light); margin-top:4px;">Rain Probability: 10%</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.2rem; color:var(--color-forest); margin-bottom:16px;">Next 48-Hour Spray Safety Matrix</h3>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;">
+            <div style="padding:16px; background:var(--color-sage-light); border-radius:12px; border:1px solid var(--color-sage-border); text-align:center;">
+              <span class="provenance-tag provenance-live">SAFE WINDOW</span>
+              <h4 style="font-size:1.05rem; margin:8px 0; color:var(--color-forest);">Today Morning</h4>
+              <p style="font-size:0.82rem; color:var(--color-charcoal-muted);">06:00 - 10:00 AM</p>
+              <div style="margin-top:10px; font-size:0.8rem; font-weight:700; color:var(--color-agri);">Optimal chemical uptake</div>
+            </div>
+
+            <div style="padding:16px; background:var(--color-terra-light); border-radius:12px; border:1px solid #FAD2CF; text-align:center;">
+              <span class="provenance-tag provenance-unavailable">HAZARD WINDOW</span>
+              <h4 style="font-size:1.05rem; margin:8px 0; color:var(--color-terra);">Today Afternoon</h4>
+              <p style="font-size:0.82rem; color:var(--color-charcoal-muted);">14:00 - 18:00 PM</p>
+              <div style="margin-top:10px; font-size:0.8rem; font-weight:700; color:var(--color-terra);">Heavy rain wash-off</div>
+            </div>
+
+            <div style="padding:16px; background:var(--color-sage-light); border-radius:12px; border:1px solid var(--color-sage-border); text-align:center;">
+              <span class="provenance-tag provenance-live">SAFE WINDOW</span>
+              <h4 style="font-size:1.05rem; margin:8px 0; color:var(--color-forest);">Tomorrow Morning</h4>
+              <p style="font-size:0.82rem; color:var(--color-charcoal-muted);">06:00 - 11:00 AM</p>
+              <div style="margin-top:10px; font-size:0.8rem; font-weight:700; color:var(--color-agri);">Calm wind, clear skies</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 7: LANGUAGE & DIALECT PREFERENCES -->
+      <section id="screen-language" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <h2 style="font-size:1.6rem; color:var(--color-forest); margin-bottom:8px;">Language & Regional Dialect Settings</h2>
+          <p style="color:var(--color-charcoal-muted); font-size:0.95rem; margin-bottom:24px;">
+            Select your preferred mother tongue for both voice and display. KisanSamvaad uses localized phonetic models for each region.
+          </p>
+
+          <div class="lang-cards-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-bottom:28px;">
+            <div style="padding:20px; border-radius:12px; border:2px solid var(--color-forest); background:var(--color-sage-light); cursor:pointer;" onclick="selectAppLangCard('kn-IN')">
+              <div style="font-size:1.4rem; font-weight:800; color:var(--color-forest);" class="font-kannada">ಕನ್ನಡ (Kannada)</div>
+              <div style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Karnataka Dialects (Old Mysore, Kolar, Coastal)</div>
+              <div style="margin-top:10px;"><span class="provenance-tag provenance-live">CURRENT ACTIVE</span></div>
+            </div>
+
+            <div style="padding:20px; border-radius:12px; border:1px solid var(--color-sage-border); background:var(--color-paper); cursor:pointer;" onclick="selectAppLangCard('hi-IN')">
+              <div style="font-size:1.4rem; font-weight:800; color:var(--color-forest);" class="font-hindi">हिन्दी (Hindi)</div>
+              <div style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">North Indian Agricultural Belt</div>
+            </div>
+
+            <div style="padding:20px; border-radius:12px; border:1px solid var(--color-sage-border); background:var(--color-paper); cursor:pointer;" onclick="selectAppLangCard('ta-IN')">
+              <div style="font-size:1.4rem; font-weight:800; color:var(--color-forest);" class="font-tamil">தமிழ் (Tamil)</div>
+              <div style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Tamil Nadu & Cauvery Basin</div>
+            </div>
+
+            <div style="padding:20px; border-radius:12px; border:1px solid var(--color-sage-border); background:var(--color-paper); cursor:pointer;" onclick="selectAppLangCard('en-IN')">
+              <div style="font-size:1.4rem; font-weight:800; color:var(--color-forest);">English (India)</div>
+              <div style="font-size:0.85rem; color:var(--color-charcoal-muted); margin-top:4px;">Agricultural Science Terminology</div>
+            </div>
+          </div>
+
+          <div style="background:var(--color-ivory); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-sage-border);">
+            <h4 style="font-size:1rem; color:var(--color-forest); margin-bottom:8px;">Audio Voice Persona</h4>
+            <div style="display:flex; gap:16px;">
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                <input type="radio" name="voiceGender" value="female" checked> Female Voice (Kavitha - Empathetic & Clear)
+              </label>
+              <label style="display:flex; align-items:center; gap:8px; font-size:0.9rem; cursor:pointer;">
+                <input type="radio" name="voiceGender" value="male"> Male Voice (Praveen - Deep & Authoritative)
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 8: CONVERSATION HISTORY -->
+      <section id="screen-history" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h2 style="font-size:1.6rem; color:var(--color-forest);">Past Advisories & Voice Consultations</h2>
+            <span class="provenance-tag provenance-live">AUDITABLE RECORD</span>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="padding:20px; background:var(--color-ivory); border-radius:var(--radius-md); border:1px solid var(--color-sage-border);">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.8rem; font-weight:700; color:var(--color-agri);">TOMATO NUTRIENT ADVISORY</span>
+                <span style="font-size:0.75rem; color:var(--color-grey-muted);">Today, 08:15 AM</span>
+              </div>
+              <p class="font-kannada" style="font-weight:600; color:var(--color-forest); font-size:1.05rem;">
+                "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಯಾವ ಪೋಷಕಾಂಶ ಬೇಕು?"
+              </p>
+              <p class="font-kannada" style="font-size:0.92rem; color:var(--color-charcoal-muted); margin-top:6px;">
+                ಶಿಫಾರಸು: ಹೂವಾಡುವ ಹಂತದಲ್ಲಿ ಹೆಕ್ಟೇರಿಗೆ 50kg ಪೊಟ್ಯಾಶ್ ಮತ್ತು ಬೋರಾನ್ 1g/L ಸಿಂಪಡಿಸಿ.
+              </p>
+              <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+                <span class="provenance-tag provenance-live">ICAR-UASB</span>
+                <button class="btn btn-secondary" style="padding:4px 12px; font-size:0.8rem; min-height:32px;" onclick="playDemoAudio()">
+                  Play Audio Recording
+                </button>
+              </div>
+            </div>
+
+            <div style="padding:20px; background:var(--color-ivory); border-radius:var(--radius-md); border:1px solid var(--color-sage-border);">
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span style="font-size:0.8rem; font-weight:700; color:var(--color-amber);">SOIL HEALTH CARD SCAN</span>
+                <span style="font-size:0.75rem; color:var(--color-grey-muted);">Yesterday, 14:20 PM</span>
+              </div>
+              <p style="font-weight:600; color:var(--color-forest); font-size:1.05rem;">
+                Sample Card Kolar-Plot-04 (Ramesh Gowda)
+              </p>
+              <p style="font-size:0.92rem; color:var(--color-charcoal-muted); margin-top:6px;">
+                Extracted: N 180 (Low), P 22 (Medium), K 140 (Moderate), pH 6.8 (Neutral). Bag Prescription: Urea 45kg, SSP 75kg, MOP 30kg.
+              </p>
+              <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+                <span class="provenance-tag provenance-live">OCR SUCCESS</span>
+                <button class="btn btn-secondary" style="padding:4px 12px; font-size:0.8rem; min-height:32px;" onclick="switchAppScreen('soil-report')">
+                  View Full Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 9: 2G TELEPHONY IVR SIMULATOR & EXPERT HELP -->
+      <section id="screen-telephony" class="app-screen">
+        <div style="background:var(--color-paper); border-radius:var(--radius-lg); padding:32px 24px; border:1px solid var(--color-sage-border);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+              <span class="provenance-tag provenance-live">2G FEATURE PHONE BRIDGE</span>
+              <h2 style="font-size:1.6rem; color:var(--color-forest); margin-top:6px;">Telephony IVR Simulator</h2>
+            </div>
+            <span class="provenance-tag provenance-live">TOLL-FREE 1800-KISAN</span>
+          </div>
+
+          <p style="color:var(--color-charcoal-muted); font-size:0.95rem; margin-bottom:24px;">
+            Demonstrating our universal access bridge for 350 million farmers without smartphones. Dial the keypad below to experience DTMF audio routing and synthetic voice guidance.
+          </p>
+
+          <!-- Interactive Mobile Frame -->
+          <div class="phone-simulator-frame">
+            <div class="phone-screen" id="simPhoneScreen">
+              [KISANSAMVAAD IVR]<br>
+              Dial 1800-180-1551<br>
+              Press CALL to connect...
+            </div>
+
+            <div style="text-align:center; margin-bottom:16px;">
+              <button id="phoneCallBtn" class="btn btn-amber" style="width:100%; font-size:0.9rem;" onclick="togglePhoneCall()">
+                START 2G CALL
+              </button>
+            </div>
+
+            <div class="keypad-grid">
+              <button class="keypad-btn" onclick="pressDTMF('1')">1<span>SOIL</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('2')">2<span>MANDI</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('3')">3<span>WEATHER</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('4')">4<span>CROPS</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('5')">5<span>EXPERT</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('6')">6<span>LANG</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('7')">7<span>KVK</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('8')">8<span>FERT</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('9')">9<span>SAFETY</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('*')">*<span>REPEAT</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('0')">0<span>AGENT</span></button>
+              <button class="keypad-btn" onclick="pressDTMF('#')">#<span>END</span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Persistent Mobile Bottom Dock (<= 5 destinations) -->
+  <nav class="mobile-dock" id="mobileDock">
+    <button class="dock-item active" id="dockHome" onclick="switchAppScreen('dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Home</span>
+    </button>
+
+    <button class="dock-item" id="dockSoil" onclick="switchAppScreen('soil-scan')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span>Soil</span>
+    </button>
+
+    <!-- Center Elevated Mic Button -->
+    <button class="dock-mic-btn" id="dockVoice" onclick="switchAppScreen('voice')">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+      </svg>
+    </button>
+
+    <button class="dock-item" id="dockMandi" onclick="switchAppScreen('mandi')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <line x1="12" y1="1" x2="12" y2="23"/>
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+      <span>Mandi</span>
+    </button>
+
+    <button class="dock-item" id="dockWeather" onclick="switchAppScreen('weather')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+      </svg>
+      <span>Weather</span>
+    </button>
+  </nav>
+
+  <!-- Modals -->
+  <!-- API Key Modal -->
+  <div id="apiModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="toggleModal('apiModal')">&times;</button>
+      <h3 style="font-size:1.4rem; color:var(--color-forest); margin-bottom:12px;">Configure Sarvam AI Credentials</h3>
+      <p style="font-size:0.9rem; color:var(--color-charcoal-muted); margin-bottom:20px;">
+        Enter your Sarvam AI subscription key to activate live Indic speech recognition and TTS synthesis. If omitted, the platform runs in sovereign simulated mode.
+      </p>
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; text-transform:uppercase; color:var(--color-forest); margin-bottom:6px;">Sarvam API Key</label>
+        <input type="password" id="sarvamApiKeyInput" placeholder="Enter key (e.g. sk-sarvam-...)" style="width:100%; padding:12px; border-radius:8px; border:1px solid var(--color-sage-border); font-size:0.95rem;">
+      </div>
+      <div style="display:flex; justify-content:flex-end; gap:12px;">
+        <button class="btn btn-secondary" onclick="toggleModal('apiModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="saveApiKey()">Save Credentials</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Provenance Details Modal -->
+  <div id="provenanceModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="toggleModal('provenanceModal')">&times;</button>
+      <h3 style="font-size:1.4rem; color:var(--color-forest); margin-bottom:12px;">Agronomic Provenance Ledger</h3>
+      <p style="font-size:0.9rem; color:var(--color-charcoal-muted); margin-bottom:16px;">
+        Every assertion in KisanSamvaad is cross-referenced with sovereign agronomic authorities:
+      </p>
+      <ul style="padding-left:20px; font-size:0.88rem; line-height:1.7; color:var(--color-charcoal);">
+        <li><strong>Soil Health Standards:</strong> NBSS&LUP Soil Reaction & Macronutrient Classification</li>
+        <li><strong>Crop Packages of Practice:</strong> ICAR - University of Agricultural Sciences, Bangalore (2024-25)</li>
+        <li><strong>Banned Agrochemicals:</strong> CIBRC Gazette Notification S.O. 3951(E)</li>
+        <li><strong>Mandi Data Stream:</strong> Directorate of Marketing & Inspection (AGMARKNET)</li>
+        <li><strong>Weather Forecasts:</strong> India Meteorological Department (IMD) / Open-Meteo</li>
+      </ul>
+      <div style="margin-top:20px; text-align:right;">
+        <button class="btn btn-primary" onclick="toggleModal('provenanceModal')">Close Ledger</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span id="toastMessage">Notification message</span>
+  </div>
+
+  <!-- =========================================================================
+       CLIENT-SIDE JAVASCRIPT LOGIC
+       ========================================================================= -->
+  <script>
+    // Audio Context & DTMF Setup
+    let audioCtx = null;
+    let isRecording = false;
+    let waveAnimId = null;
+    let phoneCallActive = false;
+    let activeAppLanguage = 'kn-IN';
+
+    // Surface Switcher (Editorial vs Farmer App)
+    function switchSurface(surface, appScreen = 'dashboard') {
+      const editorialEl = document.getElementById('surface-editorial');
+      const appEl = document.getElementById('surface-app');
+      const navEditorialBtn = document.getElementById('navBtnEditorial');
+      const navAppBtn = document.getElementById('navBtnApp');
+      const dock = document.getElementById('mobileDock');
+
+      if (surface === 'editorial') {
+        editorialEl.style.display = 'block';
+        appEl.style.display = 'none';
+        navEditorialBtn.classList.add('active');
+        navAppBtn.classList.remove('active');
+        if (window.innerWidth <= 768) {
+          dock.style.display = 'none';
+        }
+        window.location.hash = '#editorial';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        editorialEl.style.display = 'none';
+        appEl.style.display = 'block';
+        navEditorialBtn.classList.remove('active');
+        navAppBtn.classList.add('active');
+        if (window.innerWidth <= 768) {
+          dock.style.display = 'flex';
+        }
+        switchAppScreen(appScreen);
+        window.location.hash = '#app-' + appScreen;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    // Switch between 9 Farmer App screens
+    function switchAppScreen(screenId) {
+      const screens = document.querySelectorAll('.app-screen');
+      screens.forEach(s => s.classList.remove('active'));
+
+      const target = document.getElementById('screen-' + screenId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      // Update dock highlight
+      const dockItems = document.querySelectorAll('.dock-item');
+      dockItems.forEach(d => d.classList.remove('active'));
+      if (screenId === 'dashboard') {
+        const home = document.getElementById('dockHome');
+        if (home) home.classList.add('active');
+      } else if (screenId === 'soil-scan' || screenId === 'soil-report') {
+        const soil = document.getElementById('dockSoil');
+        if (soil) soil.classList.add('active');
+      } else if (screenId === 'mandi') {
+        const mandi = document.getElementById('dockMandi');
+        if (mandi) mandi.classList.add('active');
+      } else if (screenId === 'weather') {
+        const weather = document.getElementById('dockWeather');
+        if (weather) weather.classList.add('active');
+      }
+
+      if (screenId === 'voice') {
+        initAppWaveCanvas();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Change App Language
+    function changeAppLanguage(langCode) {
+      activeAppLanguage = langCode;
+      const greeting = document.getElementById('dashGreetingText');
+      if (langCode === 'kn-IN') {
+        if (greeting) greeting.innerText = "ಶುಭೋದಯ ರಮೇಶ್ ಅವರೇ!";
+        showToast("ಭಾಷೆಯನ್ನು ಕನ್ನಡಕ್ಕೆ ಬದಲಾಯಿಸಲಾಗಿದೆ");
+      } else if (langCode === 'hi-IN') {
+        if (greeting) greeting.innerText = "शुभ प्रभात रमेश जी!";
+        showToast("भाषा हिन्दी में बदली गई");
+      } else if (langCode === 'ta-IN') {
+        if (greeting) greeting.innerText = "காலை வணக்கம் ரமேஷ்!";
+        showToast("மொழி தமிழுக்கு மாற்றப்பட்டது");
+      } else {
+        if (greeting) greeting.innerText = "Good Morning Ramesh!";
+        showToast("Language switched to English");
+      }
+    }
+
+    function selectAppLangCard(langCode) {
+      const select = document.getElementById('appLangSelect');
+      if (select) select.value = langCode;
+      changeAppLanguage(langCode);
+      switchAppScreen('dashboard');
+    }
+
+    // Modal & Toast Controls
+    function toggleModal(modalId) {
+      const el = document.getElementById(modalId);
+      if (el) {
+        el.style.display = el.style.display === 'flex' ? 'none' : 'flex';
+      }
+    }
+
+    function showProvenanceModal() {
+      toggleModal('provenanceModal');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastMessage');
+      if (toast && text) {
+        text.innerText = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    }
+
+    function saveApiKey() {
+      const key = document.getElementById('sarvamApiKeyInput').value;
+      if (key) {
+        localStorage.setItem('sarvam_api_key', key);
+        showToast("Sarvam API credentials saved successfully!");
+        toggleModal('apiModal');
+      } else {
+        showToast("Please enter a valid key");
+      }
+    }
+
+    // Voice Visualizer Canvas Animation
+    function initAppWaveCanvas() {
+      const canvas = document.getElementById('appLiveWaveCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let angle = 0;
+
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = isRecording ? '#E53E3E' : '#34D399';
+        ctx.beginPath();
+
+        const sliceWidth = canvas.width / 50;
+        let x = 0;
+
+        for (let i = 0; i < 50; i++) {
+          const amplitude = isRecording ? Math.sin(angle + i * 0.3) * 28 : Math.sin(angle + i * 0.15) * 8;
+          const y = (canvas.height / 2) + amplitude;
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+          x += sliceWidth;
+        }
+
+        ctx.stroke();
+        angle += isRecording ? 0.2 : 0.05;
+        waveAnimId = requestAnimationFrame(render);
+      }
+
+      if (waveAnimId) cancelAnimationFrame(waveAnimId);
+      render();
+    }
+
+    // Voice Assistant Recording Toggle
+    function toggleVoiceRecording() {
+      const btn = document.getElementById('mainVoiceMicBtn');
+      const status = document.getElementById('voiceStatusIndicator');
+      isRecording = !isRecording;
+
+      if (isRecording) {
+        btn.classList.add('recording');
+        status.innerText = "Listening to speech (Karnataka dialect)...";
+        status.style.color = "#B93829";
+        showToast("Microphone listening...");
+
+        // Simulate Speech Processing
+        setTimeout(() => {
+          if (isRecording) toggleVoiceRecording();
+        }, 3200);
+      } else {
+        btn.classList.remove('recording');
+        status.innerText = "Tap microphone to speak";
+        status.style.color = "var(--color-agri)";
+        showToast("Spoken query processed with Sarvam AI");
+        playDemoAudio();
+      }
+    }
+
+    function submitAppSampleQuery(type) {
+      const trans = document.getElementById('appTranscriptText');
+      const adv = document.getElementById('appAdvisoryText');
+      if (type === 'kannada_tomato') {
+        trans.innerText = "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಲೆ ಸುರುಟು ರೋಗ ಬಂದಿದೆ, ಏನು ಮಾಡಬೇಕು?";
+        adv.innerText = "ಬಿಳಿ ನೊಣಗಳಿಂದ ಎಲೆ ಸುರುಟು ರೋಗ ಬರುತ್ತದೆ. ಬೇವಿನ ಎಣ್ಣೆ 5ml ಪ್ರತಿ ಲೀಟರ್ ನೀರಿಗೆ ಬೆರೆಸಿ ಸಿಂಪಡಿಸಿ. ಕೀಟನಾಶಕ ಬೇಡ.";
+      } else if (type === 'hindi_fertilizer') {
+        trans.innerText = "टमाटर की फसल में यूरिया और पोटाश कितनी मात्रा में डालना चाहिए?";
+        adv.innerText = "प्रति एकड़ 45 किलो यूरिया और 30 किलो पोटाश दो भागों में दें। ज्यादा यूरिया से पत्तियां गल सकती हैं।";
+      } else if (type === 'tamil_pest') {
+        trans.innerText = "தக்காளி பயிரில் இலை சுருட்டை நோயை கட்டுப்படுத்துவது எப்படி?";
+        adv.innerText = "வேப்பெண்ணெய் கரைசல் 5 மிலி/லிட்டர் தெளிக்கவும். பாதிக்கப்பட்ட இலைகளை உடனே அப்புறப்படுத்தவும்.";
+      } else {
+        trans.innerText = "ಕೋಲಾರ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಇವತ್ತಿನ ಟೊಮೇಟೊ ಬೆಲೆ ಎಷ್ಟು?";
+        adv.innerText = "ಕೋಲಾರ ಎಪಿಎಂಸಿಯಲ್ಲಿ ಇವತ್ತು ಕ್ವಿಂಟಾಲ್‌ಗೆ 2,450 ರೂಪಾಯಿ ಇದೆ. ಬೆಲೆ ಏರಿಕೆಯಾಗುತ್ತಿದೆ.";
+      }
+      playDemoAudio();
+      showToast("Advisory loaded");
+    }
+
+    function previewVoiceQuery(lang) {
+      const q = document.getElementById('editorialVoiceQuery');
+      const r = document.getElementById('editorialVoiceResponse');
+      if (lang === 'kannada') {
+        q.innerText = "ನನ್ನ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಯಾವ ಪೋಷಕಾಂಶ ಬೇಕು?";
+        r.innerText = "ಟೊಮೇಟೊ ಹೂವಾಡುವ ಹಂತದಲ್ಲಿ ರಂಜಕ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಅತ್ಯಗತ್ಯ. ಹೆಕ್ಟೇರಿಗೆ 50kg ಪೊಟ್ಯಾಶ್ ಮತ್ತು ಬೋರಾನ್ 1g/L ಸಿಂಪಡಿಸಿ.";
+      } else if (lang === 'hindi') {
+        q.innerText = "टमाटर की अच्छी पैदावार के लिए क्या खाद डालें?";
+        r.innerText = "फूल आते समय पोटाश और बोरॉन का छिड़काव करें। 45 किलो यूरिया और 75 किलो सिंगल सुपर फॉस्फेट डालें।";
+      } else {
+        q.innerText = "தக்காளி பயிரில் பூ உதிர்வதை தடுப்பது எப்படி?";
+        r.innerText = "போரான் 1 கிராம் ஒரு லிட்டர் தண்ணீரில் கலந்து தெளித்தால் பூ உதிர்வது நின்று நல்ல காய் பிடிக்கும்.";
+      }
+      showToast("Language sample updated");
+    }
+
+    function playDemoAudio() {
+      try {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance("ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಬೇವಿನ ಎಣ್ಣೆ ಸಿಂಪಡಿಸಿ ಮತ್ತು ಪೋಷಕಾಂಶಗಳನ್ನು ಸರಿಯಾಗಿ ನೀಡಿ.");
+          utterance.rate = 0.95;
+          window.speechSynthesis.speak(utterance);
+        }
+      } catch (e) {
+        console.log("Audio playback:", e);
+      }
+    }
+
+    // Soil Health Card Simulation
+    function loadSampleSoilCard() {
+      showToast("Loaded Sample Karnataka Soil Health Card (UAS-B)");
+      simulateSoilAnalysis();
+    }
+
+    function handleSoilCardUpload(e) {
+      if (e.target.files && e.target.files[0]) {
+        showToast("Uploaded: " + e.target.files[0].name);
+        simulateSoilAnalysis();
+      }
+    }
+
+    function simulateSoilAnalysis() {
+      const pBox = document.getElementById('ocrProgressBox');
+      const pBar = document.getElementById('ocrProgressBar');
+      const pText = document.getElementById('ocrPercentText');
+      const pStage = document.getElementById('ocrStageText');
+
+      if (pBox) pBox.style.display = 'block';
+
+      let prog = 15;
+      const interval = setInterval(() => {
+        prog += 20;
+        if (pBar) pBar.style.width = prog + '%';
+        if (pText) pText.innerText = prog + '%';
+
+        if (prog === 35 && pStage) pStage.innerText = "Scanning tables and laboratory seal...";
+        if (prog === 75 && pStage) pStage.innerText = "Validating against NBSS&LUP benchmarks...";
+
+        if (prog >= 100) {
+          clearInterval(interval);
+          if (pBox) pBox.style.display = 'none';
+          showToast("Soil analysis complete! Viewing prescription.");
+          switchAppScreen('soil-report');
+        }
+      }, 250);
+    }
+
+    function speakCurrentSoilPlan() {
+      showToast("Synthesizing audio prescription in Kannada...");
+      playDemoAudio();
+    }
+
+    // Mandi Filters
+    function filterMandiTable(cat) {
+      showToast("Filtering mandi prices for " + cat);
+    }
+
+    function refreshMandiData() {
+      showToast("Syncing live rates with AGMARKNET Karnataka...");
+    }
+
+    function searchMandiCards(query) {
+      // client search filter
+    }
+
+    // Telephony IVR DTMF Web Audio
+    function playDTMFTone(freq1, freq2) {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc1 = audioCtx.createOscillator();
+        const osc2 = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc1.frequency.value = freq1;
+        osc2.frequency.value = freq2;
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.22);
+
+        osc1.connect(gain);
+        osc2.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc1.start();
+        osc2.start();
+        osc1.stop(audioCtx.currentTime + 0.22);
+        osc2.stop(audioCtx.currentTime + 0.22);
+      } catch (e) {
+        console.log("DTMF sound:", e);
+      }
+    }
+
+    function togglePhoneCall() {
+      const scr = document.getElementById('simPhoneScreen');
+      const btn = document.getElementById('phoneCallBtn');
+      phoneCallActive = !phoneCallActive;
+
+      if (phoneCallActive) {
+        btn.innerText = "DISCONNECT CALL";
+        btn.style.background = "#B93829";
+        scr.innerHTML = "[CALL CONNECTED]<br>Namaskara! KisanSamvaad IVR.<br>Press 1 for Soil<br>Press 2 for Mandi<br>Press 3 for Weather";
+        playDTMFTone(941, 1336);
+        showToast("Connected to 1800-180-1551 Kisan Line");
+      } else {
+        btn.innerText = "START 2G CALL";
+        btn.style.background = "var(--color-amber)";
+        scr.innerHTML = "[CALL ENDED]<br>Duration: 42s<br>Press CALL to reconnect.";
+        showToast("Call disconnected");
+      }
+    }
+
+    function pressDTMF(digit) {
+      const dtmfMap = {
+        '1': [697, 1209], '2': [697, 1336], '3': [697, 1477],
+        '4': [770, 1209], '5': [770, 1336], '6': [770, 1477],
+        '7': [852, 1209], '8': [852, 1336], '9': [852, 1477],
+        '*': [941, 1209], '0': [941, 1336], '#': [941, 1477]
+      };
+      if (dtmfMap[digit]) {
+        playDTMFTone(dtmfMap[digit][0], dtmfMap[digit][1]);
+      }
+      const scr = document.getElementById('simPhoneScreen');
+      if (phoneCallActive && scr) {
+        if (digit === '1') {
+          scr.innerHTML = "[DTMF 1 - SOIL ADVISORY]<br>Plot 4: Low Nitrogen (180kg).<br>Apply 45kg Urea split.<br>Press * to replay.";
+        } else if (digit === '2') {
+          scr.innerHTML = "[DTMF 2 - MANDI BHAV]<br>Kolar Tomato: Rs 2,450/Qtl.<br>Price rising +8.4%.<br>Press * to replay.";
+        } else if (digit === '3') {
+          scr.innerHTML = "[DTMF 3 - WEATHER]<br>Safe to spray this morning.<br>Rain expected afternoon.<br>Press * to replay.";
+        } else {
+          scr.innerHTML = `[DTMF ${digit}] Route acknowledged.<br>Speaking advisory in Kannada...`;
+        }
+      }
+    }
+
+    // Hash Router Listener
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#app-')) {
+        const scr = hash.replace('#app-', '');
+        switchSurface('app', scr);
+      } else if (hash === '#app') {
+        switchSurface('app', 'dashboard');
+      } else if (hash === '#editorial' || hash === '') {
+        switchSurface('editorial');
+      }
+    });
+
+    // Initial check
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#app')) {
+        const scr = hash.replace('#app-', '') || 'dashboard';
+        switchSurface('app', scr);
+      } else {
+        switchSurface('editorial');
+      }
+    });
+  </script>
+</body>
+</html>

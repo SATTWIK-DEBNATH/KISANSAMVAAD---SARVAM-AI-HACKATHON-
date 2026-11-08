@@ -8,3 +8,11 @@ __pycache__/
 graphify-out/
 .system_generated/
 *.tmp
+
+.adal/
+.codex/
+.impeccable/
+awesome-claude-skills/
+skills-lock.json
+~/
+scratch/
