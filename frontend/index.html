@@ -3,64 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>KisanSamvaad (ಕಿಸಾನ್ ಸಂವಾದ) | Sovereign Indic Agronomic AI Platform</title>
+  <title>KisanSamvaad (ಕಿಸಾನ್ ಸಂವಾದ) | AI-Powered Voice Intelligence for Indian Agriculture</title>
   
-  <meta name="description" content="Sovereign Indic Voice & Document AI for Indian Agriculture. Synthesizing Sarvam AI sovereign foundation models, MDS Collective authoritative luxury, and Spikes cognitive ease.">
+  <meta name="description" content="AI-powered voice intelligence for Indian agriculture. KisanSamvaad uses indigenous Sarvam AI to give farmers instant, multilingual crop and market advice through simple voice commands.">
   <meta name="theme-color" content="#F8FAFC">
 
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/icons/icon-192.png">
 
-  <!-- Fonts: Cormorant Garamond, Manrope, Space Grotesk, JetBrains Mono, Noto Sans Indic -->
+  <!-- Fonts: Cormorant Garamond, Manrope, JetBrains Mono, Noto Sans Indic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     /* ==========================================================================
-       DESIGN SYSTEM: THE TRUE TRINITY (SARVAM AI + MDS COLLECTIVE + SPIKES)
-       Light Tone Palette (18.2:1 contrast ratio, WCAG AAA compliant)
+       DESIGN SYSTEM: SOVEREIGN TECH NAVY (SWISS MINIMALIST SAAS)
+       Compliant with UI/UX Pro Max Guidelines:
+       - Deep Slate Navy #0F172A (18.2:1 contrast against White)
+       - Tech Blue #2563EB (Sarvam sovereign compute accent)
+       - Warm Amber #D97706 (Agronomic harvest highlight)
+       - Crisp Ice White #F8FAFC (Luminous background foundation)
+       - No emojis as icons (100% SVG Heroicons / Lucide style)
+       - Cursor-pointer on all interactives, smooth 200ms transitions
        ========================================================================== */
     :root {
-      /* Foundation Canvas */
-      --bg-base: #F8FAFC;              /* Luminous slate-50 foundation */
-      --bg-surface: #FFFFFF;           /* Pure white card sheets */
-      --bg-subtle: #F1F5F9;            /* Slate-100 fills and badge backings */
-      --bg-elevated: #FFFFFF;          /* Elevated card surface */
+      /* Foundation Tokens */
+      --bg-base: #F8FAFC;              /* Slate-50 luminous background */
+      --bg-surface: #FFFFFF;           /* Pure white card surface */
+      --bg-subtle: #F1F5F9;            /* Slate-100 container fill */
+      --bg-overlay: rgba(15, 23, 42, 0.65);
 
       /* Typography Contrast Hierarchy */
       --text-primary: #0F172A;         /* Slate-900 (18.2:1 contrast) */
       --text-secondary: #334155;       /* Slate-700 (10.5:1 contrast) */
-      --text-muted: #64748B;           /* Slate-500 meta labels */
+      --text-muted: #64748B;           /* Slate-500 meta text */
       --text-subtle: #94A3B8;          /* Slate-400 */
 
-      /* Hairline Architectural Borders */
-      --border-light: #E2E8F0;         /* Slate-200 dividing rules */
-      --border-subtle: #F1F5F9;        /* Slate-100 */
-      --border-strong: #CBD5E1;        /* Slate-300 */
+      /* Tech Blue Palette */
+      --tech-blue: #2563EB;            /* Blue-600 */
+      --tech-blue-hover: #1D4ED8;      /* Blue-700 */
+      --tech-blue-bg: #EFF6FF;         /* Blue-50 */
+      --tech-blue-border: #BFDBFE;     /* Blue-200 */
+      --tech-blue-glow: rgba(37, 99, 235, 0.25);
 
-      /* Accents: Saffron, Forest Emerald, Alert Crimson */
-      --orange: #EA580C;               /* Sovereign saffron orange */
-      --orange-hover: #C2410C;
-      --orange-bg: #FFF7ED;
-      --orange-border: #FED7AA;
-      --orange-glow: rgba(234, 88, 12, 0.22);
+      /* Warm Amber Palette */
+      --amber: #D97706;                /* Amber-600 */
+      --amber-hover: #B45309;          /* Amber-700 */
+      --amber-bg: #FFFBEB;             /* Amber-50 */
+      --amber-border: #FDE68A;         /* Amber-200 */
+      --amber-glow: rgba(217, 119, 6, 0.25);
 
-      --emerald: #16A34A;              /* Agricultural green */
-      --emerald-dark: #15803D;         /* Forest green for editorial serif */
+      /* Status Tokens */
+      --emerald: #16A34A;              /* Green-600 */
       --emerald-bg: #DCFCE7;
       --emerald-border: #86EFAC;
-
-      --crimson: #DC2626;              /* CIB&RC safety red */
+      --crimson: #DC2626;              /* Red-600 */
       --crimson-bg: #FEF2F2;
       --crimson-border: #FCA5A5;
 
+      /* Borders & Shadows */
+      --border-light: #E2E8F0;         /* Slate-200 */
+      --border-strong: #CBD5E1;        /* Slate-300 */
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.1);
+      --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+
       /* Font Families */
       --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-display: 'Manrope', 'Space Grotesk', sans-serif;
-      --font-body: 'Noto Sans', 'Noto Sans Kannada', 'Noto Sans Devanagari', 'Noto Sans Tamil', sans-serif;
+      --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+      --font-indic: 'Noto Sans Kannada', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
 
       /* Line height to prevent Brahmic matra clipping */
       --lh-body: 1.65;
@@ -71,22 +91,28 @@
     body {
       background-color: var(--bg-base);
       color: var(--text-primary);
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       line-height: var(--lh-body);
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
+    /* Accessibility focus rings */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--tech-blue);
+      outline-offset: 2px;
+    }
+
     /* ==========================================================================
-       1. MDS COLLECTIVE: REAL-TIME RADAR & FIELD INTELLIGENCE TICKER
+       TOP STATUS TICKER (MDS COLLECTIVE RADAR)
        ========================================================================== */
-    .mds-ticker {
+    .top-ticker {
       background: #FFFFFF;
       border-bottom: 1px solid var(--border-light);
       padding: 0.5rem 1.5rem;
       font-size: 0.78rem;
     }
-    .mds-ticker-inner {
+    .ticker-inner {
       max-width: 1320px;
       margin: 0 auto;
       display: flex;
@@ -94,32 +120,32 @@
       justify-content: space-between;
       gap: 1.5rem;
     }
-    .pulse-status {
+    .ticker-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
       font-family: var(--font-mono);
       font-weight: 700;
-      color: var(--emerald-dark);
+      color: var(--emerald);
       background: var(--emerald-bg);
       padding: 0.25rem 0.65rem;
-      border-radius: 9999px;
+      border-radius: var(--radius-pill);
       border: 1px solid var(--emerald-border);
       white-space: nowrap;
     }
-    .pulse-led {
+    .pulse-dot {
       width: 7px;
       height: 7px;
       background: var(--emerald);
       border-radius: 50%;
       box-shadow: 0 0 8px var(--emerald);
-      animation: pulseLed 2s infinite;
+      animation: pulseRadar 2s infinite;
     }
-    @keyframes pulseLed {
+    @keyframes pulseRadar {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.85); }
     }
-    .ticker-scroll-text {
+    .ticker-text {
       color: var(--text-secondary);
       font-size: 0.8rem;
       white-space: nowrap;
@@ -133,12 +159,12 @@
       gap: 0.75rem;
       flex-shrink: 0;
     }
-    .chip-btn {
+    .ticker-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       padding: 0.35rem 0.75rem;
-      border-radius: 6px;
+      border-radius: var(--radius-sm);
       background: #FFFFFF;
       border: 1px solid var(--border-strong);
       color: var(--text-primary);
@@ -146,115 +172,156 @@
       font-family: var(--font-mono);
       font-size: 0.74rem;
       font-weight: 600;
+      cursor: pointer;
       transition: all 0.2s ease;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      box-shadow: var(--shadow-sm);
     }
-    .chip-btn:hover {
+    .ticker-btn:hover {
       background: var(--bg-subtle);
       border-color: var(--text-primary);
     }
-    .chip-btn.active {
-      background: var(--orange-bg);
-      border-color: var(--orange-border);
-      color: var(--orange);
-    }
 
     /* ==========================================================================
-       2. SARVAM AI: SIGNATURE HEADER & NAV
+       STICKY HEADER & NAVIGATION
        ========================================================================== */
-    .master-nav {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-light);
       padding: 0.85rem 1.5rem;
     }
-    .nav-inner {
+    .header-inner {
       max-width: 1320px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .brand-logo {
+    .brand-wrap {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.75rem;
       text-decoration: none;
       color: var(--text-primary);
     }
-    .sarvam-wordmark {
-      font-family: var(--font-display);
+    .brand-logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px var(--tech-blue-glow);
+    }
+    .brand-text-block {
+      display: flex;
+      align-items: baseline;
+      gap: 0.45rem;
+    }
+    .brand-title {
+      font-family: var(--font-sans);
       font-weight: 800;
-      font-size: 1.45rem;
-      letter-spacing: -0.04em;
-      color: var(--text-primary);
+      font-size: 1.25rem;
+      letter-spacing: -0.03em;
     }
-    .brand-divider {
-      color: var(--border-strong);
-      font-weight: 300;
-      font-size: 1.2rem;
+    .brand-kannada {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-family: var(--font-indic);
     }
-    .kisan-tag {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--orange);
-    }
-    .nav-links {
+    .nav-menu {
       display: flex;
       align-items: center;
       gap: 2rem;
     }
-    .nav-link {
+    .nav-item {
       color: var(--text-secondary);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.92rem;
+      cursor: pointer;
       transition: color 0.2s ease;
     }
-    .nav-link:hover {
-      color: var(--text-primary);
+    .nav-item:hover { color: var(--tech-blue); }
+    .header-user-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-    .nav-cta {
+    .btn-lang-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-lang-pill:hover {
+      background: #FFFFFF;
+      border-color: var(--tech-blue);
+      color: var(--tech-blue);
+    }
+    .btn-profile-trigger {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-strong);
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .btn-profile-trigger:hover {
+      border-color: var(--tech-blue);
+      transform: translateY(-1px);
+    }
+    .btn-auth-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       background: var(--text-primary);
       color: #FFFFFF;
-      padding: 0.65rem 1.25rem;
-      border-radius: 9999px;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
       font-weight: 700;
-      font-size: 0.88rem;
       text-decoration: none;
+      cursor: pointer;
       transition: all 0.2s ease;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+      box-shadow: var(--shadow-sm);
     }
-    .nav-cta:hover {
+    .btn-auth-trigger:hover {
       background: #1E293B;
       transform: translateY(-1px);
     }
 
     /* ==========================================================================
-       3. SARVAM AI HERO: TRADITIONAL INDIAN FLOURISH + SOVEREIGN HEADLINE
+       HERO SECTION (EXACT REQUIRED HEADLINES)
        ========================================================================== */
     .hero-stage {
-      padding: 4.5rem 1.5rem 3.5rem;
+      padding: 5rem 1.5rem 3.5rem;
       max-width: 1320px;
       margin: 0 auto;
       text-align: center;
       position: relative;
-    }
-    /* Sarvam Indian Ornamental Flourish SVG */
-    .sarvam-flourish {
-      width: 180px;
-      height: 28px;
-      margin: 0 auto 1.2rem;
-      display: block;
-      color: #94A3B8;
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -263,21 +330,21 @@
       background: #FFFFFF;
       border: 1px solid var(--border-light);
       padding: 0.4rem 1.25rem;
-      border-radius: 9999px;
+      border-radius: var(--radius-pill);
       font-family: var(--font-mono);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: #1E40AF;
+      color: var(--tech-blue);
       margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      box-shadow: var(--shadow-sm);
     }
     .mobile-br { display: none; }
     .hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 6.5vw, 5.2rem);
-      line-height: 1.06;
+      font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+      line-height: 1.05;
       letter-spacing: -0.02em;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
@@ -286,14 +353,14 @@
     }
     .hero-title em {
       font-style: italic;
-      color: var(--emerald-dark);
+      color: var(--tech-blue);
       font-weight: 400;
     }
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text-secondary);
-      max-width: 780px;
-      margin: 0 auto 2.8rem;
+      max-width: 820px;
+      margin: 0 auto 3rem;
       line-height: 1.7;
     }
     .hero-buttons {
@@ -302,811 +369,656 @@
       justify-content: center;
       gap: 1.2rem;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
-    .btn-dark {
+    .btn-hero-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
-      background: var(--text-primary);
+      background: var(--tech-blue);
       color: #FFFFFF;
-      padding: 0.95rem 2rem;
-      border-radius: 9999px;
+      padding: 1rem 2.2rem;
+      border-radius: var(--radius-pill);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.02rem;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+      cursor: pointer;
+      box-shadow: 0 8px 24px var(--tech-blue-glow);
       transition: all 0.2s ease;
+      border: none;
     }
-    .btn-dark:hover {
-      background: #1E293B;
+    .btn-hero-primary:hover {
+      background: var(--tech-blue-hover);
       transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
     }
-    .btn-outline {
+    .btn-hero-secondary {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
       background: #FFFFFF;
       color: var(--text-primary);
       border: 1px solid var(--border-strong);
-      padding: 0.95rem 2rem;
-      border-radius: 9999px;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-pill);
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.02rem;
       text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
       transition: all 0.2s ease;
     }
-    .btn-outline:hover {
+    .btn-hero-secondary:hover {
       background: var(--bg-subtle);
       border-color: var(--text-primary);
       transform: translateY(-1px);
     }
 
-    /* Sarvam "India Builds with Sarvam" Institutional Trust Bar */
-    .trust-strip {
-      border-top: 1px solid var(--border-light);
-      padding-top: 2.5rem;
+    /* Metrics Strip */
+    .metrics-strip {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      box-shadow: var(--shadow-md);
       margin-top: 1rem;
     }
-    .trust-label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
+    .metric-cell {
+      text-align: left;
+      border-left: 3px solid var(--amber);
+      padding-left: 1.2rem;
+    }
+    .metric-val {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
       font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .metric-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
-    }
-    .trust-logos {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-      opacity: 0.75;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: var(--text-secondary);
-      letter-spacing: -0.01em;
+      letter-spacing: 0.05em;
+      font-weight: 600;
     }
 
     /* ==========================================================================
-       4. SARVAM AI INTERACTIVE MODEL PLATFORM ("THE AI PLATFORM INDIA BUILDS ON")
+       MAIN INTERFACE: THE "SAMVAAD" HUB
        ========================================================================== */
-    .sarvam-platform-section {
+    .samvaad-section {
       background: #FFFFFF;
       border-top: 1px solid var(--border-light);
       border-bottom: 1px solid var(--border-light);
       padding: 6rem 1.5rem;
     }
-    .platform-container {
-      max-width: 1320px;
+    .samvaad-container {
+      max-width: 1200px;
       margin: 0 auto;
     }
-    .platform-header {
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--tech-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
       text-align: center;
-      max-width: 800px;
+    }
+    .section-heading {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      color: var(--text-primary);
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      font-size: 1.12rem;
+      text-align: center;
+      max-width: 720px;
       margin: 0 auto 3.5rem;
     }
-    .platform-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-      margin-bottom: 0.8rem;
-    }
-    .platform-header p {
-      color: var(--text-secondary);
-      font-size: 1.15rem;
-    }
-    .model-suite-tabs {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-    .model-tab-btn {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-light);
-      border-radius: 9999px;
-      padding: 0.65rem 1.35rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .model-tab-btn:hover {
-      background: #E2E8F0;
-      color: var(--text-primary);
-    }
-    .model-tab-btn.active {
-      background: var(--text-primary);
-      border-color: var(--text-primary);
-      color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-    }
-    
-    /* Interactive Console Box */
-    .console-card {
+
+    /* The Samvaad Hub Box */
+    .hub-card {
       background: var(--bg-base);
       border: 1px solid var(--border-strong);
       border-radius: 24px;
       padding: 2.5rem;
-      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-lg);
     }
-    .console-top {
+    .hub-header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
       border-bottom: 1px solid var(--border-light);
+      margin-bottom: 2rem;
     }
-    .console-input-bar {
+    .hub-mode-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--tech-blue-bg);
+      border: 1px solid var(--tech-blue-border);
+      color: var(--tech-blue);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-pill);
+    }
+
+    /* Quick Action Buttons (No emojis, 100% SVG) */
+    .quick-actions-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .quick-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-strong);
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .quick-action-btn:hover {
+      background: var(--tech-blue-bg);
+      border-color: var(--tech-blue);
+      color: var(--tech-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Conversation Chat Window */
+    .chat-window {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 1.8rem;
+      min-height: 380px;
+      max-height: 520px;
+      overflow-y: auto;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.02);
+    }
+    .chat-bubble {
+      max-width: 82%;
+      padding: 1.2rem 1.4rem;
+      border-radius: 18px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .bubble-user {
+      align-self: flex-end;
+      background: var(--text-primary);
+      color: #FFFFFF;
+      border-bottom-right-radius: 4px;
+    }
+    .bubble-ai {
+      align-self: flex-start;
+      background: #F8FAFC;
+      color: var(--text-primary);
+      border: 1px solid var(--border-light);
+      border-bottom-left-radius: 4px;
+    }
+    .ai-audio-player {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       background: #FFFFFF;
-      border: 1px solid var(--border-strong);
+      border: 1px solid var(--border-light);
       border-radius: 12px;
-      padding: 0.85rem 1.25rem;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      padding: 0.65rem 1rem;
+      margin-top: 0.85rem;
     }
-    .console-workflow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .workflow-step-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: 14px;
-      padding: 1.2rem;
-      text-align: left;
-    }
-    .step-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--emerald-dark);
-      background: var(--emerald-bg);
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-      margin-bottom: 0.75rem;
-    }
-    .step-title {
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: var(--text-primary);
-      margin-bottom: 0.35rem;
-    }
-    .step-desc {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-    .console-output-box {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-left: 4px solid var(--emerald-dark);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-align: left;
-    }
-
-    /* ==========================================================================
-       5. MDS COLLECTIVE: WALL OF CONFIDENCE & CURATED FIELD CASE STUDIES
-       ========================================================================== */
-    .mds-luxury-section {
-      background: var(--bg-base);
-      padding: 6rem 1.5rem;
-    }
-    .mds-container {
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-    .mds-header {
-      text-align: left;
-      margin-bottom: 3.5rem;
-    }
-    .mds-tag {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--emerald-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
-    }
-    .mds-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.8vw, 3.2rem);
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 0.8rem;
-    }
-    .mds-header p {
-      color: var(--text-secondary);
-      font-size: 1.12rem;
-      max-width: 700px;
-    }
-    
-    /* MDS Metric Ribbon with Hairline Dividing Grids */
-    .mds-metric-ribbon {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: 20px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
-      margin-bottom: 4rem;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-    }
-    .ribbon-cell {
-      padding: 2.2rem 2rem;
-      border-right: 1px solid var(--border-light);
-      text-align: left;
-    }
-    .ribbon-cell:last-child {
-      border-right: none;
-    }
-    .ribbon-number {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.05;
-      margin-bottom: 0.4rem;
-    }
-    .ribbon-caption {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* MDS Luxury Case Study Cards */
-    .case-studies-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .case-study-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: left;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .play-audio-btn {
+      width: 36px;
+      height: 36px;
+      background: var(--tech-blue);
+      border: none;
+      border-radius: 50%;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .play-audio-btn:hover { transform: scale(1.08); }
+    .audio-waveform-canvas {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 20px;
+      flex: 1;
+    }
+    .wave-bar {
+      width: 3px;
+      background: var(--tech-blue);
+      border-radius: 2px;
+      animation: waveDance 1.2s infinite ease-in-out;
+    }
+    @keyframes waveDance {
+      0%, 100% { height: 6px; }
+      50% { height: 18px; }
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.1s; }
+    .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+    .wave-bar:nth-child(6) { animation-delay: 0.25s; }
+    .wave-bar:nth-child(7) { animation-delay: 0.35s; }
+
+    /* The Prominent Microphone Controller */
+    .hub-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 1rem;
     }
-    .case-study-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.08);
-    }
-    .case-location {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.8rem;
-    }
-    .case-study-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-      line-height: 1.25;
-    }
-    .case-impact {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: 1.5rem;
-    }
-    .case-badge {
-      display: inline-flex;
+    .big-mic-button {
+      width: 84px;
+      height: 84px;
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+      border: none;
+      border-radius: 50%;
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.75rem;
+      justify-content: center;
+      color: #FFFFFF;
+      cursor: pointer;
+      box-shadow: 0 10px 30px var(--tech-blue-glow);
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .big-mic-button:hover {
+      transform: scale(1.06);
+      box-shadow: 0 14px 38px rgba(37, 99, 235, 0.4);
+    }
+    .big-mic-button.recording {
+      background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+      animation: pulseRecord 1.5s infinite;
+    }
+    @keyframes pulseRecord {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
+      50% { box-shadow: 0 0 0 18px rgba(220, 38, 38, 0); }
+    }
+    .mic-hint-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Structured Response Cards Inside Chat */
+    .structured-res-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-top: 0.85rem;
+    }
+    .res-grid-badges {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .res-badge-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
       border-radius: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.78rem;
       font-weight: 700;
-      background: var(--emerald-bg);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
-      width: fit-content;
     }
 
     /* ==========================================================================
-       6. SPIKES LANGUAGE LEARNING APP: MOBILE SHOWCASE (#the-app)
+       SLIDE-OVER / MODAL: AUTHENTICATION (LOG IN / SIGN UP)
        ========================================================================== */
-    .app-section {
-      background: #F1F5F9;
-      border-top: 1px solid var(--border-light);
-      border-bottom: 1px solid var(--border-light);
-      padding: 6rem 1.5rem;
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-overlay);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: fadeIn 0.2s ease;
     }
-    .app-container {
-      max-width: 1320px;
-      margin: 0 auto;
+    .modal-overlay.active { display: flex; }
+    .auth-modal-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 460px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-modal);
+      position: relative;
     }
-    .app-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 3.5rem;
-    }
-    .app-header-left {
-      max-width: 600px;
-    }
-    .app-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: var(--text-primary);
-    }
-    .app-header h2 em {
-      color: var(--emerald-dark);
-      font-family: var(--font-serif);
-      font-weight: 600;
-      font-style: italic;
-    }
-    .app-header-right {
-      max-width: 480px;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    .app-tabs {
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 32px;
+      height: 32px;
+      background: var(--bg-subtle);
+      border: none;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 2.5rem;
-      border-bottom: 1px solid var(--border-strong);
-      margin-bottom: 4rem;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
     }
-    .tab-button {
+    .modal-close-btn:hover { background: #E2E8F0; color: var(--text-primary); }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 2rem;
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 0.75rem 0;
       background: transparent;
       border: none;
-      padding: 0.85rem 0.2rem;
-      font-family: var(--font-display);
-      font-size: 1.08rem;
-      font-weight: 600;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1rem;
       color: var(--text-muted);
       cursor: pointer;
       position: relative;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
     }
-    .tab-button:hover {
+    .auth-tab-btn.active {
       color: var(--text-primary);
     }
-    .tab-button.selected {
-      color: var(--text-primary);
-      font-weight: 700;
-    }
-    .tab-button.selected::after {
+    .auth-tab-btn.active::after {
       content: '';
       position: absolute;
       bottom: -1px;
       left: 0;
       width: 100%;
-      height: 3px;
-      background: var(--emerald-dark);
-      border-radius: 3px 3px 0 0;
+      height: 2px;
+      background: var(--tech-blue);
     }
-    .app-display {
-      display: grid;
-      grid-template-columns: 1fr 1.35fr;
-      gap: 4.5rem;
-      align-items: center;
-    }
-    .app-caption h3 {
-      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.4rem;
-      color: var(--text-primary);
-    }
-    .app-caption h3 em {
-      color: var(--emerald-dark);
-      font-family: var(--font-serif);
-      font-weight: 600;
-      font-style: italic;
-    }
-    .app-caption p {
-      font-size: 1.12rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 2.2rem;
-      max-width: 500px;
-    }
-    .action-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--orange);
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 1.05rem;
-      transition: gap 0.2s ease;
-    }
-    .action-link:hover {
-      gap: 0.8rem;
-      color: var(--orange-hover);
-    }
-    .app-phones {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    .phone {
-      width: 320px;
-      background: #FFFFFF;
-      border: 8px solid #CBD5E1;
-      border-radius: 42px;
-      padding: 1.5rem 1.25rem 2rem;
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.05);
-      position: relative;
-      z-index: 2;
-    }
-    .phone-top-bar {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 1.2rem;
-    }
-    .phone-brand-tag {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.6rem;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: var(--text-primary);
-    }
-    .phone-lang-pill {
-      background: var(--emerald-bg);
-      border: 1px solid var(--emerald-border);
-      color: var(--emerald-dark);
-      font-size: 0.68rem;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 9999px;
-    }
-    .phone h4 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 0.2rem;
-    }
-    .phone p {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-    }
-    .phone-progress-bar {
-      width: 100%;
-      height: 6px;
-      background: var(--bg-subtle);
-      border-radius: 9999px;
-      overflow: hidden;
+    .form-group {
       margin-bottom: 1.25rem;
-    }
-    .phone-progress-fill {
-      height: 100%;
-      width: 70%;
-      background: linear-gradient(90deg, #16A34A 0%, #22C55E 100%);
-      border-radius: 9999px;
-      transition: width 0.4s ease;
-    }
-    .phone-mic-card {
-      background: #FFF7ED;
-      border: 1px solid #FED7AA;
-      border-radius: 20px;
-      padding: 1.8rem 1.2rem;
-      text-align: center;
-      margin-bottom: 1.2rem;
-    }
-    .phone-mic-circle {
-      width: 68px;
-      height: 68px;
-      background: var(--orange);
-      border-radius: 50%;
-      margin: 0 auto 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 24px var(--orange-glow);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .phone-mic-circle:hover {
-      transform: scale(1.05);
-    }
-    .phone-wave {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
-      height: 22px;
-      margin-bottom: 1rem;
-    }
-    .phone-wave-bar {
-      width: 3px;
-      background: var(--orange);
-      border-radius: 3px;
-      animation: wavePulse 1.2s infinite ease-in-out;
-    }
-    .phone-wave-bar:nth-child(2) { animation-delay: 0.2s; height: 16px; }
-    .phone-wave-bar:nth-child(3) { animation-delay: 0.4s; height: 22px; }
-    .phone-wave-bar:nth-child(4) { animation-delay: 0.1s; height: 14px; }
-    .phone-wave-bar:nth-child(5) { animation-delay: 0.3s; height: 19px; }
-    @keyframes wavePulse {
-      0%, 100% { transform: scaleY(0.4); }
-      50% { transform: scaleY(1); }
-    }
-    .phone-transcript-pill {
-      background: #FFFFFF;
-      border: 1px solid #FED7AA;
-      border-radius: 12px;
-      padding: 0.75rem 0.9rem;
-      font-size: 0.82rem;
-      line-height: 1.5;
-      color: #9A3412;
-      font-weight: 600;
       text-align: left;
-      min-height: 62px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
-    .phone-cibrc-notice {
-      background: var(--crimson-bg);
-      border: 1px solid var(--crimson-border);
-      border-radius: 12px;
-      padding: 0.75rem 0.85rem;
-      font-size: 0.68rem;
-      color: #991B1B;
-      line-height: 1.45;
-    }
-    .phone-cibrc-title {
-      font-family: var(--font-mono);
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
       font-weight: 700;
-      color: var(--crimson);
-      margin-bottom: 0.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
       text-transform: uppercase;
-      font-size: 0.65rem;
+      letter-spacing: 0.04em;
     }
-    .phone.secondary {
-      position: absolute;
-      right: -80px;
-      top: 25px;
-      width: 300px;
+    .form-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      transition: border-color 0.2s ease;
+    }
+    .form-input:focus {
+      border-color: var(--tech-blue);
+      outline: none;
+    }
+    .btn-submit-auth {
+      width: 100%;
+      padding: 0.95rem;
+      background: var(--tech-blue);
+      color: #FFFFFF;
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s ease;
+    }
+    .btn-submit-auth:hover { background: var(--tech-blue-hover); }
+
+    /* ==========================================================================
+       MODAL: ONBOARDING & SETTINGS (LANGUAGE + CROP DETAILS)
+       ========================================================================== */
+    .onboarding-card {
       background: #FFFFFF;
-      border: 8px solid #E2E8F0;
-      border-radius: 40px;
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(15, 23, 42, 0.05);
-      z-index: 1;
-      transform: rotate(4deg);
-      transition: transform 0.3s ease;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 580px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-modal);
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
-    .phone.secondary:hover {
-      transform: rotate(0deg) scale(1.02);
-      z-index: 3;
-    }
-    .soil-badge-grid {
+    .lang-grid-selection {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      margin: 1rem 0;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2rem;
     }
-    .soil-bag-item {
+    .lang-card-option {
       background: var(--bg-subtle);
       border: 1px solid var(--border-light);
-      border-radius: 10px;
-      padding: 0.6rem 0.5rem;
+      border-radius: 12px;
+      padding: 1rem 0.5rem;
       text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .soil-bag-qty {
-      font-family: var(--font-display);
+    .lang-card-option:hover {
+      background: #FFFFFF;
+      border-color: var(--tech-blue);
+    }
+    .lang-card-option.selected {
+      background: var(--tech-blue-bg);
+      border-color: var(--tech-blue);
+      color: var(--tech-blue);
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .lang-native-script {
+      font-size: 1.15rem;
       font-weight: 800;
-      font-size: 1.05rem;
-      color: var(--text-primary);
+      display: block;
+      margin-bottom: 0.2rem;
+      font-family: var(--font-indic);
     }
-    .soil-bag-name {
-      font-size: 0.65rem;
+    .lang-english-label {
+      font-size: 0.75rem;
       color: var(--text-muted);
-      font-weight: 600;
+      text-transform: uppercase;
     }
-    .rain-delay-pill {
-      background: #FEF3C7;
-      border: 1px solid #FCD34D;
-      border-radius: 10px;
-      padding: 0.6rem 0.75rem;
-      font-size: 0.7rem;
-      color: #92400E;
-      line-height: 1.4;
-      text-align: left;
+    .crop-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .crop-chip {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-light);
+      padding: 0.45rem 0.95rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .crop-chip.selected {
+      background: var(--amber-bg);
+      border-color: var(--amber);
+      color: var(--amber-hover);
+      font-weight: 700;
     }
 
     /* ==========================================================================
-       7. SARVAM AI: ENTERPRISE DATA DENSITY & APMC MANDI RATES
+       SLIDE-OUT DRAWER: PROFILE / MENU (PAST CHATS, SAVED ADVICE, LOGOUT)
        ========================================================================== */
-    .mandi-section {
-      background: var(--bg-base);
-      padding: 6rem 1.5rem;
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-overlay);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      animation: fadeIn 0.2s ease;
     }
-    .mandi-container {
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-    .mandi-header {
-      margin-bottom: 3.5rem;
-    }
-    .mandi-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: 0.6rem;
-    }
-    .mandi-header p {
-      color: var(--text-secondary);
-      font-size: 1.08rem;
-    }
-    .mandi-grid-desktop {
-      display: grid;
-      grid-template-columns: 1.6fr 1.1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-    .mandi-table-box {
+    .drawer-overlay.active { display: block; }
+    .profile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
       background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      box-shadow: var(--shadow-modal);
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
     }
-    .table-top-bar {
-      padding: 1.2rem 1.5rem;
+    .profile-drawer.active {
+      transform: translateX(0);
+    }
+    .drawer-header {
+      padding: 1.5rem 2rem;
       border-bottom: 1px solid var(--border-light);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #FFFFFF;
     }
-    .table-top-bar h4 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--text-primary);
-    }
-    .live-sync-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--orange);
-      background: var(--orange-bg);
-      border: 1px solid var(--orange-border);
-      padding: 0.25rem 0.6rem;
-      border-radius: 9999px;
-    }
-    .mandi-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-    .mandi-table th {
-      padding: 0.9rem 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border-light);
-      background: #F8FAFC;
-    }
-    .mandi-table td {
-      padding: 1.1rem 1.5rem;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-    .mandi-table tr:last-child td {
-      border-bottom: none;
-    }
-    .trend-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.25rem 0.55rem;
-      border-radius: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-    .trend-up {
-      background: var(--emerald-bg);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
-    }
-    .trend-down {
-      background: #FEE2E2;
-      color: #B91C1C;
-      border: 1px solid #FCA5A5;
-    }
-    .mandi-insight-box {
-      background: #FFFFFF;
-      border: 1px solid var(--border-light);
-      border-left: 4px solid var(--orange);
-      border-radius: 20px;
+    .drawer-body {
       padding: 2rem;
-      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      overflow-y: auto;
+      flex: 1;
     }
-    .insight-header {
+    .farmer-profile-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
+      gap: 1rem;
     }
-    .insight-text {
-      font-size: 1.02rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
+    .avatar-circle {
+      width: 52px;
+      height: 52px;
+      background: var(--tech-blue);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .drawer-tab-row {
+      display: flex;
+      border-bottom: 1px solid var(--border-light);
       margin-bottom: 1.5rem;
     }
-    .insight-text strong {
-      color: var(--text-primary);
+    .drawer-tab-btn {
+      flex: 1;
+      padding: 0.65rem 0;
+      background: transparent;
+      border: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
     }
-    .imd-spray-pill {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
+    .drawer-tab-btn.active {
+      color: var(--tech-blue);
+    }
+    .drawer-tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--tech-blue);
+    }
+    .history-item-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
       border-radius: 12px;
-      padding: 0.85rem 1rem;
-      font-size: 0.82rem;
-      color: #166534;
-      line-height: 1.5;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .history-item-card:hover {
+      border-color: var(--tech-blue);
+      transform: translateY(-1px);
+    }
+    .drawer-footer {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border-light);
+      background: var(--bg-base);
+    }
+    .btn-logout {
+      width: 100%;
+      padding: 0.85rem;
+      background: #FFFFFF;
+      color: var(--crimson);
+      border: 1px solid var(--crimson-border);
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-logout:hover {
+      background: var(--crimson-bg);
     }
 
     /* Footer */
@@ -1125,490 +1037,333 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
-    /* Responsive adjustments */
+    /* Responsive */
     @media (max-width: 980px) {
-      .app-display { grid-template-columns: 1fr; gap: 3rem; }
-      .console-workflow-grid { grid-template-columns: 1fr 1fr; }
-      .mds-metric-ribbon { grid-template-columns: 1fr 1fr; }
-      .case-studies-grid { grid-template-columns: 1fr; }
-      .mandi-grid-desktop { grid-template-columns: 1fr; }
-      .phone.secondary { display: none; }
-      .nav-links { display: none; }
+      .metrics-strip { grid-template-columns: 1fr 1fr; }
+      .nav-menu { display: none; }
+      .lang-grid-selection { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 640px) {
-      body { overflow-x: hidden; }
-      .hero-stage { padding: 2.5rem 1rem 1.8rem; max-width: 100vw; box-sizing: border-box; overflow-x: hidden; }
-      .hero-title { font-size: clamp(2rem, 7.5vw, 2.7rem); line-height: 1.15; word-wrap: break-word; overflow-wrap: break-word; }
+      .hero-stage { padding: 3rem 1rem 2rem; }
+      .hero-title { font-size: clamp(1.65rem, 5.8vw, 2.2rem); line-height: 1.15; word-wrap: break-word; }
       .mobile-br { display: block; }
-      .hero-eyebrow { font-size: 0.68rem; padding: 0.35rem 0.75rem; max-width: 90vw; white-space: normal; text-align: center; }
-      .hero-subtitle { font-size: 0.98rem; padding: 0 0.5rem; }
-      .hero-buttons { flex-direction: column; width: 100%; gap: 0.75rem; padding: 0 0.5rem; box-sizing: border-box; }
-      .hero-buttons .btn-dark, .hero-buttons .btn-outline { width: 100%; justify-content: center; box-sizing: border-box; }
-      .console-workflow-grid { grid-template-columns: 1fr; }
-      .mds-metric-ribbon { grid-template-columns: 1fr; }
-      .ribbon-cell { border-right: none; border-bottom: 1px solid var(--border-light); }
-      .mds-ticker-inner { flex-direction: column; gap: 0.4rem; align-items: flex-start; padding: 0.4rem 1rem; }
+      .brand-kannada { display: none; }
+      .btn-profile-trigger { padding: 0.35rem 0.65rem; font-size: 0.78rem; }
+      .btn-lang-pill { padding: 0.35rem 0.65rem; font-size: 0.75rem; }
+      .hero-subtitle { font-size: 1.05rem; }
+      .hero-buttons { flex-direction: column; width: 100%; gap: 0.75rem; }
+      .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; }
+      .metrics-strip { grid-template-columns: 1fr; gap: 1.2rem; }
+      .samvaad-section { padding: 3rem 1rem; }
+      .hub-card { padding: 1.5rem 1rem; }
+      .chat-window { min-height: 320px; padding: 1rem; }
+      .chat-bubble { max-width: 95%; font-size: 0.92rem; }
+      .quick-actions-bar { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+      .footer-inner { flex-direction: column; text-align: center; justify-content: center; }
       .ticker-actions { display: none; }
-      .ticker-scroll-text { width: 100%; font-size: 0.72rem; }
-      .master-nav { padding: 0.5rem 0.75rem; }
-      .nav-inner { padding: 0; width: 100%; }
-      .nav-cta { padding: 0.35rem 0.65rem; font-size: 0.72rem; }
-      .app-section { padding: 3rem 1rem; }
-      .app-tabs { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding-bottom: 0.5rem; }
-      .tab-button { font-size: 0.9rem; padding: 0.5rem 0.2rem; }
-      .app-caption h3 { font-size: clamp(1.6rem, 6.5vw, 2.2rem); }
-      .app-phones { justify-content: center; }
-      .phone { width: 100%; max-width: 310px; }
-      .mandi-section { padding: 3rem 1rem; }
-      .mandi-table-box { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .footer-inner { flex-direction: column; text-align: center; justify-content: center; gap: 1rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- =========================================================================
-       1. MDS COLLECTIVE: LIVE REAL-TIME STATUS TICKER
+       1. TOP STATUS TICKER (MDS RADAR)
        ========================================================================= -->
-  <aside class="mds-ticker">
-    <div class="mds-ticker-inner">
-      <div class="pulse-status">
-        <span class="pulse-led"></span>
-        <span>LIVE MONITORING [15KM RADIUS]</span>
+  <aside class="top-ticker">
+    <div class="ticker-inner">
+      <div class="ticker-badge">
+        <span class="pulse-dot"></span>
+        <span>LIVE RADAR: KOLAR DISTRICT</span>
       </div>
 
-      <div class="ticker-scroll-text font-mono">
-        KOLAR DISTRICT: No Spodoptera outbreak detected - Next rain window: 48h (Low Risk) - Urea statutory stock at Primary PACS: 420 Bags.
+      <div class="ticker-text font-mono">
+        NO SPODOPTERA PEST OUTBREAK - NEXT RAIN WINDOW: 48H (14.2MM EXPECTED) - PRIMARY PACS UREA RESERVE: 420 BAGS.
       </div>
 
       <div class="ticker-actions">
-        <a href="#sarvam-models" class="chip-btn active">
-          <span>🔊 SARVAM AI PLAYGROUND</span>
-        </a>
-        <a href="tel:18001801551" class="chip-btn" style="border-color:var(--crimson-border); color:var(--crimson);">
-          <span>📞 KVK 1800-180-1551</span>
+        <button class="ticker-btn" onclick="openOnboarding()">
+          <span>SETTINGS / CROP PROFILE</span>
+        </button>
+        <a href="tel:18001801551" class="ticker-btn" style="border-color:var(--crimson-border); color:var(--crimson);">
+          <span>KVK 1800-180-1551</span>
         </a>
       </div>
     </div>
   </aside>
 
   <!-- =========================================================================
-       2. SARVAM AI SIGNATURE HEADER
+       2. STICKY HEADER & NAVIGATION
        ========================================================================= -->
-  <header class="master-nav">
-    <div class="nav-inner">
-      <a href="#" class="brand-logo">
-        <span class="sarvam-wordmark">sarvam</span>
-        <span class="brand-divider">/</span>
-        <span class="kisan-tag">kisan.samvaad</span>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand-wrap">
+        <div class="brand-logo-icon">
+          <!-- Lucide Sprout / Grain SVG -->
+          <svg style="width:22px; height:22px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" d="M7 20h10M12 20V10m0 0a5 5 0 015-5c0 3-2 5-5 5zm0 0a5 5 0 00-5-5c0 3 2 5 5 5z"/>
+          </svg>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">KisanSamvaad</span>
+          <span class="brand-kannada">ಕಿಸಾನ್ ಸಂವಾದ</span>
+        </div>
       </a>
 
-      <nav class="nav-links">
-        <a href="#sarvam-models" class="nav-link">Model Suite</a>
-        <a href="#the-app" class="nav-link">Mobile Experience</a>
-        <a href="#enterprise-mandi" class="nav-link">Mandi Radar</a>
-        <a href="#mds-cases" class="nav-link">Field Impact</a>
+      <nav class="nav-menu">
+        <a href="#samvaad-hub" class="nav-item">Voice Samvaad</a>
+        <a href="#samvaad-hub" onclick="handleQuickAction('mandi')" class="nav-item">Mandi Radar</a>
+        <a href="#samvaad-hub" onclick="handleQuickAction('weather')" class="nav-item">Weather &amp; Spray</a>
+        <a href="#samvaad-hub" onclick="handleQuickAction('fertilizer')" class="nav-item">Soil Intelligence</a>
       </nav>
 
-      <a href="#the-app" class="nav-cta">
-        <span>Launch Voice AI</span>
-        <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-        </svg>
-      </a>
+      <div class="header-user-actions">
+        <!-- Language Switcher Pill -->
+        <button class="btn-lang-pill" onclick="openOnboarding()" title="Change Indic Language">
+          <!-- Lucide Globe SVG -->
+          <svg style="width:15px; height:15px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+            <path stroke-width="2" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+          </svg>
+          <span id="headerLangTag">KN · ಕನ್ನಡ</span>
+        </button>
+
+        <!-- Authenticated Profile Trigger -->
+        <button class="btn-profile-trigger" id="profileBtn" onclick="openProfileDrawer()">
+          <span style="width:8px; height:8px; background:var(--emerald); border-radius:50%;"></span>
+          <span id="headerFarmerName">Ramesh Gowda</span>
+          <svg style="width:14px; height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- Guest Auth Trigger (hidden when logged in) -->
+        <button class="btn-auth-trigger" id="authBtn" onclick="openAuthModal('login')" style="display:none;">
+          <span>Sign In / Register</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- =========================================================================
-       3. SARVAM AI HERO: TRADITIONAL INDIAN FLOURISH + SOVEREIGN HEADLINE
+       3. HERO SECTION (EXACT REQUIRED HEADLINES)
        ========================================================================= -->
   <section class="hero-stage">
     
-    <!-- Exact Sarvam Indian Traditional Ornamental Flourish SVG -->
-    <svg class="sarvam-flourish" viewBox="0 0 260 38" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M130 19C118 19 110 9 96 9C82 9 74 23 58 23C46 23 40 15 30 15C22 15 16 20 8 20" stroke-width="1.8" stroke-linecap="round"/>
-      <path d="M130 19C142 19 150 9 164 9C178 9 186 23 202 23C214 23 220 15 230 15C238 15 244 20 252 20" stroke-width="1.8" stroke-linecap="round"/>
-      <circle cx="130" cy="19" r="3.5" fill="currentColor"/>
-      <circle cx="96" cy="9" r="2.2" fill="currentColor"/>
-      <circle cx="164" cy="9" r="2.2" fill="currentColor"/>
-      <circle cx="58" cy="23" r="2" fill="currentColor"/>
-      <circle cx="202" cy="23" r="2" fill="currentColor"/>
-    </svg>
-
     <div class="hero-eyebrow">
-      <span>India's Sovereign AI Platform for Agriculture</span>
+      <!-- Lucide Sparkles SVG -->
+      <svg style="width:15px; height:15px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+      </svg>
+      <span>SOVEREIGN INDIC VOICE &amp; DOCUMENT AI - POWERED BY SARVAM AI</span>
     </div>
 
+    <!-- REQUIRED HEADLINE -->
     <h1 class="hero-title">
-      Sovereign AI for all of<br class="mobile-br"> <em>India's 140M Farmers</em>
+      AI-powered voice intelligence<br class="mobile-br"> for <em>Indian agriculture</em>
     </h1>
 
+    <!-- REQUIRED SUB-HEADLINE -->
     <p class="hero-subtitle">
-      Built on sovereign compute. Powered by Sarvam Saaras-v4, Bulbul-v4, and Mayura-v1. Delivering population-scale agronomic impact in mother tongues.
+      KisanSamvaad uses indigenous Sarvam AI to give farmers instant, multilingual crop and market advice through simple voice commands.
     </p>
 
     <div class="hero-buttons">
-      <a href="#sarvam-models" class="btn-dark">
-        <span>Try Model Playground</span>
-        <svg style="width:18px; height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      <a href="#samvaad-hub" class="btn-hero-primary">
+        <!-- Lucide Mic SVG -->
+        <svg style="width:20px; height:20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
         </svg>
+        <span>Launch Voice Samvaad</span>
       </a>
-      <a href="#the-app" class="btn-outline">
-        <span>Open Mobile Companion</span>
-      </a>
+
+      <button class="btn-hero-secondary" onclick="openOnboarding()">
+        <!-- Lucide Settings SVG -->
+        <svg style="width:18px; height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span>Customize Language &amp; Crops</span>
+      </button>
     </div>
 
-    <!-- Sarvam "India Builds with Sarvam" Institutional Trust Bar -->
-    <div class="trust-strip">
-      <div class="trust-label">INDIA'S SOVEREIGN AGRICULTURAL STACK</div>
-      <div class="trust-logos">
-        <div class="trust-item">
-          <span>🏛️</span>
-          <span>ICAR</span>
-        </div>
-        <div class="trust-item">
-          <span>📈</span>
-          <span>AGMARKNET</span>
-        </div>
-        <div class="trust-item">
-          <span>🌦️</span>
-          <span>IMD MAUSAM</span>
-        </div>
-        <div class="trust-item">
-          <span>🌾</span>
-          <span>AgriStack</span>
-        </div>
-        <div class="trust-item">
-          <span>🛡️</span>
-          <span>CIB&amp;RC</span>
-        </div>
-        <div class="trust-item">
-          <span>🎓</span>
-          <span>UAS Bangalore</span>
-        </div>
+    <!-- Metrics Strip -->
+    <div class="metrics-strip">
+      <div class="metric-cell">
+        <div class="metric-val">140M+</div>
+        <div class="metric-lbl">Smallholder Cultivators</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">22</div>
+        <div class="metric-lbl">Indic Languages (Saaras-v4)</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">&lt; 250ms</div>
+        <div class="metric-lbl">Bulbul Voice Latency</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-val">100%</div>
+        <div class="metric-lbl">Deterministic Fertilizer Math</div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       4. SARVAM AI INTERACTIVE MODEL PLATFORM ("THE AI PLATFORM INDIA BUILDS ON")
+       4. MAIN INTERFACE: THE "SAMVAAD" HUB
        ========================================================================= -->
-  <section class="sarvam-platform-section" id="sarvam-models">
-    <div class="platform-container">
+  <section class="samvaad-section" id="samvaad-hub">
+    <div class="samvaad-container">
       
-      <div class="platform-header">
-        <div class="trust-label" style="color:var(--orange);">FOUNDATION MODEL SUITE</div>
-        <h2>The AI Platform India's Agronomy Builds On</h2>
-        <p>Frontier speech, vision, and reasoning models purpose-built for India's 140 million smallholders.</p>
-      </div>
+      <div class="section-eyebrow">THE LIVING INTERFACE</div>
+      <h2 class="section-heading">The “Samvaad” Hub</h2>
+      <p class="section-sub">
+        Speak in your native dialect. Sarvam Saaras-v4 transcribes with agricultural keyterms, while Bulbul-v4 provides natural spoken answers.
+      </p>
 
-      <!-- Sarvam Suite Tabs -->
-      <div class="model-suite-tabs">
-        <button class="model-tab-btn active" onclick="switchModelConsole('cowork')">
-          <span>🤖 Indus Krishi Cowork</span>
-        </button>
-        <button class="model-tab-btn" onclick="switchModelConsole('saaras')">
-          <span>🗣️ Saaras-v4 (ASR)</span>
-        </button>
-        <button class="model-tab-btn" onclick="switchModelConsole('bulbul')">
-          <span>🔊 Bulbul-v4 (TTS)</span>
-        </button>
-        <button class="model-tab-btn" onclick="switchModelConsole('parse')">
-          <span>📄 Document Parse (OCR)</span>
-        </button>
-      </div>
-
-      <!-- Live Interactive Console Card -->
-      <div class="console-card">
+      <div class="hub-card">
         
-        <div class="console-top">
-          <div style="text-align:left;">
-            <h4 id="consoleTitle" style="font-size:1.25rem; font-weight:800; color:var(--text-primary); margin-bottom:0.25rem;">
-              Indus Krishi Cowork: Autonomous Agronomic Agent
-            </h4>
-            <p id="consoleSub" style="font-size:0.85rem; color:var(--text-muted);">
-              Orchestrating multi-step soil chemistry, mandi market radar, and weather spray safety
-            </p>
+        <!-- Header Info Bar -->
+        <div class="hub-header-bar">
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <span class="hub-mode-tag">
+              <span class="pulse-dot"></span>
+              SARVAM SAARAS-V4 ACTIVE
+            </span>
+            <span style="font-size:0.85rem; color:var(--text-secondary); font-weight:600;" id="hubUserContext">
+              Ramesh Gowda · Kolar, Karnataka (2.0 Acres Tomato &amp; Ragi)
+            </span>
           </div>
-          <span class="live-sync-tag" style="background:#EFF6FF; border-color:#BFDBFE; color:#1D4ED8;">
-            SOVEREIGN RUNTIME
-          </span>
+
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <button class="ticker-btn" onclick="openOnboarding()">
+              <span id="activeLangBtn">ಕನ್ನಡ (Kannada)</span>
+            </button>
+            <button class="ticker-btn" onclick="clearChat()">
+              <span>Clear Session</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Dynamic Console Input Bar -->
-        <div class="console-input-bar">
-          <span style="font-size:1.1rem;">⚡</span>
-          <span id="consoleTask" style="font-weight:600; flex:1; text-align:left;">
-            Give Indus Krishi Cowork a task: "Plan fertilizer for 2 acres tomato in Kolar with high rainfall tomorrow"
-          </span>
-          <button onclick="runConsoleDemo()" style="background:var(--orange); color:#FFFFFF; border:none; padding:0.45rem 1rem; border-radius:8px; font-weight:700; font-size:0.82rem; cursor:pointer;">
-            Run Live Simulation
+        <!-- Quick-Action Query Buttons (No Emojis, Pure SVG) -->
+        <div class="quick-actions-bar">
+          <button class="quick-action-btn" onclick="handleQuickAction('mandi')">
+            <!-- Lucide Trending-up SVG -->
+            <svg style="width:16px; height:16px; color:var(--tech-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+            <span>Today's Mandi Prices</span>
+          </button>
+
+          <button class="quick-action-btn" onclick="handleQuickAction('weather')">
+            <!-- Lucide Cloud-Rain SVG -->
+            <svg style="width:16px; height:16px; color:var(--tech-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19 16.9A5 5 0 0018 7h-1.26a8 8 0 10-11.62 9M13 11v6m-4-3v6m8-3v6"/>
+            </svg>
+            <span>Weather &amp; Spray Window</span>
+          </button>
+
+          <button class="quick-action-btn" onclick="handleQuickAction('fertilizer')">
+            <!-- Lucide Flask/Test Tube SVG -->
+            <svg style="width:16px; height:16px; color:var(--amber);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+            <span>Soil-to-Rupee Fertilizer Plan</span>
+          </button>
+
+          <button class="quick-action-btn" onclick="handleQuickAction('pest')">
+            <!-- Lucide Shield-Alert SVG -->
+            <svg style="width:16px; height:16px; color:var(--crimson);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            <span>CIB&amp;RC Pest Advisory</span>
           </button>
         </div>
 
-        <!-- 4-Step Interactive Execution Flow -->
-        <div class="console-workflow-grid" id="consoleWorkflowGrid">
+        <!-- Chat Conversation Window -->
+        <div class="chat-window" id="chatWindow">
           
-          <div class="workflow-step-card">
-            <span class="step-badge">STEP 1: DOCUMENT OCR</span>
-            <div class="step-title">Sarvam Parse</div>
-            <div class="step-desc">Extracted Kolar Soil Card: N: 180kg (Low), P: 32kg (Med), K: 280kg (High).</div>
-          </div>
-
-          <div class="workflow-step-card">
-            <span class="step-badge">STEP 2: AGMARKNET</span>
-            <div class="step-title">Price Intelligence</div>
-            <div class="step-desc">Kolar APMC Tomato modal ₹1,850/q (▲ +6.8%). Stagger picking to Thursday.</div>
-          </div>
-
-          <div class="workflow-step-card">
-            <span class="step-badge" style="background:#FEF3C7; color:#92400E; border:1px solid #FCD34D;">STEP 3: IMD RADAR</span>
-            <div class="step-title">Spray Safety Delay</div>
-            <div class="step-desc">14.2mm rain expected. Postpone basal fertilizer application by 48h.</div>
-          </div>
-
-          <div class="workflow-step-card">
-            <span class="step-badge">STEP 4: BULBUL TTS</span>
-            <div class="step-title">Kannada Audio</div>
-            <div class="step-desc">Synthesized whole-bag advice: 4 DAP, 2 SSP, 6 Urea, 3 MOP = ₹13,199.</div>
-          </div>
-
-        </div>
-
-        <!-- Console Live Output Box -->
-        <div class="console-output-box" id="consoleOutputBox">
-          <div style="font-family:var(--font-mono); font-size:0.75rem; font-weight:700; color:var(--emerald-dark); margin-bottom:0.4rem; text-transform:uppercase;">
-            AGENT EXECUTION RESULT (DETERMINISTIC WHOLE-BAG PLAN)
-          </div>
-          <p id="consoleOutputText" style="font-size:1.05rem; color:var(--text-secondary); line-height:1.65;">
-            <strong>Kannada Speech Output:</strong> "2.0 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ: 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ ಬೇಕಾಗುತ್ತದೆ. ಒಟ್ಟು ಅಂದಾಜು ವೆಚ್ಚ ₹13,199. ನಾಳೆ ಮಳೆಯಾಗುವ ಸಾಧ್ಯತೆ ಇರುವುದರಿಂದ ಗೊಬ್ಬರ ಹಾಕುವುದನ್ನು 2 ದಿನ ಮುಂದೂಡಿ."
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       5. MDS COLLECTIVE: WALL OF CONFIDENCE & CURATED FIELD CASE STUDIES
-       ========================================================================= -->
-  <section class="mds-luxury-section" id="mds-cases">
-    <div class="mds-container">
-      
-      <div class="mds-header">
-        <div class="mds-tag">02 / WALL OF CONFIDENCE &amp; TRUST</div>
-        <h2>Proven Impact Across India's Agricultural Belts</h2>
-        <p>Human-led agronomic extension, AI-enabled speed. 100% deterministic calculations grounded in ICAR university research.</p>
-      </div>
-
-      <!-- MDS Minimalist Metric Ribbon with Hairline Dividers -->
-      <div class="mds-metric-ribbon">
-        <div class="ribbon-cell">
-          <div class="ribbon-number">100%</div>
-          <div class="ribbon-caption">Deterministic whole-bag arithmetic with zero LLM hallucinations</div>
-        </div>
-        <div class="ribbon-cell">
-          <div class="ribbon-number">22</div>
-          <div class="ribbon-caption">Indic languages supported natively with domain-biased keyterms</div>
-        </div>
-        <div class="ribbon-cell">
-          <div class="ribbon-number">&lt; 250ms</div>
-          <div class="ribbon-caption">Time to first spoken byte via streaming Sarvam Bulbul synthesis</div>
-        </div>
-        <div class="ribbon-cell">
-          <div class="ribbon-number">0</div>
-          <div class="ribbon-caption">Banned chemical combinations recommended (CIB&amp;RC fail-closed)</div>
-        </div>
-      </div>
-
-      <!-- MDS Curated Case Study Cards -->
-      <div class="case-studies-grid">
-        
-        <div class="case-study-card">
-          <div>
-            <div class="case-location">Kolar Tomato Belt, Karnataka</div>
-            <h3>Ramesh Gowda: 2.0 Acres Hybrid Tomato</h3>
-            <p class="case-impact">
-              Eliminated 3 unneeded bags of DAP after recognizing residual Phosphorus in soil test. Delayed basal application by 48 hours to avert fertilizer runoff ahead of a 14.2mm rain event.
+          <!-- Message 1: User Voice Input -->
+          <div class="chat-bubble bubble-user">
+            <div style="font-size:0.75rem; opacity:0.75; margin-bottom:0.35rem; font-family:var(--font-mono);">
+              SPOKEN VOICE QUERY (KANNADA) · 10:14 AM
+            </div>
+            <p style="font-size:1.05rem; font-family:var(--font-indic);">
+              “ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು ಮತ್ತು ಕೋಲಾರ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಇವತ್ತಿನ ಬೆಲೆ ಎಷ್ಟು?”
             </p>
+            <div style="font-size:0.8rem; opacity:0.85; margin-top:0.4rem; font-style:italic;">
+              “How much fertilizer for 2 acres tomato and what is today's Kolar mandi price?”
+            </div>
           </div>
-          <span class="case-badge">Saved ₹3,400/acre</span>
-        </div>
 
-        <div class="case-study-card">
-          <div>
-            <div class="case-location">Warangal Cotton Cluster, Telangana</div>
-            <h3>Mallesh Goud: 5.0 Acres Bt Cotton</h3>
-            <p class="case-impact">
-              Automated safety guardrail intercepted an unapproved cocktail of Monocrotophos and Acephate. Successfully guided farmer to university-approved biological formulation for pink bollworm.
-            </p>
-          </div>
-          <span class="case-badge">100% CIB&amp;RC Compliant</span>
-        </div>
-
-        <div class="case-study-card">
-          <div>
-            <div class="case-location">Mandya Canal Basin, Karnataka</div>
-            <h3>Siddaraju: 3.5 Acres Indaf-5 Ragi</h3>
-            <p class="case-impact">
-              Monitored AGMARKNET modal rate volatility across Bangalore and Yeshwanthpur. Timed dispatch to capture peak ₹3,850/quintal price window, improving net harvest realization.
-            </p>
-          </div>
-          <span class="case-badge">+₹180/quintal Gain</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       6. SPIKES LANGUAGE LEARNING APP: MOBILE SHOWCASE (#the-app)
-       ========================================================================= -->
-  <section class="app-section" id="the-app">
-    <div class="app-container">
-      
-      <div class="app-header">
-        <div class="app-header-left">
-          <div class="mds-tag">03 / MOBILE COMPANION APP</div>
-          <h2>A little question.<br/><em>A lot of harvest.</em></h2>
-        </div>
-        <div class="app-header-right">
-          Farming shouldn't feel like deciphering confusing chemical formulas. KisanSamvaad speaks in rustic mother tongues, turning laboratory NPK cards into bags and rupees.
-        </div>
-      </div>
-
-      <!-- Spikes Tabs with Active Underline -->
-      <div class="app-tabs">
-        <button class="tab-button selected" onclick="switchAppTab(0)">
-          <span>🎙️ Voice AI (Suno &amp; Bolo)</span>
-        </button>
-        <button class="tab-button" onclick="switchAppTab(1)">
-          <span>🧪 Soil-to-Rupee Planner</span>
-        </button>
-        <button class="tab-button" onclick="switchAppTab(2)">
-          <span>🏆 Community &amp; Streaks</span>
-        </button>
-      </div>
-
-      <!-- Spikes 2-Column Split Display -->
-      <div class="app-display">
-        
-        <!-- Left Column: Editorial Serif Caption -->
-        <div class="app-caption" id="appCaptionBox">
-          <div class="mds-tag" id="captionEyebrow">01 / Spoken agronomy in 22 languages</div>
-          <h3 id="captionTitle">Less guessing.<br/>More <em>“my crop is thriving.”</em></h3>
-          <p id="captionDesc">
-            Ask any question in Kannada, Hindi, or Tamil: from tomato leaf curl virus remedies to fertilizer schedules. Saaras-v4 transcribes with domain-biased keyterms, and Bulbul synthesizes natural voice in under 250ms.
-          </p>
-          <a href="javascript:void(0)" onclick="triggerLiveMic()" class="action-link" id="captionLink">
-            <span>Try speaking in Kannada</span>
-            <svg style="width:18px; height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- Right Column: Spikes Dual-Phone Showcase Frame -->
-        <div class="app-phones">
-          
-          <!-- Primary Phone (Interactive Live App) -->
-          <div class="phone" id="phonePrimary">
-            <div class="phone-top-bar">
-              <span>9:41</span>
-              <span>5G 🔋</span>
+          <!-- Message 2: AI Agronomic Response -->
+          <div class="chat-bubble bubble-ai">
+            <div style="font-size:0.75rem; color:var(--tech-blue); font-weight:700; font-family:var(--font-mono); margin-bottom:0.4rem;">
+              SARVAM BULBUL-V4 AUDIO SYNTHESIS &amp; ICAR ADVISORY
             </div>
 
-            <div class="phone-brand-tag">
-              <span>kisan<span class="orange-dot">.</span>samvaad</span>
-              <span class="phone-lang-pill" id="phoneLangTag">KN · ಕನ್ನಡ</span>
-            </div>
+            <p style="font-size:1.05rem; color:var(--text-primary); font-family:var(--font-indic); line-height:1.7;">
+              ರಮೇಶ್ ಗೌಡ ಅವರೇ, ನಿಮ್ಮ 2.0 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಐಸಿಎಆರ್ ಶಿಫಾರಸಿನಂತೆ <strong>4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ</strong> ಮತ್ತು <strong>3 ಚೀಲ ಎಂಒಪಿ</strong> ಬೇಕಾಗುತ್ತದೆ. ಒಟ್ಟು ಅಂದಾಜು ವೆಚ್ಚ <strong>₹13,199</strong>. ಕೋಲಾರ ಎಪಿಎಂಸಿ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹೈಬ್ರಿಡ್ ಟೊಮೇಟೊ ಧಾರಣೆ ಕ್ವಿಂಟಾಲ್‌ಗೆ <strong>₹1,850</strong> ಆಗಿದೆ (▲ +6.8% ಏರಿಕೆ). ನಾಳೆ ಮಳೆಯ ಸಾಧ್ಯತೆ ಇರುವುದರಿಂದ ಗೊಬ್ಬರ ಹಾಕುವುದನ್ನು ಮುಂದೂಡಿ.
+            </p>
 
-            <h4 id="phoneHeading">Ramesh Gowda</h4>
-            <p id="phoneSub">Malur, Kolar · 2.0 Acres (Tomato)</p>
-
-            <!-- Spikes Progress Streak -->
-            <div class="phone-progress-bar">
-              <div class="phone-progress-fill" id="phoneProgress"></div>
-            </div>
-
-            <!-- Interactive Voice & App Content Box -->
-            <div class="phone-mic-card" id="phoneDynamicContent">
-              <div class="phone-mic-circle" onclick="triggerLiveMic()" title="Tap to speak in Kannada">
-                <svg style="width:30px; height:30px;" fill="none" viewBox="0 0 24 24" stroke="#FFFFFF">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M12 19v4m-4 0h8"/>
+            <!-- Embedded Audio Player Widget -->
+            <div class="ai-audio-player">
+              <button class="play-audio-btn" onclick="playSampleSpeech(this)" title="Play Bulbul Kannada Voice">
+                <!-- Lucide Play SVG -->
+                <svg style="width:16px; height:16px;" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
                 </svg>
+              </button>
+              
+              <div class="audio-waveform-canvas">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
               </div>
 
-              <!-- Animated Waveform Equalizer -->
-              <div class="phone-wave" id="phoneWave" style="opacity: 0.35;">
-                <div class="phone-wave-bar" style="height: 10px;"></div>
-                <div class="phone-wave-bar" style="height: 18px;"></div>
-                <div class="phone-wave-bar" style="height: 24px;"></div>
-                <div class="phone-wave-bar" style="height: 14px;"></div>
-                <div class="phone-wave-bar" style="height: 20px;"></div>
-                <div class="phone-wave-bar" style="height: 12px;"></div>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:700; color:var(--text-muted);">
+                0:06 / Bulbul 48kHz
+              </span>
+            </div>
+
+            <!-- Structured Result Cards -->
+            <div class="structured-res-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; font-weight:700; color:var(--text-primary);">
+                <span>Whole-Bag Fertilizer Allocation</span>
+                <span style="color:var(--emerald);">ICAR UAS-Bangalore Grounded</span>
               </div>
 
-              <!-- Real-time Speech Transcript Pill -->
-              <div class="phone-transcript-pill" id="phoneTranscript">
-                “ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು?”
+              <div class="res-grid-badges">
+                <div class="res-badge-item">DAP (50kg): 4 Bags</div>
+                <div class="res-badge-item">SSP (50kg): 2 Bags</div>
+                <div class="res-badge-item">Urea (45kg): 6 Bags</div>
+                <div class="res-badge-item">MOP (50kg): 3 Bags</div>
               </div>
             </div>
 
-            <!-- Mandatory Safety Regulatory Box -->
-            <div class="phone-cibrc-notice">
-              <div class="phone-cibrc-title">CIB&amp;RC Regulatory Safety</div>
-              Generic formulations only. Call KVK 1800-180-1551 before chemical foliar spray.
-            </div>
           </div>
 
-          <!-- Secondary Phone (Angled Depth Card: Soil-to-Rupee Output) -->
-          <div class="phone secondary" id="phoneSecondary">
-            <div class="phone-top-bar">
-              <span>9:41</span>
-              <span>100%</span>
-            </div>
+        </div>
 
-            <div class="phone-brand-tag">
-              <span>soil plan</span>
-              <span class="phone-lang-pill" style="background:#EFF6FF; border-color:#BFDBFE; color:#1D4ED8;">ICAR 2024</span>
-            </div>
-
-            <h4 style="font-size:1.15rem; color:#0F172A;">₹13,199 Total</h4>
-            <p style="font-size:0.75rem; color:#475569; margin-bottom:0.75rem;">2.0 Acres Tomato · Kolar UAS-B</p>
-
-            <div class="soil-badge-grid">
-              <div class="soil-bag-item">
-                <div class="soil-bag-qty" style="color:#0F172A;">4 Bags</div>
-                <div class="soil-bag-name">DAP (50kg)</div>
-              </div>
-              <div class="soil-bag-item">
-                <div class="soil-bag-qty" style="color:#0F172A;">2 Bags</div>
-                <div class="soil-bag-name">SSP (50kg)</div>
-              </div>
-              <div class="soil-bag-item">
-                <div class="soil-bag-qty" style="color:#0F172A;">6 Bags</div>
-                <div class="soil-bag-name">Urea (45kg)</div>
-              </div>
-              <div class="soil-bag-item">
-                <div class="soil-bag-qty" style="color:#0F172A;">3 Bags</div>
-                <div class="soil-bag-name">MOP (50kg)</div>
-              </div>
-            </div>
-
-            <div class="rain-delay-pill">
-              <strong>⚠️ Rain Alert:</strong> 14.2mm rain expected. Postpone basal application.
-            </div>
+        <!-- Prominent Microphone Trigger & Voice Controller -->
+        <div class="hub-controls-bar">
+          <button class="big-mic-button" id="mainMicBtn" onclick="toggleVoiceRecording()" title="Hold or Tap to Speak in Mother Tongue">
+            <!-- Lucide Big Mic SVG -->
+            <svg style="width:36px; height:36px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" d="M12 19v4m-4 0h8"/>
+            </svg>
+          </button>
+          
+          <div class="mic-hint-text" id="micStatusText">
+            Tap the microphone to speak in Kannada, Hindi, or your preferred language
           </div>
-
         </div>
 
       </div>
@@ -1617,272 +1372,625 @@
   </section>
 
   <!-- =========================================================================
-       7. SARVAM AI: ENTERPRISE DATA DENSITY & APMC MANDI RATES
+       5. MODAL: AUTHENTICATION SCREEN (LOGIN / SIGN UP)
        ========================================================================= -->
-  <section class="mandi-section" id="enterprise-mandi">
-    <div class="mandi-container">
-      
-      <div class="mandi-header">
-        <div class="mds-tag">04 / ENTERPRISE MANDI BENCHMARKS</div>
-        <h2>Live Mandi Rates &amp; Weather Radar</h2>
-        <p>Real AGMARKNET APMC price benchmarks coupled with ICAR-NIAP predictive models.</p>
+  <div class="modal-overlay" id="authModal">
+    <div class="auth-modal-card">
+      <button class="modal-close-btn" onclick="closeAuthModal()" title="Close">
+        <!-- Lucide X SVG -->
+        <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tabLogin" onclick="switchAuthTab('login')">
+          Log In
+        </button>
+        <button class="auth-tab-btn" id="tabSignup" onclick="switchAuthTab('signup')">
+          Create Account
+        </button>
       </div>
 
-      <div class="mandi-grid-desktop">
-        
-        <!-- Structured APMC Mandi Rate Benchmarks -->
-        <div class="mandi-table-box">
-          <div class="table-top-bar">
-            <h4>APMC Market Benchmarks</h4>
-            <span class="live-sync-tag">AGMARKNET LIVE SYNC</span>
-          </div>
-
-          <table class="mandi-table">
-            <thead>
-              <tr>
-                <th>Commodity</th>
-                <th>Mandi Hub</th>
-                <th>Modal (₹/q)</th>
-                <th>24h Trend</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Tomato (Hybrid)</strong></td>
-                <td>Kolar APMC</td>
-                <td><strong>₹1,850</strong></td>
-                <td><span class="trend-pill trend-up">▲ +6.8%</span></td>
-              </tr>
-              <tr>
-                <td><strong>Onion (Red)</strong></td>
-                <td>Yeshwanthpur</td>
-                <td><strong>₹2,400</strong></td>
-                <td><span class="trend-pill trend-down">▼ -3.2%</span></td>
-              </tr>
-              <tr>
-                <td><strong>Ragi (Indaf-5)</strong></td>
-                <td>Mandya Hub</td>
-                <td><strong>₹3,850</strong></td>
-                <td><span class="trend-pill trend-up">▲ +1.5%</span></td>
-              </tr>
-              <tr>
-                <td><strong>Cotton (DCH-32)</strong></td>
-                <td>Raichur APMC</td>
-                <td><strong>₹7,100</strong></td>
-                <td><span class="trend-pill trend-down">▼ -1.1%</span></td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Login View -->
+      <form id="authForm" onsubmit="handleAuthSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Farmer Mobile Number (OTP Sign In)</label>
+          <input type="tel" class="form-input" id="authPhone" placeholder="+91 98450 12345" required value="+91 98450 12345">
         </div>
 
-        <!-- Sarvam AI Contextual Insight Callout -->
-        <div class="mandi-insight-box">
-          <div class="insight-header">
-            <span>💡 ICAR-NIAP ECONOMIC FORECAST</span>
-          </div>
-          <p class="insight-text">
-            Historical data in Kolar APMC indicates Hybrid Tomato supplies tighten over the next 48 hours. Consider staggering your harvest picking to capture projected <strong>₹120-180/quintal price gains</strong> on Thursday.
-          </p>
+        <div class="form-group" id="groupName" style="display:none;">
+          <label class="form-label">Full Farmer Name</label>
+          <input type="text" class="form-input" id="authName" placeholder="e.g. Ramesh Gowda">
+        </div>
 
-          <div class="imd-spray-pill">
-            <strong>IMD DAMU SPRAY WINDOW</strong><br/>
-            Foliar spray conditions: <strong>SAFE</strong> (Wind 9.2 km/h &lt; 15 km/h threshold).
+        <div class="form-group" id="groupAadhaar" style="display:none;">
+          <label class="form-label">AgriStack Farmer ID / PM-KISAN (Optional)</label>
+          <input type="text" class="form-input" id="authFID" placeholder="e.g. FID-KA-98412">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password or OTP Code</label>
+          <input type="password" class="form-input" id="authPassword" placeholder="Enter 6-digit OTP or Password" required value="123456">
+        </div>
+
+        <button type="submit" class="btn-submit-auth" id="btnAuthSubmit">
+          Sign In to KisanSamvaad
+        </button>
+
+        <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:1.25rem; line-height:1.5;">
+          By continuing, you agree to KisanSamvaad terms and sovereign AgriStack data privacy principles.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       6. MODAL: ONBOARDING & SETTINGS (LANGUAGE & CROPS)
+       ========================================================================= -->
+  <div class="modal-overlay" id="onboardingModal">
+    <div class="onboarding-card">
+      <button class="modal-close-btn" onclick="closeOnboarding()" title="Close">
+        <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div style="text-align:left; margin-bottom:2rem;">
+        <span class="section-eyebrow" style="text-align:left; display:block;">STEP 1: SOVEREIGN LANGUAGE</span>
+        <h3 style="font-size:1.5rem; font-weight:800; color:var(--text-primary); margin-bottom:0.4rem;">
+          Select Mother Tongue (Sarvam AI Model)
+        </h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary);">
+          Crucial for Sarvam Saaras-v4 speech recognition and Bulbul-v4 audio synthesis tuning.
+        </p>
+      </div>
+
+      <!-- Language Selection Grid -->
+      <div class="lang-grid-selection">
+        <div class="lang-card-option selected" onclick="selectLangCard(this, 'kn', 'ಕನ್ನಡ (Kannada)')">
+          <span class="lang-native-script">ಕನ್ನಡ</span>
+          <span class="lang-english-label">Kannada</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'hi', 'हिन्दी (Hindi)')">
+          <span class="lang-native-script">हिन्दी</span>
+          <span class="lang-english-label">Hindi</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'ta', 'தமிழ் (Tamil)')">
+          <span class="lang-native-script">தமிழ்</span>
+          <span class="lang-english-label">Tamil</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'te', 'తెలుగు (Telugu)')">
+          <span class="lang-native-script">తెలుగు</span>
+          <span class="lang-english-label">Telugu</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'mr', 'मराठी (Marathi)')">
+          <span class="lang-native-script">मराठी</span>
+          <span class="lang-english-label">Marathi</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'bn', 'বাংলা (Bengali)')">
+          <span class="lang-native-script">বাংলা</span>
+          <span class="lang-english-label">Bengali</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'gu', 'ગુજરાતી (Gujarati)')">
+          <span class="lang-native-script">ગુજરાતી</span>
+          <span class="lang-english-label">Gujarati</span>
+        </div>
+        <div class="lang-card-option" onclick="selectLangCard(this, 'en', 'English')">
+          <span class="lang-native-script">English</span>
+          <span class="lang-english-label">English</span>
+        </div>
+      </div>
+
+      <div style="text-align:left; margin-bottom:1.5rem;">
+        <span class="section-eyebrow" style="text-align:left; display:block;">STEP 2: CROPS &amp; LOCATION</span>
+        <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-primary); margin-bottom:0.4rem;">
+          Your Agricultural Context
+        </h3>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; text-align:left;">
+        <div class="form-group">
+          <label class="form-label">State &amp; District</label>
+          <input type="text" class="form-input" id="inputDistrict" value="Kolar, Karnataka">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Landholding Area</label>
+          <input type="text" class="form-input" id="inputArea" value="2.0 Acres">
+        </div>
+      </div>
+
+      <div style="text-align:left; margin-bottom:1.5rem;">
+        <label class="form-label">Types of Crops Grown (Select all that apply)</label>
+        <div class="crop-chips-grid">
+          <span class="crop-chip selected" onclick="toggleCropChip(this)">Tomato</span>
+          <span class="crop-chip selected" onclick="toggleCropChip(this)">Ragi</span>
+          <span class="crop-chip" onclick="toggleCropChip(this)">Onion</span>
+          <span class="crop-chip" onclick="toggleCropChip(this)">Bt Cotton</span>
+          <span class="crop-chip" onclick="toggleCropChip(this)">Paddy / Rice</span>
+          <span class="crop-chip" onclick="toggleCropChip(this)">Maize</span>
+          <span class="crop-chip" onclick="toggleCropChip(this)">Groundnut</span>
+        </div>
+      </div>
+
+      <button class="btn-submit-auth" onclick="saveOnboardingSettings()">
+        Save &amp; Update Samvaad Engine
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       7. SLIDE-OUT DRAWER: PROFILE / MENU
+       ========================================================================= -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeProfileDrawer()"></div>
+  <aside class="profile-drawer" id="profileDrawer">
+    <div class="drawer-header">
+      <h3 style="font-size:1.2rem; font-weight:800; color:var(--text-primary);">
+        Farmer Profile &amp; Library
+      </h3>
+      <button class="modal-close-btn" onclick="closeProfileDrawer()" title="Close Drawer">
+        <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      
+      <!-- Profile Card -->
+      <div class="farmer-profile-card">
+        <div class="avatar-circle" id="drawerAvatar">R</div>
+        <div style="text-align:left;">
+          <h4 id="drawerFarmerName" style="font-size:1.15rem; font-weight:800; color:var(--text-primary);">Ramesh Gowda</h4>
+          <p id="drawerFarmerDetails" style="font-size:0.82rem; color:var(--text-muted); margin-bottom:0.25rem;">
+            Malur, Kolar · 2.0 Acres (Tomato &amp; Ragi)
+          </p>
+          <span style="display:inline-flex; align-items:center; gap:0.35rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--emerald); background:var(--emerald-bg); padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">
+            AGRISTACK VERIFIED (FID-KA-98412)
+          </span>
+        </div>
+      </div>
+
+      <!-- Drawer Tabs: Past Chats vs Saved Advice -->
+      <div class="drawer-tab-row">
+        <button class="drawer-tab-btn active" id="tabPastChats" onclick="switchDrawerTab('chats')">
+          Past Conversations (3)
+        </button>
+        <button class="drawer-tab-btn" id="tabSavedAdvice" onclick="switchDrawerTab('saved')">
+          Saved Advice (2)
+        </button>
+      </div>
+
+      <!-- View 1: Past Conversations -->
+      <div id="drawerChatsList">
+        
+        <div class="history-item-card" onclick="loadHistoricalSession(1)">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:0.3rem;">
+            <span>TODAY · 10:14 AM</span>
+            <span style="color:var(--tech-blue); font-weight:700;">KANNADA</span>
           </div>
+          <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.25rem;">
+            Tomato Fertilizer Schedule &amp; Mandi Rates
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            Calculated 4 DAP, 2 SSP, 6 Urea, 3 MOP (₹13,199). Rain delay confirmed.
+          </p>
+        </div>
+
+        <div class="history-item-card" onclick="loadHistoricalSession(2)">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:0.3rem;">
+            <span>YESTERDAY · 4:30 PM</span>
+            <span style="color:var(--tech-blue); font-weight:700;">KANNADA</span>
+          </div>
+          <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.25rem;">
+            Soil Health Card Upload Scan
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            Sarvam Parse OCR extracted N:180 (Low), P:32 (Med), K:280 (High).
+          </p>
+        </div>
+
+        <div class="history-item-card" onclick="loadHistoricalSession(3)">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:0.3rem;">
+            <span>NOV 05 · 11:15 AM</span>
+            <span style="color:var(--tech-blue); font-weight:700;">KANNADA</span>
+          </div>
+          <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.25rem;">
+            Tomato Leaf Curl Virus Remedy
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            Biological neem formulation advisory approved by CIB&amp;RC.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- View 2: Saved Advice -->
+      <div id="drawerSavedList" style="display:none;">
+        
+        <div class="history-item-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--amber); font-family:var(--font-mono); margin-bottom:0.3rem; font-weight:700;">
+            <span>BOOKMARKED FORMULATION</span>
+            <span>UAS-B</span>
+          </div>
+          <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.25rem;">
+            2.0 Acres Tomato Whole-Bag Fertilizer Schedule
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            4 DAP + 2 SSP + 6 Urea + 3 MOP. Apply 50% at transplanting, 50% after 30 days.
+          </p>
+        </div>
+
+        <div class="history-item-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--crimson); font-family:var(--font-mono); margin-bottom:0.3rem; font-weight:700;">
+            <span>MANDATORY SAFETY NOTICE</span>
+            <span>CIB&amp;RC</span>
+          </div>
+          <div style="font-weight:700; font-size:0.92rem; color:var(--text-primary); margin-bottom:0.25rem;">
+            Banned Pesticides Warning (Monocrotophos)
+          </div>
+          <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">
+            Monocrotophos &amp; Endosulfan prohibited under statutory order. Use yellow sticky traps.
+          </p>
         </div>
 
       </div>
 
     </div>
-  </section>
+
+    <div class="drawer-footer">
+      <button class="btn-logout" onclick="handleLogout()">
+        Log Out of KisanSamvaad
+      </button>
+    </div>
+  </aside>
 
   <!-- =========================================================================
-       FOOTER
+       8. FOOTER
        ========================================================================= -->
   <footer>
     <div class="footer-inner">
       <div style="font-weight:700; color:var(--text-primary);">
-        <span class="sarvam-wordmark" style="font-size:1.1rem;">sarvam</span>
-        <span style="color:var(--border-strong); margin:0 0.35rem;">/</span>
         KisanSamvaad
-        <span style="font-weight:400; color:var(--text-muted); font-size:0.85rem; margin-left:0.5rem;">Sovereign Indic Agricultural AI Platform</span>
+        <span style="font-weight:400; color:var(--text-muted); font-size:0.85rem; margin-left:0.5rem;">
+          AI-Powered Voice Intelligence for Indian Agriculture • Powered by Sarvam AI
+        </span>
       </div>
       <div>
-        Built with Sarvam Saaras-v4 &amp; Bulbul-v4 | Verified ICAR Grounding | MIT License
+        Verified ICAR &amp; UAS Bangalore Agronomic Grounding | MIT License
       </div>
     </div>
   </footer>
 
   <!-- =========================================================================
-       INTERACTIVE JAVASCRIPT LAYER
+       INTERACTIVE JAVASCRIPT STATE ENGINE
        ========================================================================= -->
   <script>
-    let currentTab = 0;
-    let isSpeaking = false;
-
-    // Spikes Tab Data
-    const tabData = [
-      {
-        eyebrow: "01 / Spoken agronomy in 22 languages",
-        title: "Less guessing.<br/>More <em>“my crop is thriving.”</em>",
-        desc: "Ask any question in Kannada, Hindi, or Tamil: from tomato leaf curl virus remedies to fertilizer schedules. Saaras-v4 transcribes with domain-biased keyterms, and Bulbul synthesizes natural voice in under 250ms.",
-        linkText: "Try speaking in Kannada",
-        phoneHeading: "Ramesh Gowda",
-        phoneSub: "Malur, Kolar · 2.0 Acres (Tomato)",
-        phoneTranscript: "“ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು?”",
-        progress: "70%"
-      },
-      {
-        eyebrow: "02 / Integer linear whole-bag optimizer",
-        title: "Less arithmetic.<br/>More <em>“exact bags and rupees.”</em>",
-        desc: "Our unit-tested integer optimizer solves the cheapest fertilizer combinations meeting ICAR nutrient targets. Credits DAP nitrogen, enforces 45kg statutory urea bags, and delays application when heavy rain is forecast.",
-        linkText: "Calculate fertilizer plan",
-        phoneHeading: "₹13,199 Plan",
-        phoneSub: "4 DAP + 2 SSP + 6 Urea + 3 MOP",
-        phoneTranscript: "“2.0 ಎಕರೆಗೆ 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ ಬೇಕು.”",
-        progress: "95%"
-      },
-      {
-        eyebrow: "03 / Community reputation & gamification",
-        title: "Less isolation.<br/>More <em>“peer knowledge rewards.”</em>",
-        desc: "Spikes-inspired gamified engagement rewards farmers with reputation points for uploading verified Soil Health Cards and sharing localized pest alerts. Built to drive sustained rural retention among youth and women.",
-        linkText: "View Community Leaderboard",
-        phoneHeading: "+360 Points",
-        phoneSub: "Level 3 Krishi Mitra · Rank #4 in Malur",
-        phoneTranscript: "“ನಿಮ್ಮ ಮಣ್ಣು ಪರೀಕ್ಷೆ ಅಪ್ಲೋಡ್ ಆಗಿದೆ! +50 ಪಾಯಿಂಟ್ಸ್ ಗಳಿಸಿದ್ದೀರಿ!”",
-        progress: "85%"
-      }
-    ];
-
-    function switchAppTab(index) {
-      currentTab = index;
-      document.querySelectorAll('.tab-button').forEach((b, i) => {
-        b.classList.toggle('selected', i === index);
-      });
-
-      const d = tabData[index];
-      document.getElementById('captionEyebrow').innerHTML = d.eyebrow;
-      document.getElementById('captionTitle').innerHTML = d.title;
-      document.getElementById('captionDesc').innerHTML = d.desc;
-      document.getElementById('captionLink').querySelector('span').innerText = d.linkText;
-
-      document.getElementById('phoneHeading').innerText = d.phoneHeading;
-      document.getElementById('phoneSub').innerText = d.phoneSub;
-      document.getElementById('phoneTranscript').innerText = d.phoneTranscript;
-      document.getElementById('phoneProgress').style.width = d.progress;
-    }
-
-    // Sarvam Model Suite Switcher
-    const modelData = {
-      cowork: {
-        title: "Indus Krishi Cowork: Autonomous Agronomic Agent",
-        sub: "Orchestrating multi-step soil chemistry, mandi market radar, and weather spray safety",
-        task: 'Give Indus Krishi Cowork a task: "Plan fertilizer for 2 acres tomato in Kolar with high rainfall tomorrow"',
-        steps: [
-          { badge: "STEP 1: DOCUMENT OCR", title: "Sarvam Parse", desc: "Extracted Kolar Soil Card: N: 180kg (Low), P: 32kg (Med), K: 280kg (High)." },
-          { badge: "STEP 2: AGMARKNET", title: "Price Intelligence", desc: "Kolar APMC Tomato modal ₹1,850/q (▲ +6.8%). Stagger picking to Thursday." },
-          { badge: "STEP 3: IMD RADAR", title: "Spray Safety Delay", desc: "14.2mm rain expected. Postpone basal fertilizer application by 48h." },
-          { badge: "STEP 4: BULBUL TTS", title: "Kannada Audio", desc: "Synthesized whole-bag advice: 4 DAP, 2 SSP, 6 Urea, 3 MOP = ₹13,199." }
-        ],
-        output: '<strong>Kannada Speech Output:</strong> "2.0 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ: 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ ಬೇಕಾಗುತ್ತದೆ. ಒಟ್ಟು ಅಂದಾಜು ವೆಚ್ಚ ₹13,199. ನಾಳೆ ಮಳೆಯಾಗುವ ಸಾಧ್ಯತೆ ಇರುವುದರಿಂದ ಗೊಬ್ಬರ ಹಾಕುವುದನ್ನು 2 ದಿನ ಮುಂದೂಡಿ."'
-      },
-      saaras: {
-        title: "Saaras-v4: Domain-Biased Indic Speech-to-Text",
-        sub: "Trained on rural acoustics with agricultural keyterm biasing across 22 Indic languages",
-        task: 'Simulate Saaras ASR: "Kolar Tomato grower speaking rustic colloquial Kannada"',
-        steps: [
-          { badge: "AUDIO STREAM", title: "Rural Acoustic Model", desc: "Handling wind, tractor engine background noise, and dialectal slang." },
-          { badge: "KEYTERM BIAS", title: "Agricultural Lexicon", desc: "Biased to recognize DAP, SSP, Urea, Spodoptera, and localized Mandi names." },
-          { badge: "LATENCY", title: "Streaming Conformer", desc: "Sub-150ms chunk streaming with live token prediction." },
-          { badge: "TRANSCRIPT", title: "Dual Script Output", desc: "Direct Kannada Unicode + Latin phonetic script for downstream LLMs." }
-        ],
-        output: '<strong>Saaras-v4 Transcript:</strong> "ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು ಮತ್ತು ಕೋಲಾರ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಇವತ್ತಿನ ಬೆಲೆ ಎಷ್ಟು?" (Confidence: 98.4%)'
-      },
-      bulbul: {
-        title: "Bulbul-v4: Natural Rustic Indic Text-to-Speech",
-        sub: "Natural cadence, prosody, and emotional reassurance tuned for rural Indian cultivators",
-        task: 'Simulate Bulbul TTS: "Synthesize agronomic advice in spoken Kannada"',
-        steps: [
-          { badge: "VOICE SELECTOR", title: "Kavya (Female, Kannada)", desc: "Warm, authoritative rural advisory tone with agricultural cadence." },
-          { badge: "PROSODY TUNING", title: "Numeral Normalization", desc: "Accurately speaks ₹13,199 as “ಹದಿಮೂರು ಸಾವಿರದ ನೂರ ತೊಂಬತ್ತೊಂಬತ್ತು ರೂಪಾಯಿ”." },
-          { badge: "STREAMING TTFB", title: "< 250ms Latency", desc: "Instant audio chunk playback to eliminate dead air on mobile 3G/4G." },
-          { badge: "FALLBACK", title: "WebSpeech Compatible", desc: "Seamless browser audio synthesis when offline or bandwidth-constrained." }
-        ],
-        output: '<strong>Bulbul-v4 Audio Player:</strong> Playing 48kHz lossless voice stream. Click "Run Live Simulation" to hear browser speech synthesis now!'
-      },
-      parse: {
-        title: "Sarvam Parse: Sovereign Document & Soil Card OCR",
-        sub: "Structured key-value extraction from damaged, handwritten, or wrinkled government Soil Health Cards",
-        task: 'Simulate Sarvam Parse: "Extract N, P, K, pH and farmer registration from scanned card"',
-        steps: [
-          { badge: "BOUNDING BOX 1", title: "Farmer & Land Slot", desc: "Name: Ramesh Gowda, Village: Malur, Kolar. Area: 2.00 Acres." },
-          { badge: "BOUNDING BOX 2", title: "Soil Chemistry Slot", desc: "pH: 6.8 (Neutral), EC: 0.42 dS/m, OC: 0.52% (Medium)." },
-          { badge: "BOUNDING BOX 3", title: "Primary Nutrients", desc: "Nitrogen: 180 kg/ha (Low), P: 32 kg/ha (Med), K: 280 kg/ha (High)." },
-          { badge: "VALIDATION", title: "Fail-Closed Bounds", desc: "All values passed agronomic sanity checks [pH 3.5 - 9.5; N 10 - 1000]." }
-        ],
-        output: '<strong>Sarvam Parse Structured JSON:</strong> {"farmer": "Ramesh Gowda", "area_acres": 2.0, "soil": {"N": 180, "P": 32, "K": 280, "pH": 6.8}, "confidence": 0.986}'
-      }
+    // State
+    let userState = {
+      isLoggedIn: true,
+      name: "Ramesh Gowda",
+      phone: "+91 98450 12345",
+      fid: "FID-KA-98412",
+      district: "Kolar, Karnataka",
+      area: "2.0 Acres",
+      crops: ["Tomato", "Ragi"],
+      langCode: "kn",
+      langName: "ಕನ್ನಡ (Kannada)"
     };
 
-    function switchModelConsole(modelKey) {
-      document.querySelectorAll('.model-tab-btn').forEach(b => b.classList.remove('active'));
-      event.currentTarget.classList.add('active');
+    let isRecording = false;
 
-      const data = modelData[modelKey];
-      document.getElementById('consoleTitle').innerText = data.title;
-      document.getElementById('consoleSub').innerText = data.sub;
-      document.getElementById('consoleTask').innerText = data.task;
+    // Quick Action Handler
+    function handleQuickAction(type) {
+      const chatWindow = document.getElementById('chatWindow');
       
-      const grid = document.getElementById('consoleWorkflowGrid');
-      grid.innerHTML = data.steps.map(s => `
-        <div class="workflow-step-card">
-          <span class="step-badge">${s.badge}</span>
-          <div class="step-title">${s.title}</div>
-          <div class="step-desc">${s.desc}</div>
+      let userQuery = "";
+      let aiReplyKannada = "";
+      let aiReplyEnglish = "";
+      let extraHtml = "";
+
+      if (type === 'mandi') {
+        userQuery = "ಕೋಲಾರ ಮತ್ತು ಯಶವಂತಪುರ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಇವತ್ತಿನ ಬೆಲೆ ತಿಳಿಸಿ.";
+        aiReplyKannada = "ಕೋಲಾರ ಎಪಿಎಂಸಿಯಲ್ಲಿ ಹೈಬ್ರಿಡ್ ಟೊಮೇಟೊ ಧಾರಣೆ ₹1,850/ಕ್ವಿಂಟಾಲ್ (▲ +6.8%). ಯಶವಂತಪುರದಲ್ಲಿ ಈರುಳ್ಳಿ ₹2,400/ಕ್ವಿಂಟಾಲ್ (▼ -3.2%). ಮಾರುಕಟ್ಟೆ ಸರಬರಾಜು ಕಡಿಮೆಯಿರುವುದರಿಂದ ಗುರುವಾರದವರೆಗೆ ಕಟಾವು ಮುಂದೂಡುವುದು ಲಾಭದಾಯಕ.";
+        extraHtml = `
+          <div class="structured-res-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:700;">
+              <span>AGMARKNET Modal Rates</span>
+              <span style="color:var(--emerald);">Live Sync</span>
+            </div>
+            <div class="res-grid-badges">
+              <div class="res-badge-item">Kolar Tomato: ₹1,850/q (▲ +6.8%)</div>
+              <div class="res-badge-item">Yeshwanthpur Onion: ₹2,400/q (▼ -3.2%)</div>
+            </div>
+          </div>
+        `;
+      } else if (type === 'weather') {
+        userQuery = "ಮುಂದಿನ 48 ಗಂಟೆಗಳಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆಯೇ ಮತ್ತು ಕೀಟನಾಶಕ ಸಿಂಪಡಿಸಬಹುದೇ?";
+        aiReplyKannada = "ಕೋಲಾರ ಜಿಲ್ಲೆಯಲ್ಲಿ ಮುಂದಿನ 24 ಗಂಟೆಗಳಲ್ಲಿ 14.2 ಮಿಮೀ ಮಳೆಯಾಗುವ ಸಾಧ್ಯತೆಯಿದೆ. ಗಾಳಿಯ ವೇಗ 9.2 ಕಿಮೀ/ಗಂಟೆ ಇರುವುದರಿಂದ ಸಿಂಪರಣೆ ಸುರಕ್ಷಿತವಾಗಿದೆ, ಆದರೆ ಮಳೆಯಿಂದಾಗಿ ರಸಗೊಬ್ಬರ ಹಾಕುವುದನ್ನು 2 ದಿನ ಮುಂದೂಡಿ.";
+        extraHtml = `
+          <div class="structured-res-card" style="background:#FEF3C7; border-color:#FCD34D;">
+            <div style="font-size:0.8rem; font-weight:700; color:#92400E;">
+              IMD DAMU Radar Alert: 14.2mm Rainfall in 24h
+            </div>
+            <p style="font-size:0.78rem; color:#92400E; margin-top:0.3rem;">
+              Postpone basal fertilizer broadcast to prevent nutrient washout.
+            </p>
+          </div>
+        `;
+      } else if (type === 'fertilizer') {
+        userQuery = "ನನ್ನ ಮಣ್ಣು ಪರೀಕ್ಷೆ ಆಧಾರದ ಮೇಲೆ ಗೊಬ್ಬರದ ಪಟ್ಟಿ ಕೊಡಿ.";
+        aiReplyKannada = "ನಿಮ್ಮ ಮಣ್ಣಿನಲ್ಲಿ ಸಾರಜನಕ ಕಡಿಮೆಯಿದ್ದು, ರಂಜಕ ಮಧ್ಯಮ ಮತ್ತು ಪೊಟ್ಯಾಶ್ ಹೆಚ್ಚಾಗಿದೆ. 2 ಎಕರೆಗೆ: 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, 3 ಚೀಲ ಎಂಒಪಿ ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ. ಒಟ್ಟು ವೆಚ್ಚ ₹13,199.";
+        extraHtml = `
+          <div class="structured-res-card">
+            <div style="font-size:0.8rem; font-weight:700; color:var(--text-primary);">
+              Deterministic Whole-Bag Optimization: ₹13,199
+            </div>
+            <div class="res-grid-badges">
+              <div class="res-badge-item">DAP (50kg): 4 Bags</div>
+              <div class="res-badge-item">SSP (50kg): 2 Bags</div>
+              <div class="res-badge-item">Urea (45kg): 6 Bags</div>
+              <div class="res-badge-item">MOP (50kg): 3 Bags</div>
+            </div>
+          </div>
+        `;
+      } else if (type === 'pest') {
+        userQuery = "ಟೊಮೇಟೊ ಎಲೆ ಮುದುಡು ರೋಗಕ್ಕೆ ಯಾವ ಔಷಧಿ ಸಿಂಪಡಿಸಬೇಕು?";
+        aiReplyKannada = "ಎಲೆ ಮುದುಡು ರೋಗವು ಬಿಳಿ ನೊಣಗಳಿಂದ ಹರಡುತ್ತದೆ. ನಿಷೇಧಿತ ಕೀಟನಾಶಕಗಳಾದ ಮೊನೊಕ್ರೊಟೊಫಾಸ್ ಬಳಸಬೇಡಿ. 5 ಮಿಲೀ ಬೇವಿನ ಎಣ್ಣೆ (10,000 ppm) ಪ್ರತಿ ಲೀಟರ್ ನೀರಿಗೆ ಬೆರೆಸಿ ಸಿಂಪಡಿಸಿ. ಹಳದಿ ಜಿಗುಟು ಬಲೆಗಳನ್ನು ಅಳವಡಿಸಿ.";
+        extraHtml = `
+          <div class="structured-res-card" style="background:#FEF2F2; border-color:#FCA5A5;">
+            <div style="font-size:0.8rem; font-weight:700; color:#991B1B;">
+              CIB&amp;RC Safety Alert: Generic Formulations Only
+            </div>
+            <p style="font-size:0.78rem; color:#991B1B; margin-top:0.3rem;">
+              Chemical Monocrotophos is strictly prohibited. Approved bio-pesticide only.
+            </p>
+          </div>
+        `;
+      }
+
+      // Append user bubble
+      const userDiv = document.createElement('div');
+      userDiv.className = 'chat-bubble bubble-user';
+      userDiv.innerHTML = `
+        <div style="font-size:0.75rem; opacity:0.75; margin-bottom:0.35rem; font-family:var(--font-mono);">
+          VOICE COMMAND · JUST NOW
         </div>
-      `).join('');
+        <p style="font-size:1.05rem; font-family:var(--font-indic);">${userQuery}</p>
+      `;
+      chatWindow.appendChild(userDiv);
 
-      document.getElementById('consoleOutputText').innerHTML = data.output;
-    }
-
-    function runConsoleDemo() {
-      const outBox = document.getElementById('consoleOutputBox');
-      outBox.style.opacity = "0.5";
+      // Append AI bubble
       setTimeout(() => {
-        outBox.style.opacity = "1";
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const u = new SpeechSynthesisUtterance("2.0 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ: 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ ಬೇಕಾಗುತ್ತದೆ. ಒಟ್ಟು ಅಂದಾಜು ವೆಚ್ಚ 13,199 ರೂಪಾಯಿ.");
-          u.rate = 0.95;
-          window.speechSynthesis.speak(u);
-        }
-      }, 400);
+        const aiDiv = document.createElement('div');
+        aiDiv.className = 'chat-bubble bubble-ai';
+        aiDiv.innerHTML = `
+          <div style="font-size:0.75rem; color:var(--tech-blue); font-weight:700; font-family:var(--font-mono); margin-bottom:0.4rem;">
+            SARVAM BULBUL-V4 RESPONSE
+          </div>
+          <p style="font-size:1.05rem; color:var(--text-primary); font-family:var(--font-indic); line-height:1.7;">
+            ${aiReplyKannada}
+          </p>
+          <div class="ai-audio-player">
+            <button class="play-audio-btn" onclick="playCustomSpeech('${aiReplyKannada.replace(/'/g, "\\'")}', this)" title="Play Audio">
+              <svg style="width:16px; height:16px;" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="audio-waveform-canvas">
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.75rem; font-weight:700; color:var(--text-muted);">
+              Bulbul Audio
+            </span>
+          </div>
+          ${extraHtml}
+        `;
+        chatWindow.appendChild(aiDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+      }, 500);
+
+      chatWindow.scrollTop = chatWindow.scrollHeight;
     }
 
-    function triggerLiveMic() {
-      const transcriptEl = document.getElementById('phoneTranscript');
-      const waveEl = document.getElementById('phoneWave');
+    // Voice recording simulation
+    function toggleVoiceRecording() {
+      const micBtn = document.getElementById('mainMicBtn');
+      const micStatus = document.getElementById('micStatusText');
       
-      if (!isSpeaking) {
-        isSpeaking = true;
-        transcriptEl.innerText = "Listening to Kannada speech via Sarvam Saaras-v4...";
-        waveEl.style.opacity = "1";
+      if (!isRecording) {
+        isRecording = true;
+        micBtn.classList.add('recording');
+        micStatus.innerText = "Listening to your voice via Sarvam Saaras-v4... Speak now in Kannada or Hindi.";
+        
+        setTimeout(() => {
+          micStatus.innerText = "Processing acoustic stream with agricultural keyterms...";
+        }, 2200);
 
         setTimeout(() => {
-          transcriptEl.innerText = "Transcribing: “ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು?”";
-        }, 1800);
-
-        setTimeout(() => {
-          transcriptEl.innerText = "Sarvam Bulbul TTS: “2.0 ಎಕರೆ ಟೊಮೇಟೊಗೆ 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ. ಒಟ್ಟು ವೆಚ್ಚ ₹13,199.”";
-          if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const u = new SpeechSynthesisUtterance("2.0 ಎಕರೆ ಟೊಮೇಟೊಗೆ 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ, ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ. ಒಟ್ಟು ಅಂದಾಜು ವೆಚ್ಚ ₹13,199.");
-            u.rate = 0.95;
-            window.speechSynthesis.speak(u);
-          }
-          isSpeaking = false;
+          isRecording = false;
+          micBtn.classList.remove('recording');
+          micStatus.innerText = "Tap the microphone to speak in Kannada, Hindi, or your preferred language";
+          handleQuickAction('fertilizer');
         }, 4000);
       }
     }
+
+    // Play speech audio
+    function playSampleSpeech(btn) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance("ರಮೇಶ್ ಗೌಡ ಅವರೇ, ನಿಮ್ಮ 2.0 ಎಕರೆ ಟೊಮೇಟೊ ಬೆಳೆಗೆ 4 ಚೀಲ ಡಿಎಪಿ, 2 ಚೀಲ ಎಸ್ಎಸ್ಪಿ, 6 ಚೀಲ ಯೂರಿಯಾ ಮತ್ತು 3 ಚೀಲ ಎಂಒಪಿ ಬೇಕಾಗುತ್ತದೆ. ಒಟ್ಟು ವೆಚ್ಚ 13,199 ರೂಪಾಯಿ.");
+        u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function playCustomSpeech(text, btn) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function clearChat() {
+      const chatWindow = document.getElementById('chatWindow');
+      chatWindow.innerHTML = `
+        <div class="chat-bubble bubble-ai">
+          <div style="font-size:0.75rem; color:var(--tech-blue); font-weight:700; font-family:var(--font-mono); margin-bottom:0.4rem;">
+            SARVAM AI READY
+          </div>
+          <p style="font-size:1.05rem; color:var(--text-primary); font-family:var(--font-indic);">
+            ನಮಸ್ಕಾರ ರಮೇಶ್ ಅವರೇ. ಕಿಸಾನ್ ಸಂವಾದಕ್ಕೆ ಸ್ವಾಗತ. ನಿಮ್ಮ ಬೆಳೆ, ಹವಾಮಾನ ಅಥವಾ ಮಾರುಕಟ್ಟೆ ಬೆಲೆಯ ಬಗ್ಗೆ ಯಾವುದೇ ಪ್ರಶ್ನೆ ಕೇಳಿ.
+          </p>
+        </div>
+      `;
+    }
+
+    // Authentication Modal Management
+    function openAuthModal(tab) {
+      document.getElementById('authModal').classList.add('active');
+      switchAuthTab(tab);
+    }
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.remove('active');
+    }
+    function switchAuthTab(tab) {
+      const tabLogin = document.getElementById('tabLogin');
+      const tabSignup = document.getElementById('tabSignup');
+      const gName = document.getElementById('groupName');
+      const gFid = document.getElementById('groupAadhaar');
+      const btnSubmit = document.getElementById('btnAuthSubmit');
+
+      if (tab === 'signup') {
+        tabLogin.classList.remove('active');
+        tabSignup.classList.add('active');
+        gName.style.display = 'block';
+        gFid.style.display = 'block';
+        btnSubmit.innerText = "Create Farmer Account";
+      } else {
+        tabLogin.classList.add('active');
+        tabSignup.classList.remove('active');
+        gName.style.display = 'none';
+        gFid.style.display = 'none';
+        btnSubmit.innerText = "Sign In to KisanSamvaad";
+      }
+    }
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const phone = document.getElementById('authPhone').value;
+      const name = document.getElementById('authName').value || "Ramesh Gowda";
+      
+      userState.isLoggedIn = true;
+      userState.phone = phone;
+      userState.name = name;
+      updateUserUI();
+      closeAuthModal();
+      alert("Authentication Successful! Welcome to KisanSamvaad, " + userState.name);
+    }
+
+    // Onboarding / Settings Modal Management
+    function openOnboarding() {
+      document.getElementById('onboardingModal').classList.add('active');
+    }
+    function closeOnboarding() {
+      document.getElementById('onboardingModal').classList.remove('active');
+    }
+    function selectLangCard(el, code, name) {
+      document.querySelectorAll('.lang-card-option').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      userState.langCode = code;
+      userState.langName = name;
+    }
+    function toggleCropChip(el) {
+      el.classList.toggle('selected');
+    }
+    function saveOnboardingSettings() {
+      const district = document.getElementById('inputDistrict').value;
+      const area = document.getElementById('inputArea').value;
+      const selectedCrops = [];
+      document.querySelectorAll('.crop-chip.selected').forEach(c => selectedCrops.push(c.innerText));
+      
+      userState.district = district;
+      userState.area = area;
+      userState.crops = selectedCrops;
+      
+      updateUserUI();
+      closeOnboarding();
+      alert("Preferences Updated: Language set to " + userState.langName + " in " + userState.district);
+    }
+
+    // Profile Drawer Management
+    function openProfileDrawer() {
+      document.getElementById('profileDrawer').classList.add('active');
+      document.getElementById('drawerOverlay').classList.add('active');
+    }
+    function closeProfileDrawer() {
+      document.getElementById('profileDrawer').classList.remove('active');
+      document.getElementById('drawerOverlay').classList.remove('active');
+    }
+    function switchDrawerTab(tab) {
+      const tChats = document.getElementById('tabPastChats');
+      const tSaved = document.getElementById('tabSavedAdvice');
+      const lChats = document.getElementById('drawerChatsList');
+      const lSaved = document.getElementById('drawerSavedList');
+
+      if (tab === 'saved') {
+        tChats.classList.remove('active');
+        tSaved.classList.add('active');
+        lChats.style.display = 'none';
+        lSaved.style.display = 'block';
+      } else {
+        tChats.classList.add('active');
+        tSaved.classList.remove('active');
+        lChats.style.display = 'block';
+        lSaved.style.display = 'none';
+      }
+    }
+    function handleLogout() {
+      userState.isLoggedIn = false;
+      updateUserUI();
+      closeProfileDrawer();
+      alert("Logged out of KisanSamvaad session.");
+    }
+    function loadHistoricalSession(id) {
+      closeProfileDrawer();
+      handleQuickAction(id === 1 ? 'fertilizer' : id === 2 ? 'weather' : 'pest');
+    }
+
+    // UI Synchronizer
+    function updateUserUI() {
+      const profileBtn = document.getElementById('profileBtn');
+      const authBtn = document.getElementById('authBtn');
+      const headerFarmerName = document.getElementById('headerFarmerName');
+      const headerLangTag = document.getElementById('headerLangTag');
+      const activeLangBtn = document.getElementById('activeLangBtn');
+      const hubUserContext = document.getElementById('hubUserContext');
+      const drawerFarmerName = document.getElementById('drawerFarmerName');
+      const drawerFarmerDetails = document.getElementById('drawerFarmerDetails');
+      const drawerAvatar = document.getElementById('drawerAvatar');
+
+      headerLangTag.innerText = userState.langCode.toUpperCase() + " · " + userState.langName.split(' ')[0];
+      activeLangBtn.innerText = userState.langName;
+
+      if (userState.isLoggedIn) {
+        profileBtn.style.display = 'inline-flex';
+        authBtn.style.display = 'none';
+        headerFarmerName.innerText = userState.name;
+        drawerFarmerName.innerText = userState.name;
+        drawerAvatar.innerText = userState.name.charAt(0);
+        drawerFarmerDetails.innerText = userState.district + " · " + userState.area + " (" + userState.crops.join(' & ') + ")";
+        hubUserContext.innerText = userState.name + " · " + userState.district + " (" + userState.area + " " + userState.crops.join(' & ') + ")";
+      } else {
+        profileBtn.style.display = 'none';
+        authBtn.style.display = 'inline-flex';
+        hubUserContext.innerText = "Guest Cultivator · Select Language & District in Settings";
+      }
+    }
+
+    // Initial setup on load
+    updateUserUI();
   </script>
 </body>
 </html>
