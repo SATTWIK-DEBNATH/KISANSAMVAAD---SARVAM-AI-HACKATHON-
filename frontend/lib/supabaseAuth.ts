@@ -164,3 +164,4 @@ export async function getCurrentUser(): Promise<User | null> {
   const { data: { user } } = await supabase.auth.getUser();
   return user;
 }
+

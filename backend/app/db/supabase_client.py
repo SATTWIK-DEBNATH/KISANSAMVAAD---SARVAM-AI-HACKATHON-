@@ -85,3 +85,4 @@ class SupabaseService:
 
 # Global convenience accessor
 supabase_service = SupabaseService.get_instance()
+

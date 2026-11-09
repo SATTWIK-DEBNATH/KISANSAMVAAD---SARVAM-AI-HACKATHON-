@@ -1065,6 +1065,302 @@
       .footer-inner { flex-direction: column; text-align: center; justify-content: center; }
       .ticker-actions { display: none; }
     }
+  
+    /* =========================================================================
+       HERO & HEADER AUTHENTICATION ADDITIONS
+       ========================================================================= */
+    .btn-hero-auth {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 1px solid var(--border-light);
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-hero-auth:hover {
+      background: var(--surface-secondary);
+      border-color: var(--tech-blue);
+      color: var(--tech-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-header-logout {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-header-logout:hover {
+      color: #DC2626;
+      border-color: #FCA5A5;
+      background: #FEF2F2;
+    }
+
+    /* =========================================================================
+       DEDICATED IN-PAGE AUTHENTICATION SCREEN SECTION
+       ========================================================================= */
+    .auth-section {
+      padding: 5rem 1.5rem;
+      background: var(--bg-primary);
+      position: relative;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .auth-container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    .auth-card-main {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-lg);
+      padding: 2.75rem;
+      position: relative;
+    }
+    .auth-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 1.35rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+      font-size: 0.88rem;
+      border: 1px solid var(--border-light);
+      background: var(--surface-secondary);
+      transition: all 0.3s ease;
+    }
+    .auth-status-bar.logged-in {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+      color: #166534;
+    }
+    .auth-status-bar.guest {
+      background: #FFFBEB;
+      border-color: #FDE68A;
+      color: #92400E;
+    }
+    .auth-tab-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      background: var(--surface-secondary);
+      padding: 0.4rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 2rem;
+    }
+    .auth-tab-btn-main {
+      padding: 0.85rem 1rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .auth-tab-btn-main.active {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .auth-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .auth-form-full {
+      grid-column: 1 / -1;
+    }
+    .btn-auth-primary-submit {
+      width: 100%;
+      background: var(--tech-blue);
+      color: #FFFFFF;
+      padding: 1rem;
+      border-radius: var(--radius-pill);
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+      margin-top: 1rem;
+    }
+    .btn-auth-primary-submit:hover {
+      background: var(--tech-blue-hover);
+      transform: translateY(-1px);
+    }
+    .btn-auth-demo-quick {
+      width: 100%;
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 1.5px dashed var(--tech-blue);
+      padding: 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-auth-demo-quick:hover {
+      background: #EFF6FF;
+      color: var(--tech-blue);
+    }
+    .btn-auth-google-quick {
+      width: 100%;
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 1px solid var(--border-light);
+      padding: 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+    }
+    .btn-auth-google-quick:hover {
+      background: var(--surface-secondary);
+      border-color: var(--text-primary);
+    }
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-light);
+    }
+
+    /* =========================================================================
+       DEDICATED IN-PAGE ONBOARDING & SETTINGS SECTION
+       ========================================================================= */
+    .onboarding-section {
+      padding: 5rem 1.5rem;
+      background: var(--surface-secondary);
+      position: relative;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .onboarding-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .onboarding-card-main {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-md);
+      padding: 2.75rem;
+    }
+    .lang-grid-inline {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .lang-card-inline {
+      padding: 1.1rem;
+      background: var(--surface-secondary);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .lang-card-inline:hover {
+      border-color: var(--tech-blue);
+      transform: translateY(-2px);
+    }
+    .lang-card-inline.active {
+      background: #EFF6FF;
+      border-color: var(--tech-blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+    .lang-card-inline .native {
+      font-family: var(--font-indic);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+    .lang-card-inline .english {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .crop-pills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.6rem;
+    }
+    .crop-pill-btn {
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-light);
+      background: var(--surface-secondary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .crop-pill-btn:hover {
+      border-color: var(--tech-blue);
+    }
+    .crop-pill-btn.active {
+      background: var(--tech-blue);
+      color: #FFFFFF;
+      border-color: var(--tech-blue);
+    }
+
+    @media (max-width: 768px) {
+      .auth-card-main, .onboarding-card-main {
+        padding: 1.5rem;
+      }
+      .auth-form-grid {
+        grid-template-columns: 1fr;
+      }
+      .lang-grid-inline {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1113,6 +1409,8 @@
       </a>
 
       <nav class="nav-menu">
+        <a href="#auth-section" class="nav-item">Sign In / Register</a>
+        <a href="#onboarding-section" class="nav-item">Language &amp; Crops</a>
         <a href="#samvaad-hub" class="nav-item">Voice Samvaad</a>
         <a href="#samvaad-hub" onclick="handleQuickAction('mandi')" class="nav-item">Mandi Radar</a>
         <a href="#samvaad-hub" onclick="handleQuickAction('weather')" class="nav-item">Weather &amp; Spray</a>
@@ -1121,7 +1419,7 @@
 
       <div class="header-user-actions">
         <!-- Language Switcher Pill -->
-        <button class="btn-lang-pill" onclick="openOnboarding()" title="Change Indic Language">
+        <button class="btn-lang-pill" onclick="scrollToOnboardingSection()" title="Change Indic Language">
           <!-- Lucide Globe SVG -->
           <svg style="width:15px; height:15px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <circle cx="12" cy="12" r="10" stroke-width="2"/>
@@ -1139,8 +1437,17 @@
           </svg>
         </button>
 
-        <!-- Guest Auth Trigger (hidden when logged in) -->
-        <button class="btn-auth-trigger" id="authBtn" onclick="openAuthModal('login')" style="display:none;">
+        <!-- Explicit Logout Trigger when Logged in -->
+        <button class="btn-header-logout" id="headerLogoutBtn" onclick="handleLogout()" title="Log Out to test guest sign in">
+          Log Out
+        </button>
+
+        <!-- Guest Auth Trigger (visible when logged out) -->
+        <button class="btn-auth-trigger" id="authBtn" onclick="scrollToAuthSection('login')" style="display:none;">
+          <!-- Lucide LogIn SVG -->
+          <svg style="width:14px; height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+          </svg>
           <span>Sign In / Register</span>
         </button>
       </div>
@@ -1213,7 +1520,270 @@
   <!-- =========================================================================
        4. MAIN INTERFACE: THE "SAMVAAD" HUB
        ========================================================================= -->
-  <section class="samvaad-section" id="samvaad-hub">
+  
+    <!-- =========================================================================
+         2. DEDICATED AUTHENTICATION SCREEN: LOGIN & SIGN UP
+         ========================================================================= -->
+    <section class="auth-section" id="auth-section">
+      <div class="auth-container">
+        
+        <div style="text-align:center; margin-bottom:2.5rem;">
+          <div class="section-eyebrow">SOVEREIGN FARMER ACCESS</div>
+          <h2 class="section-heading">Authentication Screen</h2>
+          <p class="section-sub" style="max-width:640px; margin:0.5rem auto 0;">
+            Sign in with your mobile number or create a new farmer profile to unlock personalized voice intelligence, multi-nutrient soil cards, and KVK advisory tracking.
+          </p>
+        </div>
+
+        <div class="auth-card-main">
+          <!-- Active Session Status Bar -->
+          <div class="auth-status-bar logged-in" id="authStatusBar">
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <span style="width:10px; height:10px; background:var(--emerald); border-radius:50%;" id="statusDot"></span>
+              <span id="authStatusText">Signed in as <strong>Ramesh Gowda</strong> (+91 98450 12345 · Kolar, Karnataka)</span>
+            </div>
+            <button class="btn-header-logout" id="authStatusToggleBtn" onclick="handleLogout()">
+              Log Out to Test Sign In
+            </button>
+          </div>
+
+          <!-- Tab Selector: Log In vs Create Account -->
+          <div class="auth-tab-nav">
+            <button class="auth-tab-btn-main active" id="sectionTabLogin" onclick="switchAuthSectionTab('login')">
+              Farmer Log In
+            </button>
+            <button class="auth-tab-btn-main" id="sectionTabSignup" onclick="switchAuthSectionTab('signup')">
+              Sign Up / Create Account
+            </button>
+          </div>
+
+          <!-- TAB 1: LOG IN VIEW -->
+          <form id="sectionLoginForm" onsubmit="handleSectionLoginSubmit(event)">
+            <div class="auth-form-grid">
+              <div class="form-group auth-form-full">
+                <label class="form-label">Farmer Mobile Number (OTP Sign In)</label>
+                <div style="display:flex; gap:0.5rem;">
+                  <span style="display:flex; align-items:center; padding:0 0.85rem; background:var(--surface-secondary); border:1px solid var(--border-light); border-radius:var(--radius-sm); font-weight:700; color:var(--text-primary); font-size:0.9rem;">+91</span>
+                  <input type="tel" class="form-input" id="secLoginPhone" placeholder="98450 12345" required value="98450 12345" style="flex:1;">
+                </div>
+              </div>
+
+              <div class="form-group auth-form-full">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                  <label class="form-label" style="margin-bottom:0;">6-Digit SMS OTP or Password</label>
+                  <button type="button" onclick="sendDemoOtpAlert()" style="background:none; border:none; color:var(--tech-blue); font-size:0.8rem; font-weight:700; cursor:pointer;">
+                    Send OTP via SMS
+                  </button>
+                </div>
+                <input type="password" class="form-input" id="secLoginPassword" placeholder="Enter 6-digit OTP code or password" required value="123456">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-auth-primary-submit">
+              Sign In to KisanSamvaad
+            </button>
+
+            <button type="button" class="btn-auth-demo-quick" onclick="handleQuickDemoLogin()">
+              <svg style="width:16px; height:16px; color:var(--tech-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span>1-Click Demo Login as Ramesh Gowda (Kolar, Karnataka)</span>
+            </button>
+
+            <div class="auth-divider">OR FEDERATED OAUTH</div>
+
+            <button type="button" class="btn-auth-google-quick" onclick="handleGoogleOAuthLogin()">
+              <svg style="width:18px; height:18px;" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Continue with Google OAuth (PKCE Flow)</span>
+            </button>
+          </form>
+
+          <!-- TAB 2: SIGN UP / CREATE ACCOUNT VIEW -->
+          <form id="sectionSignupForm" onsubmit="handleSectionSignupSubmit(event)" style="display:none;">
+            <div class="auth-form-grid">
+              <div class="form-group">
+                <label class="form-label">Full Farmer Name</label>
+                <input type="text" class="form-input" id="secSignupName" placeholder="e.g. Suresh Kumar" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Mobile Number (+91)</label>
+                <input type="tel" class="form-input" id="secSignupPhone" placeholder="e.g. 98765 43210" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">State &amp; District</label>
+                <select class="form-input" id="secSignupDistrict" required>
+                  <option value="Kolar, Karnataka" selected>Karnataka - Kolar</option>
+                  <option value="Mandya, Karnataka">Karnataka - Mandya</option>
+                  <option value="Nashik, Maharashtra">Maharashtra - Nashik</option>
+                  <option value="Ludhiana, Punjab">Punjab - Ludhiana</option>
+                  <option value="Varanasi, Uttar Pradesh">Uttar Pradesh - Varanasi</option>
+                  <option value="Thanjavur, Tamil Nadu">Tamil Nadu - Thanjavur</option>
+                  <option value="Guntur, Andhra Pradesh">Andhra Pradesh - Guntur</option>
+                  <option value="Rajkot, Gujarat">Gujarat - Rajkot</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Landholding Area</label>
+                <select class="form-input" id="secSignupArea" required>
+                  <option value="1.0 Acre">1.0 Acre (Smallholder)</option>
+                  <option value="2.0 Acres" selected>2.0 Acres</option>
+                  <option value="3.5 Acres">3.5 Acres</option>
+                  <option value="5.0 Acres">5.0 Acres (Medium)</option>
+                  <option value="10.0+ Acres">10.0+ Acres (Commercial)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Preferred Indic Language</label>
+                <select class="form-input" id="secSignupLang" required>
+                  <option value="kn|kn-IN|ಕನ್ನಡ (Kannada)" selected>ಕನ್ನಡ (Kannada)</option>
+                  <option value="hi|hi-IN|हिन्दी (Hindi)">हिन्दी (Hindi)</option>
+                  <option value="te|te-IN|తెలుగు (Telugu)">తెలుగు (Telugu)</option>
+                  <option value="ta|ta-IN|தமிழ் (Tamil)">தமிழ் (Tamil)</option>
+                  <option value="mr|mr-IN|मराठी (Marathi)">मराठी (Marathi)</option>
+                  <option value="pa|pa-IN|ਪੰਜਾਬੀ (Punjabi)">ਪੰਜਾਬੀ (Punjabi)</option>
+                  <option value="gu|gu-IN|ગુજરાતી (Gujarati)">ગુજરાતી (Gujarati)</option>
+                  <option value="bn|bn-IN|বাংলা (Bengali)">বাংলা (Bengali)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">AgriStack Farmer ID / PM-KISAN (Optional)</label>
+                <input type="text" class="form-input" id="secSignupFid" placeholder="e.g. FID-KA-99120">
+              </div>
+
+              <div class="form-group auth-form-full">
+                <label class="form-label">Select Primary Crops Grown</label>
+                <div class="crop-pills-grid" id="signupCropPills">
+                  <button type="button" class="crop-pill-btn active" onclick="toggleSectionCrop(this, 'Tomato')">Tomato</button>
+                  <button type="button" class="crop-pill-btn active" onclick="toggleSectionCrop(this, 'Ragi')">Ragi</button>
+                  <button type="button" class="crop-pill-btn" onclick="toggleSectionCrop(this, 'Cotton')">Cotton</button>
+                  <button type="button" class="crop-pill-btn" onclick="toggleSectionCrop(this, 'Sugarcane')">Sugarcane</button>
+                  <button type="button" class="crop-pill-btn" onclick="toggleSectionCrop(this, 'Wheat')">Wheat</button>
+                  <button type="button" class="crop-pill-btn" onclick="toggleSectionCrop(this, 'Paddy')">Paddy</button>
+                  <button type="button" class="crop-pill-btn" onclick="toggleSectionCrop(this, 'Soybean')">Soybean</button>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-auth-primary-submit">
+              Create Farmer Account &amp; Launch Voice Samvaad
+            </button>
+          </form>
+
+          <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:1.5rem; line-height:1.5;">
+            Secured via Supabase Row Level Security (RLS) &amp; AgriStack Sovereign Data Principles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. ONBOARDING & SETTINGS: LANGUAGE SELECTION & CROPS
+         ========================================================================= -->
+    <section class="onboarding-section" id="onboarding-section">
+      <div class="onboarding-container">
+        
+        <div style="text-align:center; margin-bottom:2.5rem;">
+          <div class="section-eyebrow">INDIC VOICE ENGINE CONFIGURATION</div>
+          <h2 class="section-heading">Onboarding &amp; Farm Settings</h2>
+          <p class="section-sub" style="max-width:680px; margin:0.5rem auto 0;">
+            Select your native Indic language (crucial for Sarvam Saaras-v4 ASR and Bulbul-v4 TTS acoustics) and customize your farming profile.
+          </p>
+        </div>
+
+        <div class="onboarding-card-main">
+          <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:0.5rem;">
+            1. Select Indic Voice Language
+          </h3>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+            Sarvam AI provides localized acoustics, farm vocabulary comprehension, and native pronunciation.
+          </p>
+
+          <div class="lang-grid-inline" id="inlineLangGrid">
+            <div class="lang-card-inline active" onclick="selectInlineLanguage(this, 'kn', 'ಕನ್ನಡ (Kannada)', 'kn-IN')">
+              <div class="native">ಕನ್ನಡ</div>
+              <div class="english">Kannada · Karnataka</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'hi', 'हिन्दी (Hindi)', 'hi-IN')">
+              <div class="native">हिन्दी</div>
+              <div class="english">Hindi · North India</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'te', 'తెలుగు (Telugu)', 'te-IN')">
+              <div class="native">తెలుగు</div>
+              <div class="english">Telugu · AP &amp; Telangana</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'ta', 'தமிழ் (Tamil)', 'ta-IN')">
+              <div class="native">தமிழ்</div>
+              <div class="english">Tamil · Tamil Nadu</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'mr', 'मराठी (Marathi)', 'mr-IN')">
+              <div class="native">मराठी</div>
+              <div class="english">Marathi · Maharashtra</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'pa', 'ਪੰਜਾਬੀ (Punjabi)', 'pa-IN')">
+              <div class="native">ਪੰਜਾਬੀ</div>
+              <div class="english">Punjabi · Punjab</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'gu', 'ગુજરાતી (Gujarati)', 'gu-IN')">
+              <div class="native">ગુજરાતી</div>
+              <div class="english">Gujarati · Gujarat</div>
+            </div>
+            <div class="lang-card-inline" onclick="selectInlineLanguage(this, 'bn', 'বাংলা (Bengali)', 'bn-IN')">
+              <div class="native">বাংলা</div>
+              <div class="english">Bengali · West Bengal</div>
+            </div>
+          </div>
+
+          <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin:2rem 0 0.5rem;">
+            2. Basic Farm Details &amp; Crops Grown
+          </h3>
+
+          <div class="auth-form-grid">
+            <div class="form-group">
+              <label class="form-label">Farmer Location / District</label>
+              <input type="text" class="form-input" id="inlineDistrictInput" value="Kolar, Karnataka">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Total Landholding Area</label>
+              <input type="text" class="form-input" id="inlineAreaInput" value="2.0 Acres">
+            </div>
+
+            <div class="form-group auth-form-full">
+              <label class="form-label">Active Crops Grown on Farm</label>
+              <div class="crop-pills-grid" id="inlineCropPills">
+                <button type="button" class="crop-pill-btn active" onclick="toggleInlineCrop(this, 'Tomato')">Tomato</button>
+                <button type="button" class="crop-pill-btn active" onclick="toggleInlineCrop(this, 'Ragi')">Ragi</button>
+                <button type="button" class="crop-pill-btn" onclick="toggleInlineCrop(this, 'Cotton')">Cotton</button>
+                <button type="button" class="crop-pill-btn" onclick="toggleInlineCrop(this, 'Sugarcane')">Sugarcane</button>
+                <button type="button" class="crop-pill-btn" onclick="toggleInlineCrop(this, 'Wheat')">Wheat</button>
+                <button type="button" class="crop-pill-btn" onclick="toggleInlineCrop(this, 'Paddy')">Paddy</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:flex-end; margin-top:2rem;">
+            <button type="button" class="btn-hero-primary" onclick="handleSaveInlineSettings()">
+              <svg style="width:18px; height:18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+              </svg>
+              <span>Save Settings &amp; Return to Samvaad</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="samvaad-section" id="samvaad-hub">
     <div class="samvaad-container">
       
       <div class="section-eyebrow">THE LIVING INTERFACE</div>
@@ -1991,6 +2561,167 @@
 
     // Initial setup on load
     updateUserUI();
+  
+    // =========================================================================
+    // DEDICATED AUTHENTICATION SCREEN HANDLERS
+    // =========================================================================
+    function scrollToAuthSection(tab) {
+      const authSec = document.getElementById('auth-section');
+      if (authSec) {
+        authSec.scrollIntoView({ behavior: 'smooth' });
+      }
+      if (tab) {
+        switchAuthSectionTab(tab);
+      }
+    }
+
+    function scrollToOnboardingSection() {
+      const onbSec = document.getElementById('onboarding-section');
+      if (onbSec) {
+        onbSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function switchAuthSectionTab(tab) {
+      const btnLogin = document.getElementById('sectionTabLogin');
+      const btnSignup = document.getElementById('sectionTabSignup');
+      const formLogin = document.getElementById('sectionLoginForm');
+      const formSignup = document.getElementById('sectionSignupForm');
+
+      if (tab === 'signup') {
+        btnLogin.classList.remove('active');
+        btnSignup.classList.add('active');
+        formLogin.style.display = 'none';
+        formSignup.style.display = 'block';
+      } else {
+        btnLogin.classList.add('active');
+        btnSignup.classList.remove('active');
+        formLogin.style.display = 'block';
+        formSignup.style.display = 'none';
+      }
+    }
+
+    function sendDemoOtpAlert() {
+      alert("SMS OTP Sent! For this prototype, your verified test code is: 123456");
+    }
+
+    function handleQuickDemoLogin() {
+      userState.isLoggedIn = true;
+      userState.name = "Ramesh Gowda";
+      userState.phone = "+91 98450 12345";
+      userState.district = "Kolar, Karnataka";
+      userState.area = "2.0 Acres";
+      userState.crops = ["Tomato", "Ragi"];
+      userState.fid = "FID-KA-98412";
+      updateUserUI();
+      alert("Authenticated as Ramesh Gowda (Kolar, Karnataka). You can now voice-query Samvaad Hub!");
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleGoogleOAuthLogin() {
+      userState.isLoggedIn = true;
+      userState.name = "Ramesh Gowda (Google Verified)";
+      userState.phone = "+91 98450 12345";
+      updateUserUI();
+      alert("Google OAuth PKCE Verified! Welcome to KisanSamvaad.");
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleSectionLoginSubmit(e) {
+      e.preventDefault();
+      const phoneInput = document.getElementById('secLoginPhone').value || "98450 12345";
+      const fullPhone = phoneInput.startsWith("+") ? phoneInput : "+91 " + phoneInput;
+
+      userState.isLoggedIn = true;
+      userState.name = "Ramesh Gowda";
+      userState.phone = fullPhone;
+      updateUserUI();
+      alert("Login Successful! Welcome to KisanSamvaad, " + userState.name);
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleSectionSignupSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('secSignupName').value || "Suresh Kumar";
+      const phone = document.getElementById('secSignupPhone').value || "98765 43210";
+      const dist = document.getElementById('secSignupDistrict').value;
+      const area = document.getElementById('secSignupArea').value;
+      const langVal = document.getElementById('secSignupLang').value.split('|');
+      const fid = document.getElementById('secSignupFid').value || "FID-KA-NEW";
+
+      userState.isLoggedIn = true;
+      userState.name = name;
+      userState.phone = phone.startsWith("+") ? phone : "+91 " + phone;
+      userState.district = dist;
+      userState.area = area;
+      userState.langCode = langVal[0];
+      userState.langName = langVal[2];
+      userState.fid = fid;
+
+      updateUserUI();
+      alert("Farmer Account Created! Welcome, " + userState.name + ". Your profile is synchronized with Supabase BaaS.");
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function handleLogout() {
+      userState.isLoggedIn = false;
+      userState.name = "Guest Farmer";
+      updateUserUI();
+      alert("You have logged out. You are now in Guest Mode. Use the Authentication Screen below to log in or create an account.");
+      scrollToAuthSection('login');
+    }
+
+    function toggleSectionCrop(el, cropName) {
+      el.classList.toggle('active');
+      if (el.classList.contains('active')) {
+        if (!userState.crops.includes(cropName)) userState.crops.push(cropName);
+      } else {
+        userState.crops = userState.crops.filter(c => c !== cropName);
+      }
+    }
+
+    function toggleInlineCrop(el, cropName) {
+      el.classList.toggle('active');
+      if (el.classList.contains('active')) {
+        if (!userState.crops.includes(cropName)) userState.crops.push(cropName);
+      } else {
+        userState.crops = userState.crops.filter(c => c !== cropName);
+      }
+      updateUserUI();
+    }
+
+    function selectInlineLanguage(el, code, name, bcp47) {
+      document.querySelectorAll('.lang-card-inline').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+      userState.langCode = code;
+      userState.langName = name;
+      updateUserUI();
+    }
+
+    function handleSaveInlineSettings() {
+      const dist = document.getElementById('inlineDistrictInput').value;
+      const area = document.getElementById('inlineAreaInput').value;
+      userState.district = dist;
+      userState.area = area;
+      updateUserUI();
+      alert("Preferences Saved! Sarvam AI Voice Hub is now calibrated for " + userState.langName + " in " + userState.district);
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // URL Route and Hash Auto-Navigation
+    window.addEventListener('DOMContentLoaded', () => {
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+
+      if (path.includes('/login') || path.includes('/auth') || hash === '#login' || hash === '#auth' || hash === '#auth-section') {
+        scrollToAuthSection('login');
+      } else if (path.includes('/signup') || hash === '#signup') {
+        scrollToAuthSection('signup');
+      } else if (path.includes('/onboarding') || hash === '#onboarding' || hash === '#onboarding-section') {
+        scrollToOnboardingSection();
+      }
+    });
+
   </script>
 </body>
 </html>

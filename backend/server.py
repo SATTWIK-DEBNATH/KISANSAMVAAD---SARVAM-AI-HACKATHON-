@@ -66,7 +66,7 @@ class KisanSamvaadHandler(SimpleHTTPRequestHandler):
         query = parse_qs(parsed.query)
 
         # Frontend web routes & PWA manifest / service worker
-        if path in ("/", "/index.html", "/interactive_kisan_hub.html"):
+        if path in ("/", "/index.html", "/interactive_kisan_hub.html", "/login", "/auth", "/signup", "/onboarding"):
             index_path = os.path.join(PROJECT_ROOT, "frontend", "index.html")
             return self._serve_static_file(index_path, "text/html; charset=utf-8")
 

@@ -455,3 +455,4 @@ CREATE POLICY "farmer_delete_own_media" ON storage.objects
         bucket_id IN ('soil-cards', 'farmer-media')
         AND (storage.foldername(name))[1] = auth.uid()::text
     );
+
