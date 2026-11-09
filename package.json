@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dom-to-pptx": "^2.1.2"
+  }
+}
