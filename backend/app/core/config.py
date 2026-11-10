@@ -7,6 +7,32 @@ import os
 from dataclasses import dataclass
 from typing import List
 
+def _load_env_file():
+    """Lightweight zero-dependency .env loader for development and production environments."""
+    possible_paths = [
+        os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))), ".env"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), ".env"),
+        os.path.join(os.getcwd(), ".env"),
+        ".env"
+    ]
+    for p in possible_paths:
+        if os.path.exists(p) and os.path.isfile(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith("#") and "=" in line:
+                            k, v = line.split("=", 1)
+                            k = k.strip()
+                            v = v.strip().strip("'\"")
+                            if k and k not in os.environ:
+                                os.environ[k] = v
+                break
+            except Exception:
+                pass
+
+_load_env_file()
+
 @dataclass
 class AppSettings:
     """Application global settings."""
@@ -18,6 +44,10 @@ class AppSettings:
     sarvam_api_key: str = os.getenv("SARVAM_API_KEY", "")
     sarvam_base_url: str = os.getenv("SARVAM_BASE_URL", "https://api.sarvam.ai")
     sarvam_timeout_seconds: int = int(os.getenv("SARVAM_TIMEOUT_SECONDS", "10"))
+
+    # Hugging Face Computer Vision & Deep Learning
+    hf_token: str = os.getenv("HF_TOKEN", "")
+    gemini_api_key: str = os.getenv("GEMINI_API_KEY", "")
     
     # Supported Indian Indic Languages
     supported_languages: List[str] = (

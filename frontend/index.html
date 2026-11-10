@@ -2162,6 +2162,10 @@
           <span class="sample-leaf-crop">🍅 Tomato</span>
           <span class="sample-leaf-disease">Concentric Target Rings</span>
         </button>
+        <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('beans_rust')">
+          <span class="sample-leaf-crop">🫘 Beans / Pulses</span>
+          <span class="sample-leaf-disease">Bean Rust (ViT Model)</span>
+        </button>
         <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('cotton_leaf_curl')">
           <span class="sample-leaf-crop">🌱 Cotton</span>
           <span class="sample-leaf-disease">Upward Curl &amp; Whitefly</span>
@@ -3105,6 +3109,11 @@
         crop: "Wheat",
         hint: "yellow stripes rust pustules powder",
         img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 10 C50 40 45 100 70 130 C95 100 90 40 70 10 Z' fill='%2386EFAC'/><line x1='63' y1='30' x2='63' y2='105' stroke='%23EAB308' stroke-width='4' stroke-dasharray='3,2'/><line x1='72' y1='35' x2='72' y2='110' stroke='%23CA8A04' stroke-width='4' stroke-dasharray='3,2'/><text x='18' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Wheat Stripe Rust</text></svg>"
+      },
+      beans_rust: {
+        crop: "Beans",
+        hint: "rust pustules spots nateraw vit-base-beans",
+        img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 15 C45 35 35 75 70 120 C105 75 95 35 70 15 Z' fill='%2386EFAC'/><circle cx='60' cy='55' r='5' fill='%23B45309'/><circle cx='80' cy='65' r='6' fill='%2392400E'/><circle cx='65' cy='85' r='4' fill='%23B45309'/><circle cx='75' cy='95' r='5' fill='%2378350F'/><text x='15' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Beans Rust (ViT Model)</text></svg>"
       }
     };
 

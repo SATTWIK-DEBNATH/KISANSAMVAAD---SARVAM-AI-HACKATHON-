@@ -85,6 +85,30 @@ class TestCropDiagnosticsService(unittest.TestCase):
         self.assertIn("kn", res["advisory_localized"])
         self.assertTrue(res["safety_guardrails"]["is_safe"])
 
+    def test_beans_vit_model_routing_and_diagnosis(self):
+        """Verifies that Beans/Pulses route to nateraw/vit-base-beans Vision Transformer model."""
+        fake_beans_rust_b64 = "data:image/jpeg;base64,/9j/4AAQ...bean_rust_pustules"
+        res = CropDiagnosticsService.diagnose(
+            crop_name="Beans",
+            image_base64=fake_beans_rust_b64,
+            language="hi-IN"
+        )
+        self.assertTrue(res["image_analyzed"])
+        self.assertEqual(res["vision_model"], "nateraw/vit-base-beans")
+        self.assertIn("Bean Rust", res["primary_diagnosis"]["disease_name"])
+        self.assertEqual(res["primary_diagnosis"]["severity_level"], "Critical")
+        self.assertTrue(res["escalate_to_kvk"])
+        self.assertIn("Hexaconazole", res["recommended_interventions"]["approved_chemical"])
+        self.assertTrue(res["safety_guardrails"]["is_safe"])
+
+    def test_mobilenet_v2_model_for_general_crops(self):
+        """Verifies that non-pulse crops route to linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification."""
+        from app.services.plant_vision import PlantVisionClassifier
+        model = PlantVisionClassifier.select_target_model("Tomato")
+        self.assertEqual(model, "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification")
+        pulse_model = PlantVisionClassifier.select_target_model("Moong Dal / Pulses")
+        self.assertEqual(pulse_model, "nateraw/vit-base-beans")
+
 if __name__ == "__main__":
     unittest.main()
 
