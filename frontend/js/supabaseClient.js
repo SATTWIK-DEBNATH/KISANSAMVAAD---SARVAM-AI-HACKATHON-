@@ -58,3 +58,4 @@ export async function signOutUser() {
     window.location.replace("/");
   }
 }
+
