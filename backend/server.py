@@ -65,10 +65,26 @@ class KisanSamvaadHandler(SimpleHTTPRequestHandler):
         path = parsed.path
         query = parse_qs(parsed.query)
 
-        # Frontend web routes & PWA manifest / service worker
-        if path in ("/", "/index.html", "/interactive_kisan_hub.html", "/login", "/auth", "/signup", "/onboarding"):
-            index_path = os.path.join(PROJECT_ROOT, "frontend", "index.html")
-            return self._serve_static_file(index_path, "text/html; charset=utf-8")
+        # Frontend web routes (Discord-style separation)
+        # 1. Public Marketing Landing Page (Purely informational)
+        if path in ("/", "/index.html", "/landing", "/landing.html", "/marketing"):
+            landing_path = os.path.join(PROJECT_ROOT, "frontend", "landing.html")
+            return self._serve_static_file(landing_path, "text/html; charset=utf-8")
+
+        # 2. Authentication Screen (Supabase Google Sign-In)
+        elif path in ("/login", "/login.html", "/auth", "/signup"):
+            login_path = os.path.join(PROJECT_ROOT, "frontend", "login.html")
+            return self._serve_static_file(login_path, "text/html; charset=utf-8")
+
+        # 3. Private User Portal / Samvaad Hub
+        elif path in ("/app", "/app.html", "/dashboard", "/interactive_kisan_hub.html", "/onboarding"):
+            app_path = os.path.join(PROJECT_ROOT, "frontend", "app.html")
+            return self._serve_static_file(app_path, "text/html; charset=utf-8")
+
+        # Frontend JS assets (ES Modules)
+        elif path.startswith("/js/"):
+            js_path = os.path.join(PROJECT_ROOT, "frontend", "js", os.path.basename(path))
+            return self._serve_static_file(js_path, "application/javascript; charset=utf-8")
 
         elif path == "/manifest.json":
             manifest_path = os.path.join(PROJECT_ROOT, "frontend", "manifest.json")

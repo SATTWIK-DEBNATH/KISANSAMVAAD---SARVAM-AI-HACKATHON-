@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KisanSamvaad - AI-Powered Voice Intelligence for Indian Agriculture</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌾</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#F0FDF4', 100: '#DCFCE7', 500: '#22C55E', 600: '#16A34A', 700: '#15803D', 900: '#14532D' },
+            tech: '#2563EB',
+            accent: '#F59E0B'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- Marketing Top Navigation (Discord Style) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-extrabold text-2xl shadow-md group-hover:scale-105 transition transform">
+          🌾
+        </div>
+        <div>
+          <span class="font-extrabold text-2xl text-slate-900 tracking-tight">KisanSamvaad</span>
+          <span class="text-xs text-emerald-700 font-bold block -mt-1">ಕಿಸಾನ್ ಸಂವಾದ &bull; किसान संवाद</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+        <a href="#features" class="hover:text-brand-600 transition">Features</a>
+        <a href="#vision" class="hover:text-brand-600 transition">Crop Doctor AI</a>
+        <a href="#mandi" class="hover:text-brand-600 transition">Mandi Radar</a>
+        <a href="#technology" class="hover:text-brand-600 transition">Sovereign Architecture</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="/login" class="text-sm font-bold text-slate-700 hover:text-brand-600 transition px-3 py-2">
+          Log In
+        </a>
+        <a href="/app" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-sm font-bold rounded-xl shadow-md shadow-emerald-600/20 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-1.5">
+          <span>Open Web App</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-emerald-50/70 via-slate-50 to-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <!-- Sovereign Badge -->
+      <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold mb-8 shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-ping"></span>
+        <span>SOVEREIGN INDIC VOICE INTELLIGENCE - POWERED BY SARVAM AI</span>
+      </div>
+
+      <!-- Core Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+        AI-powered voice intelligence for <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 font-serif italic">Indian agriculture</span>
+      </h1>
+
+      <!-- Sub-Headline -->
+      <p class="mt-6 text-lg sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
+        KisanSamvaad uses indigenous Sarvam AI to give farmers instant, multilingual crop and market advice through simple voice commands.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/app" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-base rounded-2xl shadow-xl shadow-emerald-600/25 transition transform hover:-translate-y-1 active:translate-y-0 text-center flex items-center justify-center gap-2">
+          <span>Launch KisanSamvaad App</span>
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="/login" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-100 text-slate-800 border-2 border-slate-300 font-bold text-base rounded-2xl shadow-sm transition text-center">
+          Sign In / Create Account
+        </a>
+      </div>
+
+      <!-- Credibility Indicators -->
+      <div class="mt-14 pt-8 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-6 text-slate-600 text-xs font-bold uppercase tracking-wider">
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-emerald-600 text-lg">&check;</span> 10 Indic Languages
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-emerald-600 text-lg">&check;</span> ICAR Agronomic Science
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-emerald-600 text-lg">&check;</span> Agmarknet Live Mandis
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <span class="text-emerald-600 text-lg">&check;</span> Zero Literacy Barriers
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Preview Showcase Mockup (Like Discord App Showcase) -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 mb-24 relative z-20">
+    <div class="bg-slate-900 rounded-3xl p-3 sm:p-5 shadow-2xl border-4 border-slate-800/80">
+      <div class="bg-slate-950 rounded-2xl p-6 sm:p-10 border border-slate-800 text-white">
+        <div class="flex items-center justify-between pb-6 border-b border-slate-800 mb-8">
+          <div class="flex items-center space-x-2">
+            <div class="w-3.5 h-3.5 rounded-full bg-rose-500"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-amber-500"></div>
+            <div class="w-3.5 h-3.5 rounded-full bg-emerald-500"></div>
+            <span class="text-xs font-mono text-slate-400 ml-4 hidden sm:inline">kisansamvaad.in/app &bull; Private Farmer Portal</span>
+          </div>
+          <span class="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full text-xs font-mono font-bold">
+            Live Demo Available
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="md:col-span-2 bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">Samvaad Voice Hub Preview</div>
+              <h3 class="text-xl font-bold mb-4">"Today's Mandi Price for Tomato in Kolar?"</h3>
+              <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-sm text-slate-300 leading-relaxed font-sans mb-4">
+                <span class="font-bold text-emerald-400">KisanSamvaad (Bulbul TTS):</span> ಕೋಲಾರ ಎಪಿಎಂಸಿ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಹೈಬ್ರಿಡ್ ಟೊಮೇಟೊ ಬೆಲೆ ಕ್ವಿಂಟಾಲ್‌ಗೆ ₹2,400 ಇದೆ. ನಾಳೆಗೆ ಬೆಲೆ ಏರಿಕೆಯಾಗುವ ಸಾಧ್ಯತೆ ಇದೆ.
+              </div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+              <span class="text-xs text-slate-400">Latency: 420ms (Edge Cache)</span>
+              <a href="/app" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+                Experience in App &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-slate-900 rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-2">Crop Doctor Scanner</div>
+              <div class="text-2xl font-bold mb-1">94% Confidence</div>
+              <div class="text-sm font-semibold text-amber-400 mb-3">Tomato Early Blight</div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                MobileNetV2 and ViT Beans models identify pathogens and deliver ICAR-vetted biological solutions.
+              </p>
+            </div>
+            <a href="/app" class="mt-6 w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-center rounded-xl text-xs font-bold text-white transition block">
+              Scan Leaves in Web App
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-xs font-extrabold tracking-widest text-brand-600 uppercase">Comprehensive Agronomic Architecture</h2>
+        <p class="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Four Sovereign Pillars for Indian Farmers</p>
+        <p class="mt-4 text-slate-600 text-base">From the field to the mandi, KisanSamvaad bridges agronomic science and farmgate profit.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-2xl mb-6 shadow-xs">
+            🎙️
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Voice Samvaad</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Farmers speak in local dialects. Powered by Sarvam Saaras ASR and Bulbul TTS with under 500ms response time.
+          </p>
+          <span class="text-xs font-bold text-emerald-700">10 Indic Dialects &bull; Fast Audio</span>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div id="vision" class="bg-slate-50 rounded-3xl p-7 border border-slate-200 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-2xl mb-6 shadow-xs">
+            🔬
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Multimodal Crop Doctor</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Upload leaf photos to detect blight, rust, and pests using MobileNetV2 and ViT Beans deep learning models.
+          </p>
+          <span class="text-xs font-bold text-blue-700">38+ PlantVillage Classes &bull; CIBRC Safety</span>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div id="mandi" class="bg-slate-50 rounded-3xl p-7 border border-slate-200 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-2xl mb-6 shadow-xs">
+            ⚖️
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Live Mandi Radar</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Real-time Agmarknet commodity tracking across Kolar, Bangalore, and all national APMCs with transport optimization.
+          </p>
+          <span class="text-xs font-bold text-amber-700">Daily Spot Prices &bull; Net Realisation</span>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-slate-50 rounded-3xl p-7 border border-slate-200 hover:shadow-lg transition">
+          <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-2xl mb-6 shadow-xs">
+            🧪
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Soil Health Intelligence</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Translates government soil cards into precision fertilizer plans with multi-nutrient cost optimization.
+          </p>
+          <span class="text-xs font-bold text-teal-700">ICAR NPK Algorithms &bull; Unit Converters</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section id="technology" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Production Tech Stack</h2>
+        <p class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Sovereign Indic Stack with Supabase BaaS</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700">
+          <h4 class="font-bold text-emerald-400 text-sm mb-2">Sarvam AI Sovereign Models</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Saaras Indic ASR, Bulbul TTS, Sarvam-1 Indic LLM, and Document Vision running on sovereign Indian infrastructure.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700">
+          <h4 class="font-bold text-blue-400 text-sm mb-2">Supabase BaaS Architecture</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            PostgreSQL 15+ with strict Row Level Security (RLS), Google OAuth with PKCE session flow, and encrypted farmer records.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/80 rounded-2xl p-6 border border-slate-700">
+          <h4 class="font-bold text-amber-400 text-sm mb-2">Hugging Face Deep Learning</h4>
+          <p class="text-slate-300 text-xs leading-relaxed">
+            Serverless inference with MobileNetV2 38-class plant disease vision and Vision Transformer (ViT) pulses specialist.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <section class="py-20 bg-gradient-to-tr from-emerald-600 to-teal-700 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+        Empowering 140+ Million Indian Farmers
+      </h2>
+      <p class="mt-6 text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto">
+        Experience zero-latency voice advice, live mandi price comparison, and plant disease diagnosis in your mother tongue.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/app" class="w-full sm:w-auto px-9 py-4 bg-white text-emerald-800 font-extrabold text-base rounded-2xl shadow-xl hover:bg-emerald-50 transition transform hover:-translate-y-0.5">
+          Get Started in Web App &rarr;
+        </a>
+        <a href="/login" class="w-full sm:w-auto px-9 py-4 bg-emerald-800/50 hover:bg-emerald-800 border-2 border-white/30 text-white font-bold text-base rounded-2xl transition">
+          Sign In with Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-500 py-12 text-sm border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-3">
+        <span class="text-xl">🌾</span>
+        <span class="font-bold text-white">KisanSamvaad</span>
+        <span>&bull; Built for Vertex Club &amp; Sarvam AI Hackathon</span>
+      </div>
+      <div class="flex items-center space-x-6 text-xs font-semibold">
+        <a href="/login" class="hover:text-white transition">Farmer Login</a>
+        <a href="/app" class="hover:text-white transition">Private Portal</a>
+        <a href="https://github.com/SATTWIK-DEBNATH/KISANSAMVAAD---SARVAM-AI-HACKATHON-" target="_blank" rel="noopener" class="hover:text-white transition">GitHub Repo</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
