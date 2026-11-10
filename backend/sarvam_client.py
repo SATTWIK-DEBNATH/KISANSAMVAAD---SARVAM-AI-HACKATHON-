@@ -350,7 +350,7 @@ class SarvamClient:
             "nitrogen_kg_ha": 195.0,
             "phosphorus_kg_ha": 8.4,
             "potassium_kg_ha": 145.0,
-            "ph_value": 5.9,
+            "ph_value": 5.98,
             "organic_carbon_pct": 0.42,
             "electrical_conductivity_dsm": 0.35,
             "confidence_score": 0.984,

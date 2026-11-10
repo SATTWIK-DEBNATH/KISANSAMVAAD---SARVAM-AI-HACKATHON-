@@ -70,6 +70,21 @@ class TestCropDiagnosticsService(unittest.TestCase):
         self.assertTrue(res["escalate_to_kvk"])
         self.assertIsNotNone(res["kvk_escalation_details"])
 
+    def test_image_based_leaf_diagnosis(self):
+        """Verifies photo-based leaf diagnosis without requiring text symptoms."""
+        fake_leaf_image_b64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD...early_blight_concentric_rings"
+        res = CropDiagnosticsService.diagnose(
+            crop_name="Tomato",
+            image_base64=fake_leaf_image_b64,
+            language="kn-IN"
+        )
+        self.assertTrue(res["image_analyzed"])
+        self.assertIsNotNone(res["visual_symptoms_detected"])
+        self.assertEqual(res["primary_diagnosis"]["disease_name"], "Tomato Early Blight")
+        self.assertIn("Alternaria solani", res["primary_diagnosis"]["pathogen"])
+        self.assertIn("kn", res["advisory_localized"])
+        self.assertTrue(res["safety_guardrails"]["is_safe"])
+
 if __name__ == "__main__":
     unittest.main()
 

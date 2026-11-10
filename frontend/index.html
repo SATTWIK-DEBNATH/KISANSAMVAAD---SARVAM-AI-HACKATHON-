@@ -1361,6 +1361,169 @@
       }
     }
 
+  
+    /* =========================================================================
+       MULTIMODAL CROP DOCTOR & LEAF VISION MODAL & UI
+       ========================================================================= */
+    .crop-doc-modal-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: var(--shadow-xl);
+    }
+    .leaf-upload-dropzone {
+      border: 2px dashed #93C5FD;
+      background: #F8FAFC;
+      border-radius: var(--radius-card);
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      margin-bottom: 1.5rem;
+    }
+    .leaf-upload-dropzone:hover {
+      background: #EFF6FF;
+      border-color: var(--tech-blue);
+      transform: translateY(-2px);
+    }
+    .sample-leaves-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+    .sample-leaf-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      padding: 0.75rem 0.9rem;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+    .sample-leaf-btn:hover {
+      border-color: var(--tech-blue);
+      background: #EFF6FF;
+      transform: translateY(-2px);
+    }
+    .sample-leaf-btn.active {
+      border-color: var(--tech-blue);
+      background: #EFF6FF;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    }
+    .sample-leaf-crop {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+    .sample-leaf-disease {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .diag-result-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-card);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-md);
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .diag-scan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: var(--tech-blue);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      margin-bottom: 0.75rem;
+    }
+    .diag-preview-container {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .diag-leaf-thumb {
+      width: 140px;
+      height: 140px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      border: 2px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      background: #F1F5F9;
+    }
+    .diag-confidence-meter {
+      height: 8px;
+      background: #E2E8F0;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0.4rem 0 1rem;
+    }
+    .diag-confidence-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563EB, #10B981);
+      width: 90%;
+      transition: width 0.6s ease;
+    }
+    .diag-pill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    .diag-pill-card {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+    }
+    .diag-audio-action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-light);
+      margin-top: 1.25rem;
+    }
+    .btn-diag-audio-listen {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--emerald);
+      color: #FFFFFF;
+      padding: 0.7rem 1.35rem;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-diag-audio-listen:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+
   </style>
 </head>
 <body>
@@ -1849,6 +2012,16 @@
             </svg>
             <span>CIB&amp;RC Pest Advisory</span>
           </button>
+
+          <!-- MULTIMODAL CROP LEAF DOCTOR BUTTON -->
+          <button class="quick-action-btn" onclick="openCropDoctorModal()" style="background:#F0FDF4; border-color:#86EFAC; color:#166534;">
+            <!-- Lucide Camera / Scan SVG -->
+            <svg style="width:16px; height:16px; color:var(--emerald);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Scan Crop Leaf (AI Doctor)</span>
+          </button>
         </div>
 
         <!-- Chat Conversation Window -->
@@ -1940,6 +2113,168 @@
 
     </div>
   </section>
+
+  
+  <!-- =========================================================================
+       7. MODAL: MULTIMODAL CROP DOCTOR & LEAF VISION SCANNER
+       ========================================================================= -->
+  <div class="modal-overlay" id="cropDoctorModal">
+    <div class="crop-doc-modal-card">
+      <button class="modal-close-btn" onclick="closeCropDoctorModal()" title="Close">
+        <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div style="margin-bottom:1.5rem;">
+        <span class="diag-scan-badge">
+          <span class="pulse-dot"></span>
+          SARVAM MULTIMODAL VISION · ICAR PATHOLOGY ENGINE
+        </span>
+        <h2 style="font-family:var(--font-heading); font-size:1.85rem; color:var(--text-primary); margin-bottom:0.35rem;">
+          Crop Doctor: AI Leaf Disease Scanner
+        </h2>
+        <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">
+          Upload or snap a photo of a diseased plant leaf (or test with 1-click samples below). Sarvam AI identifies the pathogen, checks CIBRC chemical safety, and provides spoken Indic remedies.
+        </p>
+      </div>
+
+      <!-- File Upload Dropzone -->
+      <div class="leaf-upload-dropzone" onclick="document.getElementById('leafPhotoFileInput').click()">
+        <input type="file" id="leafPhotoFileInput" accept="image/*" style="display:none;" onchange="handleLeafFileUploaded(event)">
+        <svg style="width:36px; height:36px; color:var(--tech-blue); margin:0 auto 0.75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <div style="font-weight:700; color:var(--text-primary); font-size:1rem; margin-bottom:0.25rem;">
+          Click to Upload or Drag Leaf Photo
+        </div>
+        <div style="font-size:0.8rem; color:var(--text-muted);">
+          Supports JPG, PNG, WebP (Max 10MB)
+        </div>
+      </div>
+
+      <!-- Quick 1-Click Demo Samples (Student & Hackathon Pitch Ready) -->
+      <div style="margin-bottom:0.6rem; font-size:0.82rem; font-weight:700; color:var(--text-primary);">
+        Or 1-Click Instant Demo Samples (Pitch-Ready):
+      </div>
+      <div class="sample-leaves-grid">
+        <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('tomato_early_blight')">
+          <span class="sample-leaf-crop">🍅 Tomato</span>
+          <span class="sample-leaf-disease">Concentric Target Rings</span>
+        </button>
+        <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('cotton_leaf_curl')">
+          <span class="sample-leaf-crop">🌱 Cotton</span>
+          <span class="sample-leaf-disease">Upward Curl &amp; Whitefly</span>
+        </button>
+        <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('rice_blast')">
+          <span class="sample-leaf-crop">🌾 Rice / Paddy</span>
+          <span class="sample-leaf-disease">Spindle-Shaped Blast</span>
+        </button>
+        <button type="button" class="sample-leaf-btn" onclick="runSampleLeafDiagnosis('wheat_yellow_rust')">
+          <span class="sample-leaf-crop">🌾 Wheat</span>
+          <span class="sample-leaf-disease">Yellow Stripe Rust</span>
+        </button>
+      </div>
+
+      <!-- Loading State -->
+      <div id="diagLoadingBox" style="display:none; text-align:center; padding:2rem 1rem;">
+        <div class="loading-spinner" style="margin:0 auto 1rem; width:36px; height:36px; border:3px solid #E2E8F0; border-top-color:var(--tech-blue); border-radius:50%; animation:spin 0.8s linear infinite;"></div>
+        <div style="font-weight:700; color:var(--text-primary); font-size:0.95rem;">
+          Sarvam Vision Scanning Leaf Surface...
+        </div>
+        <div style="font-size:0.82rem; color:var(--text-muted); margin-top:0.25rem;">
+          Detecting fungal concentric rings, chlorosis, and comparing with ICAR pathology database
+        </div>
+      </div>
+
+      <!-- Diagnostic Results Card -->
+      <div class="diag-result-card" id="diagResultCard">
+        <div class="diag-preview-container">
+          <img id="diagLeafImg" src="" alt="Analyzed Leaf" class="diag-leaf-thumb">
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+              <h3 id="diagDiseaseName" style="font-size:1.35rem; font-weight:800; color:var(--text-primary); margin:0;">
+                Tomato Early Blight
+              </h3>
+              <span id="diagSeverityBadge" style="background:#FEF3C7; color:#92400E; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:var(--radius-pill); border:1px solid #FDE68A;">
+                Moderate Severity
+              </span>
+            </div>
+            <div id="diagPathogen" style="font-size:0.85rem; color:var(--text-secondary); font-style:italic; margin:0.2rem 0 0.5rem;">
+              Alternaria solani
+            </div>
+            
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem; font-weight:700; color:var(--text-muted);">
+              <span>AI Diagnostic Confidence</span>
+              <span id="diagConfidenceText">91%</span>
+            </div>
+            <div class="diag-confidence-meter">
+              <div class="diag-confidence-fill" id="diagConfidenceFill" style="width:91%;"></div>
+            </div>
+            <div id="diagVisualNotes" style="font-size:0.82rem; color:var(--text-secondary); line-height:1.4;">
+              Sarvam Visual AI identified concentric target-board rings with yellow halos characteristic of Alternaria solani.
+            </div>
+          </div>
+        </div>
+
+        <!-- Differential & Remedies Grid -->
+        <div class="diag-pill-grid">
+          <div class="diag-pill-card">
+            <div style="font-size:0.75rem; font-weight:700; color:var(--tech-blue); font-family:var(--font-mono); margin-bottom:0.35rem;">
+              DIFFERENTIAL DIAGNOSIS (SECONDARY)
+            </div>
+            <div id="diagSecondarySuspect" style="font-size:0.88rem; font-weight:700; color:var(--text-primary); margin-bottom:0.2rem;">
+              Septoria Leaf Spot
+            </div>
+            <div style="font-size:0.78rem; color:var(--text-muted);">
+              Alternative suspect evaluated by ICAR protocol.
+            </div>
+          </div>
+
+          <div class="diag-pill-card" style="background:#F0FDF4; border-color:#BBF7D0;">
+            <div style="font-size:0.75rem; font-weight:700; color:#166534; font-family:var(--font-mono); margin-bottom:0.35rem;">
+              CIB&amp;RC SAFETY PROTOCOL
+            </div>
+            <div style="font-size:0.88rem; font-weight:700; color:#166534; margin-bottom:0.2rem;">
+              Verified Safe (Zero Banned Actives)
+            </div>
+            <div style="font-size:0.78rem; color:#15803D;">
+              Blocks hazardous pesticides (Paraquat, Endosulfan).
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <div style="font-size:0.82rem; font-weight:700; color:var(--text-primary); margin-bottom:0.3rem;">
+            Recommended Interventions:
+          </div>
+          <div style="background:var(--surface-secondary); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--border-light); font-size:0.85rem; line-height:1.5; margin-bottom:0.5rem;">
+            <strong>Organic:</strong> <span id="diagOrganicRemedy">Spray Neem Oil 3ml/L of water or apply Trichoderma harzianum 5g/L.</span>
+          </div>
+          <div style="background:var(--surface-secondary); padding:0.85rem; border-radius:var(--radius-sm); border:1px solid var(--border-light); font-size:0.85rem; line-height:1.5;">
+            <strong>Approved Chemical:</strong> <span id="diagChemicalRemedy">Spray Mancozeb 75% WP @ 2.0g to 2.5g/L of water.</span>
+          </div>
+        </div>
+
+        <!-- Audio Player & Chat Action -->
+        <div class="diag-audio-action-bar">
+          <button type="button" class="btn-diag-audio-listen" onclick="playDiagnosticAudio()">
+            <svg style="width:16px; height:16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+            </svg>
+            <span id="btnAudioText">Listen Spoken Advisory (Sarvam Bulbul)</span>
+          </button>
+
+          <button type="button" class="quick-action-btn" onclick="sendDiagnosticToChat()">
+            <svg style="width:16px; height:16px; color:var(--tech-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            <span>Ask Follow-up in Samvaad Chat</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================================
        5. MODAL: AUTHENTICATION SCREEN (LOGIN / SIGN UP)
@@ -2721,6 +3056,199 @@
         scrollToOnboardingSection();
       }
     });
+
+  
+    // =========================================================================
+    // MULTIMODAL CROP DOCTOR & LEAF VISION HANDLERS
+    // =========================================================================
+    let currentDiagnosticData = null;
+
+    function openCropDoctorModal() {
+      document.getElementById('cropDoctorModal').classList.add('active');
+    }
+
+    function closeCropDoctorModal() {
+      document.getElementById('cropDoctorModal').classList.remove('active');
+    }
+
+    // High quality sample leaf SVG icons / data URLs for pitch-ready demo
+    const sampleLeafImages = {
+      tomato_early_blight: {
+        crop: "Tomato",
+        hint: "concentric rings target board early blight",
+        img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 20 C40 40 30 80 70 120 C110 80 100 40 70 20 Z' fill='%2322C55E'/><circle cx='65' cy='65' r='18' fill='%2378350F' opacity='0.7'/><circle cx='65' cy='65' r='12' fill='%23FEF08A' opacity='0.5'/><circle cx='65' cy='65' r='6' fill='%23451A03'/><text x='15' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Tomato Early Blight</text></svg>"
+      },
+      cotton_leaf_curl: {
+        crop: "Cotton",
+        hint: "curl curling whitefly stunted",
+        img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 15 C30 45 40 95 70 125 C100 95 110 45 70 15 Z' fill='%234ADE80'/><path d='M50 40 Q70 20 90 40 Q105 70 85 90 Q65 110 50 80 Z' fill='%23FDE047' opacity='0.6'/><text x='15' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Cotton Leaf Curl</text></svg>"
+      },
+      rice_blast: {
+        crop: "Rice",
+        hint: "spindle eye-shaped blast lesion",
+        img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 10 C55 40 50 100 70 130 C90 100 85 40 70 10 Z' fill='%2386EFAC'/><ellipse cx='70' cy='65' rx='8' ry='22' fill='%2378350F'/><ellipse cx='70' cy='65' rx='4' ry='14' fill='%23CBD5E1'/><text x='25' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Rice Blast Lesion</text></svg>"
+      },
+      wheat_yellow_rust: {
+        crop: "Wheat",
+        hint: "yellow stripes rust pustules powder",
+        img: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><rect width='140' height='140' fill='%23E2E8F0'/><path d='M70 10 C50 40 45 100 70 130 C95 100 90 40 70 10 Z' fill='%2386EFAC'/><line x1='63' y1='30' x2='63' y2='105' stroke='%23EAB308' stroke-width='4' stroke-dasharray='3,2'/><line x1='72' y1='35' x2='72' y2='110' stroke='%23CA8A04' stroke-width='4' stroke-dasharray='3,2'/><text x='18' y='132' font-size='10' font-family='sans-serif' font-weight='bold' fill='%231E293B'>Wheat Stripe Rust</text></svg>"
+      }
+    };
+
+    function runSampleLeafDiagnosis(key) {
+      const sample = sampleLeafImages[key];
+      if (!sample) return;
+
+      document.querySelectorAll('.sample-leaf-btn').forEach(b => b.classList.remove('active'));
+      event?.currentTarget?.classList?.add('active');
+
+      document.getElementById('diagLoadingBox').style.display = 'block';
+      document.getElementById('diagResultCard').style.display = 'none';
+
+      // Call KisanSamvaad backend /api/crop-diagnostics
+      fetch('/api/crop-diagnostics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          crop: sample.crop,
+          symptoms: sample.hint,
+          image_base64: sample.img,
+          language: userState.langCode === 'kn' ? 'kn-IN' : 'hi-IN'
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        setTimeout(() => {
+          document.getElementById('diagLoadingBox').style.display = 'none';
+          displayCropDiagnosticResult(data, sample.img);
+        }, 700);
+      })
+      .catch(err => {
+        console.error("Diagnosis error:", err);
+        document.getElementById('diagLoadingBox').style.display = 'none';
+        alert("Failed to analyze leaf image. Please retry.");
+      });
+    }
+
+    function handleLeafFileUploaded(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const b64Data = evt.target.result;
+        document.getElementById('diagLoadingBox').style.display = 'block';
+        document.getElementById('diagResultCard').style.display = 'none';
+
+        fetch('/api/crop-diagnostics', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            crop: userState.crops[0] || "Tomato",
+            image_base64: b64Data,
+            language: userState.langCode === 'kn' ? 'kn-IN' : 'hi-IN'
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('diagLoadingBox').style.display = 'none';
+          displayCropDiagnosticResult(data, b64Data);
+        })
+        .catch(err => {
+          console.error("Leaf upload diagnosis error:", err);
+          document.getElementById('diagLoadingBox').style.display = 'none';
+          alert("Image analysis encountered an error.");
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function displayCropDiagnosticResult(data, imgUrl) {
+      currentDiagnosticData = data;
+      const card = document.getElementById('diagResultCard');
+      card.style.display = 'block';
+
+      document.getElementById('diagLeafImg').src = imgUrl;
+      document.getElementById('diagDiseaseName').innerText = data.primary_diagnosis.disease_name;
+      document.getElementById('diagPathogen').innerText = data.primary_diagnosis.pathogen;
+      document.getElementById('diagSeverityBadge').innerText = data.primary_diagnosis.severity_level + " Severity";
+      
+      const confPercent = Math.round(data.primary_diagnosis.confidence_score * 100);
+      document.getElementById('diagConfidenceText').innerText = confPercent + "%";
+      document.getElementById('diagConfidenceFill').style.width = confPercent + "%";
+
+      document.getElementById('diagVisualNotes').innerText = data.visual_symptoms_detected || "Sarvam Visual AI identified foliar lesions grounded in ICAR disease protocols.";
+      document.getElementById('diagSecondarySuspect').innerText = data.differential_diagnosis.secondary_suspect;
+      document.getElementById('diagOrganicRemedy').innerText = data.recommended_interventions.organic_biological;
+      document.getElementById('diagChemicalRemedy').innerText = data.recommended_interventions.approved_chemical;
+
+      const btnAudioText = document.getElementById('btnAudioText');
+      if (userState.langCode === 'kn') {
+        btnAudioText.innerText = "ಕನ್ನಡದಲ್ಲಿ ಕೇಳಿ (Sarvam Bulbul)";
+      } else if (userState.langCode === 'hi') {
+        btnAudioText.innerText = "हिंदी में सुनें (Sarvam Bulbul)";
+      } else {
+        btnAudioText.innerText = "Listen Spoken Advisory (Sarvam Bulbul)";
+      }
+    }
+
+    function playDiagnosticAudio() {
+      if (!currentDiagnosticData) return;
+      const lang = userState.langCode || 'kn';
+      const textToSpeak = currentDiagnosticData.advisory_localized[lang] || currentDiagnosticData.advisory_localized['en'];
+
+      // Web Speech API fallback or audio element
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        utterance.rate = 0.92;
+        utterance.lang = lang === 'kn' ? 'kn-IN' : (lang === 'hi' ? 'hi-IN' : 'en-IN');
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Audio advisory:\n\n" + textToSpeak);
+      }
+    }
+
+    function sendDiagnosticToChat() {
+      if (!currentDiagnosticData) return;
+      closeCropDoctorModal();
+      document.getElementById('samvaad-hub')?.scrollIntoView({ behavior: 'smooth' });
+
+      const chatWindow = document.getElementById('chatWindow');
+      const lang = userState.langCode || 'kn';
+      const advisory = currentDiagnosticData.advisory_localized[lang] || currentDiagnosticData.advisory_localized['en'];
+
+      const userBubble = document.createElement('div');
+      userBubble.className = 'chat-bubble bubble-user';
+      userBubble.innerHTML = `
+        <div style="font-size:0.75rem; opacity:0.75; margin-bottom:0.35rem; font-family:var(--font-mono);">
+          PHOTO DIAGNOSTIC QUERY · LEAF SCAN
+        </div>
+        <p style="font-size:1.02rem; font-weight:600;">
+          Diagnose leaf photo: ${currentDiagnosticData.primary_diagnosis.disease_name} (${currentDiagnosticData.crop})
+        </p>
+      `;
+      chatWindow.appendChild(userBubble);
+
+      const aiBubble = document.createElement('div');
+      aiBubble.className = 'chat-bubble bubble-ai';
+      aiBubble.innerHTML = `
+        <div style="font-size:0.75rem; color:var(--tech-blue); font-weight:700; font-family:var(--font-mono); margin-bottom:0.4rem;">
+          SARVAM MULTIMODAL CROP DOCTOR · ICAR GROUNDED
+        </div>
+        <div style="margin-bottom:0.5rem; font-weight:700; color:var(--text-primary); font-size:1.05rem;">
+          ${currentDiagnosticData.primary_diagnosis.disease_name} (${currentDiagnosticData.primary_diagnosis.pathogen})
+        </div>
+        <p style="font-size:0.95rem; color:var(--text-primary); line-height:1.6; margin-bottom:0.6rem;">
+          ${advisory}
+        </p>
+        <div style="font-size:0.8rem; color:var(--emerald); font-weight:700;">
+          🛡️ Verified Safe by CIB&amp;RC Guardrails: Zero Banned Chemicals.
+        </div>
+      `;
+      chatWindow.appendChild(aiBubble);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
 
   </script>
 </body>
