@@ -9,7 +9,7 @@
 
 ---
 
-## 🌾 1. Product Vision & Sovereign AI Mission
+##  1. Product Vision & Sovereign AI Mission
 
 KisanSamvaad (किसान संवाद / ಕಿಸಾನ್ ಸಂವಾದ) is a sovereign, voice-first agricultural intelligence platform and document concierge built directly on Sarvam AI Indic language models for India's 140+ million farmers.
 
@@ -25,7 +25,7 @@ Among hackathon domains, Agriculture & Rural Innovation (Track 03) is the premie
 
 ---
 
-## ⚡ 2. Engineered for 8GB RAM PCs (Ultra-Lightweight)
+##  2. Engineered for 8GB RAM PCs (Ultra-Lightweight)
 
 KisanSamvaad is intentionally built to run with zero heavy overhead:
 - Active Memory Usage: Under 100MB RAM.
@@ -35,7 +35,7 @@ KisanSamvaad is intentionally built to run with zero heavy overhead:
 
 ---
 
-## 🏛️ 3. System Architecture & Core Subsystems
+##  3. System Architecture & Core Subsystems
 
 ```mermaid
 flowchart TD
@@ -85,7 +85,7 @@ flowchart TD
 
 ---
 
-## 🔄 4. End-to-End Voice Advisory Loop
+##  4. End-to-End Voice Advisory Loop
 
 ```mermaid
 sequenceDiagram
@@ -126,7 +126,7 @@ sequenceDiagram
 
 ---
 
-## 🧪 5. Soil Health Card Intelligence Workflow
+##  5. Soil Health Card Intelligence Workflow
 
 ```mermaid
 flowchart LR
@@ -140,7 +140,7 @@ flowchart LR
 
 ---
 
-## 🌾 6. Soil-to-Rupee Precision Fertilizer Planner
+##  6. Soil-to-Rupee Precision Fertilizer Planner
 
 The **Soil-to-Rupee Planner** bridges the gap between laboratory soil test numbers (kg/ha N-P-K) and real-world farm operations: whole bags, rupees, application schedules, and 72-hour rain delay warnings.
 
@@ -177,7 +177,7 @@ flowchart TD
     end
 ```
 
-### 📋 Optimization & Agronomic Workflow
+###  Optimization & Agronomic Workflow
 1. **Slot Extraction**: Parses natural voice queries (e.g., *"ನನಗೆ 2 ಎಕರೆ ಟೊಮೇಟೊಗೆ ಎಷ್ಟು ಗೊಬ್ಬರ ಬೇಕು?"*) using multilingual aliases and regex fallback. If slots are missing or ambiguous, generates targeted clarifying questions without guessing.
 2. **Unit Conversion**: Converts regional area units (ha, acre, gunta, bigha) using state-specific ratios (e.g., Karnataka: 40 guntas = 1 acre).
 3. **Soil Rating & Dose Adjustment**: Maps soil laboratory test metrics against ICAR fertility classes (Low: +25% dose, Medium: recommended dose, High: -25% dose, Very High: nil application).
@@ -190,7 +190,7 @@ flowchart TD
 
 ---
 
-### 🛠️ Updating Dose Tables and Fertilizer Prices
+###  Updating Dose Tables and Fertilizer Prices
 
 All agronomic doses and fertilizer retail prices are decoupled from code in versioned YAML files:
 
@@ -275,7 +275,7 @@ Experience the Soil-to-Rupee pipeline from start to finish:
 4. **Step 4: Weather & Rain Delay Check (10s)**
    - The system checks Open-Meteo for Kolar coordinates (`13.1367° N, 78.1292° E`).
    - If rainfall > 10 mm in the next 72 hours, it flags:
-     > *"⚠️ Heavy rain expected (14.2mm). Postpone basal fertilizer application to prevent nutrient runoff."*
+     > *" Heavy rain expected (14.2mm). Postpone basal fertilizer application to prevent nutrient runoff."*
 
 5. **Step 5: Grounded Voice Playback (10s)**
    - Click **"Listen to Audio Plan"** (or receive the IVR phone call).
@@ -284,7 +284,7 @@ Experience the Soil-to-Rupee pipeline from start to finish:
 
 ---
 
-### 🔬 Agronomic Assumptions & `TODO(verify)` Register
+###  Agronomic Assumptions & `TODO(verify)` Register
 
 | Module / Topic | Current Implementation | Agronomic Assumption | Verification Status |
 | :--- | :--- | :--- | :--- |
@@ -299,7 +299,7 @@ Experience the Soil-to-Rupee pipeline from start to finish:
 
 ---
 
-## ☎️ 7. 1800-KISAN-AI Telephony State Machine
+##  7. 1800-KISAN-AI Telephony State Machine
 
 ```mermaid
 stateDiagram-v2
@@ -324,7 +324,7 @@ stateDiagram-v2
 
 ---
 
-## 🚀 8. Quick Start Guide
+##  8. Quick Start Guide
 
 ### Step 1: Clone and Navigate
 ```bash
@@ -343,7 +343,7 @@ To run with live Sarvam Cloud APIs, set `SARVAM_API_KEY=your_key_here` in `.env`
 python backend/server.py 8000
 ```
 Open your browser at:  
-👉 **`http://localhost:8000`**
+ **`http://localhost:8000`**
 
 ### Step 4: Run the Master 19-Point Automated Test Suite
 ```bash
@@ -353,7 +353,7 @@ python backend/tests/run_all_tests.py
 Output:
 ```
 ======================================================================
-🌾 KISANSAMVAAD MASTER TEST SUITE - 19 CRITICAL SPECIFICATION AREAS
+ KISANSAMVAAD MASTER TEST SUITE - 19 CRITICAL SPECIFICATION AREAS
 ======================================================================
   [PASSED] Suite 1. Sarvam Handling & Fallback (3 tests)
   [PASSED] Suite 2. Speech Workflow & Synthesis (2 tests)
@@ -375,13 +375,13 @@ Output:
   [PASSED] Suite 18. Soil Planner Narration & Grounding (7 tests)
   [PASSED] Suite 19. Soil Planner Weather Thresholds (3 tests)
 ======================================================================
-✅ ALL 67 VERIFICATION TESTS PASSED SUCCESSFULLY! (0.46s)
+ ALL 67 VERIFICATION TESTS PASSED SUCCESSFULLY! (0.46s)
 ======================================================================
 ```
 
 ---
 
-## 📱 9. Feature Highlights
+##  9. Feature Highlights
 
 ### 1. Suno & Bolo (AI Voice Assistant)
 - Multi-dialect support: Kannada, Hindi, Tamil, Telugu, Marathi, Bengali, and Indian English.
@@ -424,7 +424,7 @@ Output:
 
 ---
 
-## 📚 10. Documentation Index
+##  10. Documentation Index
 
 - [docs/architecture.md](docs/architecture.md): Complete architecture document, low-resource design rationale, and data flow models.
 - [docs/api.md](docs/api.md): REST API endpoints, schemas, and curl examples.
