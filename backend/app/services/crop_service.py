@@ -10,6 +10,7 @@ import os
 import re
 from ..safety.agri_guardrails import AgriGuardrailEngine
 from ..db.repository import repository
+from .plant_vision import PlantVisionClassifier
 
 # Agronomic Knowledge Base for Common Indian Crop Diseases and Pests
 CROP_DIAGNOSTIC_DB: Dict[str, List[Dict[str, Any]]] = {
@@ -138,66 +139,28 @@ class CropDiagnosticsService:
         cls,
         image_base64: str,
         crop_name: str
-    ) -> tuple[str, str]:
+    ) -> tuple[str, str, Dict[str, Any]]:
         """
-        Extracts agronomic visual leaf descriptors from uploaded crop photo.
-        Supports free Google Gemini 1.5 Flash vision API if configured,
-        with calibrated offline ICAR visual descriptor fallback for students/hackathons.
+        Extracts agronomic visual leaf descriptors using deep learning vision models:
+        - linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification (Hugging Face)
+        - Google Gemini 1.5 Flash Vision API (if GEMINI_API_KEY present)
+        - Calibrated ICAR offline vision descriptors
         """
-        gemini_key = os.getenv("GEMINI_API_KEY")
-        crop_clean = crop_name.strip().lower()
+        vision_res = PlantVisionClassifier.classify_image(image_base64, crop_name)
+        taxonomy = vision_res["taxonomy"]
+        primary_label = vision_res["primary_label"]
+        source = vision_res["inference_source"]
+        confidence = vision_res["confidence_score"]
 
-        # Check if external Gemini Vision API is configured
-        if gemini_key:
-            try:
-                import urllib.request
-                import json
-                clean_b64 = image_base64.split(",")[-1] if "," in image_base64 else image_base64
-                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
-                payload = {
-                    "contents": [{
-                        "parts": [
-                            {"text": f"You are an ICAR plant pathologist. Analyze this leaf image of {crop_name}. Describe visual lesions, leaf color changes, fungal concentric rings, curling, or borer holes in 1 concise sentence."},
-                            {"inline_data": {"mime_type": "image/jpeg", "data": clean_b64}}
-                        ]
-                    }]
-                }
-                req = urllib.request.Request(
-                    url,
-                    data=json.dumps(payload).encode("utf-8"),
-                    headers={"Content-Type": "application/json"}
-                )
-                with urllib.request.urlopen(req, timeout=8) as response:
-                    res_data = json.loads(response.read().decode("utf-8"))
-                    text_out = res_data["candidates"][0]["content"]["parts"][0]["text"]
-                    return text_out, text_out
-            except Exception:
-                pass
-
-        # Robust Calibrated Fallback (Zero cost, offline student/hackathon ready)
-        lower_b64 = image_base64.lower() if isinstance(image_base64, str) else ""
-
-        if "blast" in lower_b64 or "paddy" in lower_b64 or crop_clean == "rice":
-            symptom_str = "Spindle-shaped or eye-shaped lesions with grayish-white centers and dark brown borders on leaves"
-            visual_note = "Sarvam Visual AI identified spindle-shaped blast lesions characteristic of Magnaporthe oryzae on rice foliage."
-        elif "curl" in lower_b64 or "whitefly" in lower_b64:
-            symptom_str = "Severe upward leaf curling, stunted growth, and vein clearing with whitefly presence"
-            visual_note = "Sarvam Visual AI identified upward leaf curling and chlorotic vein clearing transmitted by whitefly vectors."
-        elif "pink" in lower_b64 or "bollworm" in lower_b64 or crop_clean == "cotton":
-            symptom_str = "Rosette flowers observed and pink bollworm caterpillars found inside damaged bolls"
-            visual_note = "Sarvam Visual AI identified rosette flower deformity and boll damage consistent with Pectinophora gossypiella."
-        elif "rust" in lower_b64 or crop_clean == "wheat":
-            symptom_str = "Parallel yellow stripes with powdery fungal pustules on leaf blades"
-            visual_note = "Sarvam Visual AI identified linear yellow pustule stripes characteristic of Puccinia striiformis."
-        elif "thrips" in lower_b64 or "murda" in lower_b64 or crop_clean == "chilli":
-            symptom_str = "Leaves curling upward in boat shape with bronzing and thrips damage"
-            visual_note = "Sarvam Visual AI identified boat-shaped leaf upward curling and thrips feeding rasping."
-        else:
-            # Default / Tomato Early Blight
-            symptom_str = "Lower leaves have concentric dark rings with yellow halo and brown blight spots"
-            visual_note = "Sarvam Visual AI identified concentric target-board rings with yellow halos characteristic of Alternaria solani."
-
-        return symptom_str, visual_note
+        symptom_str = (
+            f"Foliar lesions corresponding to {taxonomy['disease_name']} ({taxonomy['pathogen']}). "
+            f"Detected by deep learning model {vision_res['model_used']}."
+        )
+        visual_note = (
+            f"Computer vision model ({vision_res['model_used']}) classified image as {primary_label} "
+            f"with {int(confidence * 100)}% confidence via {source}."
+        )
+        return symptom_str, visual_note, vision_res
 
 
 
@@ -216,9 +179,13 @@ class CropDiagnosticsService:
         Enforces experimental labeling, confidence boundaries, and KVK escalation.
         """
         visual_notes = None
-        if image_base64 and not (symptom_description or symptoms):
-            extracted_sym, visual_notes = cls.extract_visual_symptoms_from_image(image_base64, crop_name)
-            raw_symptoms = extracted_sym
+        vision_meta = None
+        if image_base64:
+            extracted_sym, visual_notes, vision_meta = cls.extract_visual_symptoms_from_image(image_base64, crop_name)
+            if not (symptom_description or symptoms):
+                raw_symptoms = extracted_sym
+            else:
+                raw_symptoms = f"{symptom_description or symptoms} {extracted_sym}"
         else:
             raw_symptoms = symptom_description or symptoms or ""
         crop_key = crop_name.strip().lower()
@@ -242,8 +209,21 @@ class CropDiagnosticsService:
                     best_score = score
                     best_match = cand
 
-        # Default fallback if no keyword matches or unrecognized condition
-        if not best_match:
+        # If deep learning vision identified a condition, adopt the taxonomy profile
+        if vision_meta and vision_meta.get("taxonomy"):
+            tax = vision_meta["taxonomy"]
+            confidence = vision_meta["confidence_score"]
+            primary_name = tax["disease_name"]
+            pathogen = tax["pathogen"]
+            differential_alt = tax["differential_alternative"]
+            alt_confidence = tax["alternative_confidence"]
+            severity = tax["severity"]
+            remedy_org = tax["organic_remedy"]
+            remedy_chem = tax["chemical_remedy"]
+            cult_prac = tax["cultural_practices"]
+            adv_kn = tax["advisory_kn"]
+            adv_hi = tax["advisory_hi"]
+        elif not best_match:
             confidence = 0.48
             primary_name = f"Unclassified {crop_name.capitalize()} Pathology"
             pathogen = "Fungal / Viral / Abiotic stress suspected"
@@ -316,6 +296,9 @@ class CropDiagnosticsService:
         return {
             "experimental": True,
             "image_analyzed": bool(image_base64),
+            "vision_model": vision_meta.get("model_used") if vision_meta else "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
+            "inference_source": vision_meta.get("inference_source") if vision_meta else "text_symptom_matching",
+            "top_predictions": vision_meta.get("top_predictions", []) if vision_meta else [],
             "visual_symptoms_detected": visual_notes,
             "spoken_audio_url": spoken_audio_url,
             "disclaimer": "Experimental AI Diagnostic Aid grounded in ICAR protocols. Verify physically with local KVK before chemical application.",

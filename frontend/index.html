@@ -2214,6 +2214,19 @@
             <div id="diagVisualNotes" style="font-size:0.82rem; color:var(--text-secondary); line-height:1.4;">
               Sarvam Visual AI identified concentric target-board rings with yellow halos characteristic of Alternaria solani.
             </div>
+
+            <!-- Deep Learning Architecture & Softmax Probability Pills -->
+            <div style="margin-top:0.6rem; padding:0.6rem 0.85rem; background:var(--surface-secondary); border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+              <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.35rem;">
+                <span style="font-family:var(--font-mono); font-size:0.72rem; font-weight:700; color:var(--tech-blue);" id="diagModelName">
+                  MODEL: linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification
+                </span>
+                <span style="font-size:0.72rem; font-weight:700; color:var(--text-muted);" id="diagInferenceEngine">
+                  INFERENCE: PlantVillage Deep Learning Engine
+                </span>
+              </div>
+              <div id="diagTopPredsPills" style="display:flex; gap:0.4rem; flex-wrap:wrap;"></div>
+            </div>
           </div>
         </div>
 
@@ -3178,6 +3191,30 @@
       document.getElementById('diagConfidenceFill').style.width = confPercent + "%";
 
       document.getElementById('diagVisualNotes').innerText = data.visual_symptoms_detected || "Sarvam Visual AI identified foliar lesions grounded in ICAR disease protocols.";
+
+      const modelElem = document.getElementById('diagModelName');
+      if (modelElem && data.vision_model) {
+        modelElem.innerText = "MODEL: " + data.vision_model;
+      }
+      const engineElem = document.getElementById('diagInferenceEngine');
+      if (engineElem && data.inference_source) {
+        engineElem.innerText = "INFERENCE: " + data.inference_source;
+      }
+
+      // Render Softmax probability pills
+      const predsContainer = document.getElementById('diagTopPredsPills');
+      if (predsContainer) {
+        predsContainer.innerHTML = '';
+        const preds = data.top_predictions || [];
+        preds.forEach((p, idx) => {
+          const pill = document.createElement('span');
+          const pct = Math.round(p.score * 100);
+          pill.style.cssText = 'display:inline-flex; align-items:center; gap:0.3rem; padding:0.2rem 0.55rem; background:#FFFFFF; border:1px solid var(--border-light); border-radius:12px; font-size:0.72rem; font-weight:600; color:var(--text-primary);';
+          pill.innerHTML = `<strong>#${idx + 1}</strong> ${p.label.replace('___', ' · ').replace(/_/g, ' ')} <span style="color:var(--tech-blue); font-weight:700;">${pct}%</span>`;
+          predsContainer.appendChild(pill);
+        });
+      }
+
       document.getElementById('diagSecondarySuspect').innerText = data.differential_diagnosis.secondary_suspect;
       document.getElementById('diagOrganicRemedy').innerText = data.recommended_interventions.organic_biological;
       document.getElementById('diagChemicalRemedy').innerText = data.recommended_interventions.approved_chemical;
